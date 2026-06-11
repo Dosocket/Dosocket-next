@@ -1,0 +1,171 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-lime: var(--lime);
+  --color-lime-foreground: var(--lime-foreground);
+  --color-cream: var(--cream);
+  --color-cream-foreground: var(--cream-foreground);
+
+  /* Minimalist Neo-Grotesque Font Definition Stack */
+  --font-display:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  --font-sans:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* ==========================================================================
+     DOSOCKET PREMIUM LIGHT THEME INVERSION (OKLCH)
+     ========================================================================== */
+
+  /* #FBFAF6 Off-White becomes the main layout background */
+  --background: oklch(0.985 0.005 90);
+
+  /* #242529 Dark Charcoal becomes the main text/typography color */
+  --foreground: oklch(0.235 0.005 270);
+
+  /* Surfaces & Containers require a slight tint to separate from pure bg */
+  --surface: oklch(0.95 0.005 90);
+  /* Soft light grey surface */
+  --surface-foreground: oklch(0.235 0.005 270);
+
+  /* Ink section inverted to stay deep/dark for intentional sections */
+  --ink: oklch(0.18 0.005 270);
+  /* Keeps dark blocks dark */
+  --ink-foreground: oklch(0.985 0.005 90);
+
+  /* Cream section updated for subtle layout card backgrounds */
+  --cream: oklch(0.97 0.008 90);
+  --cream-foreground: oklch(0.235 0.005 270);
+
+  /* #D6FC00 Neon Lime - Kept exact but text forced to dark charcoal for contrast */
+  --lime: oklch(0.94 0.24 122);
+  --lime-foreground: oklch(0.235 0.005 270);
+
+  /* Global UI Components */
+  --card: oklch(0.97 0.005 90);
+  /* Light container background */
+  --card-foreground: oklch(0.235 0.005 270);
+  --popover: oklch(0.985 0.005 90);
+  --popover-foreground: oklch(0.235 0.005 270);
+
+  /* Interactive Elements */
+  --primary: oklch(0.235 0.005 270);
+  /* Buttons are dark charcoal by default */
+  --primary-foreground: oklch(0.985 0.005 90);
+  /* Button text is off-white */
+
+  --secondary: oklch(0.92 0.005 270);
+  /* Light secondary actions */
+  --secondary-foreground: oklch(0.235 0.005 270);
+
+  --muted: oklch(0.95 0.005 270);
+  --muted-foreground: oklch(0.45 0.005 270);
+  /* Clean mid-grey for secondary info */
+
+  --accent: oklch(0.94 0.24 122);
+  /* Accent hits are Neon Lime */
+  --accent-foreground: oklch(0.235 0.005 270);
+
+  /* Borders and Inputs must be dark enough to be visible against off-white */
+  --border: oklch(0.88 0.005 270);
+  /* Subdued gray border lines */
+  --input: oklch(0.88 0.005 270);
+  --ring: oklch(0.235 0.005 270);
+  /* Focus ring matches text color */
+
+  --destructive: oklch(0.6 0.22 27);
+  --destructive-foreground: oklch(0.985 0 0);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+    font-weight: 600;
+  }
+
+  ::selection {
+    background-color: var(--color-lime);
+    color: var(--color-lime-foreground);
+  }
+}
+
+@utility ink-section {
+  background-color: var(--color-ink);
+  color: var(--color-ink-foreground);
+  border-radius: 1.5rem;
+}
+
+@utility cream-section {
+  background-color: var(--color-cream);
+  color: var(--color-cream-foreground);
+  border-radius: 1.5rem;
+}
+
+@utility lime-glow {
+  box-shadow: 0 0 80px -20px oklch(0.94 0.24 122 / 0.55);
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
