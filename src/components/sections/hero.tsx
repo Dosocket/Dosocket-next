@@ -42,7 +42,7 @@ export function Hero() {
     () => {
       // Exaggerated Parallax effect on the background image
       gsap.to(imageRef.current, {
-        yPercent: 150, // dramatically move the image 150% down relative to its container while scrolling
+        yPercent: 150,
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
@@ -51,6 +51,29 @@ export function Hero() {
           scrub: true,
         },
       });
+
+      // Cutting-edge Blur + Y stagger reveal for the Hero Heading
+      const headingLines = gsap.utils.toArray(".hero-line");
+      gsap.fromTo(
+        headingLines,
+        { y: 60, opacity: 0, filter: "blur(10px)" },
+        {
+          y: 0,
+          opacity: 1,
+          filter: "blur(0px)",
+          duration: 1.2,
+          stagger: 0.15,
+          ease: "power4.out",
+          delay: 0.1,
+        }
+      );
+
+      // Fade in the right side paragraph with a slight delay
+      gsap.fromTo(
+        ".hero-right",
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 1, delay: 0.6, ease: "power3.out" }
+      );
     },
     { scope: containerRef }
   );
@@ -78,33 +101,15 @@ export function Hero() {
           <div className="grid items-center gap-12 md:grid-cols-[60%_40%]">
             {/* Left Side */}
             <div>
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.8,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
-                className="text-balance text-6xl font-medium tracking-tighter md:text-8xl"
-              >
-                Ship brave
-                <br />
-                work 2×
-                <br />
-                faster.
-              </motion.h1>
+              <h1 className="text-balance text-5xl font-medium tracking-tighter sm:text-6xl md:text-8xl">
+                <div className="overflow-hidden pb-2"><div className="hero-line">Ship brave</div></div>
+                <div className="overflow-hidden pb-2"><div className="hero-line">work 2×</div></div>
+                <div className="overflow-hidden pb-2"><div className="hero-line">faster.</div></div>
+              </h1>
             </div>
 
             {/* Right Side */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.8,
-                delay: 0.15,
-              }}
-              className="ml-auto flex max-w-md flex-col items-start gap-8 md:pt-16"
-            >
+            <div className="hero-right ml-auto flex max-w-md flex-col items-start gap-8 md:pt-16">
               <p className="text-lg leading-relaxed text-white/70">
                 Dosocket is a senior-led product agency. Brand execution, scalable development
                 frameworks, growth mechanics, and AI workflow automation pipelines paired with
@@ -122,7 +127,7 @@ export function Hero() {
                   <ArrowUpRight className="h-4 w-4" />
                 </span>
               </a>
-            </motion.div>
+            </div>
           </div>
         </div>
 

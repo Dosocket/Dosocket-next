@@ -35,22 +35,22 @@ export function AboutSection() {
         </div>
 
         {/* Right Column: Statistics Grid */}
-        <div className="lg:col-span-5 grid grid-cols-3 gap-4 pt-4 lg:pt-16">
+        <div className="lg:col-span-5 grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 lg:pt-16">
           <div className="space-y-1.5">
             <p className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight">50+</p>
-            <p className="text-[11px] sm:text-xs text-neutral-400 font-medium whitespace-nowrap">
+            <p className="text-[11px] sm:text-xs text-neutral-400 font-medium">
               Projects Completed
             </p>
           </div>
           <div className="space-y-1.5">
             <p className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight">10+</p>
-            <p className="text-[11px] sm:text-xs text-neutral-400 font-medium whitespace-nowrap">
+            <p className="text-[11px] sm:text-xs text-neutral-400 font-medium">
               Industries Served
             </p>
           </div>
           <div className="space-y-1.5">
             <p className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight">20+</p>
-            <p className="text-[11px] sm:text-xs text-neutral-400 font-medium whitespace-nowrap">
+            <p className="text-[11px] sm:text-xs text-neutral-400 font-medium">
               Happy Clients
             </p>
           </div>

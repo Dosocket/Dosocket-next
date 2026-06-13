@@ -54,7 +54,7 @@ export default function AboutPage() {
           >
             <p className="text-xs tracking-[0.35em] text-white/40 uppercase">About Dosocket</p>
 
-            <h1 className="mt-6 text-6xl md:text-8xl font-medium leading-[0.95] tracking-tight">
+            <h1 className="mt-6 text-5xl sm:text-6xl md:text-8xl font-medium leading-[0.95] tracking-tight">
               Senior craft.
               <br />
               <span className="text-lime-400 drop-shadow-[0_0_25px_rgba(184,255,61,0.25)]">
@@ -194,15 +194,15 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="grid md:grid-cols-[120px_300px_1fr] gap-6"
+              className="grid grid-cols-[60px_1fr] md:grid-cols-[120px_300px_1fr] gap-6"
             >
               <div className="text-lime-400 text-3xl font-medium">
                 {String(i + 1).padStart(2, "0")}
               </div>
 
-              <div className="text-xl font-medium">{p.t}</div>
+              <div className="text-xl font-medium md:pt-1">{p.t}</div>
 
-              <div className="text-white/60 leading-relaxed max-w-2xl">{p.d}</div>
+              <div className="text-white/60 leading-relaxed max-w-2xl col-span-2 md:col-span-1">{p.d}</div>
             </motion.div>
           ))}
         </div>

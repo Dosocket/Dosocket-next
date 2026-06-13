@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Toaster } from "@/components/ui/sonner";
+import { CustomCursor } from "@/components/ui/custom-cursor";
 
 export const metadata: Metadata = {
   title: "Dosocket — Senior Craft, AI-Multiplied Velocity",
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="min-h-screen font-sans antialiased bg-background text-foreground flex flex-col">
+        <CustomCursor />
         <SiteHeader />
         <main className="flex-1">
           {children}
