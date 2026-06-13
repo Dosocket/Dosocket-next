@@ -1,0 +1,182 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Dosocket custom semantic colors */
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-lime: var(--lime);
+  --color-lime-foreground: var(--lime-foreground);
+  --color-cream: var(--cream);
+  --color-cream-foreground: var(--cream-foreground);
+
+  /* Minimalist Neo-Grotesque Font Stack */
+  --font-display:
+    var(--font-space-grotesk), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-sans:
+    var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* ==========================================================================
+     DOSOCKET PREMIUM LIGHT THEME (OKLCH)
+     ========================================================================== */
+
+  /* #FBFAF6 Off-White — main layout background */
+  --background: oklch(0.985 0.005 90);
+
+  /* #242529 Dark Charcoal — main text/typography */
+  --foreground: oklch(0.235 0.005 270);
+
+  /* Surfaces & Containers */
+  --surface: oklch(0.95 0.005 90);
+  --surface-foreground: oklch(0.235 0.005 270);
+
+  /* Ink — deep dark for intentional sections */
+  --ink: oklch(0.18 0.005 270);
+  --ink-foreground: oklch(0.985 0.005 90);
+
+  /* Cream — subtle layout card backgrounds */
+  --cream: oklch(0.97 0.008 90);
+  --cream-foreground: oklch(0.235 0.005 270);
+
+  /* #D6FC00 Neon Lime */
+  --lime: oklch(0.94 0.24 122);
+  --lime-foreground: oklch(0.235 0.005 270);
+
+  /* Global UI Components */
+  --card: oklch(0.97 0.005 90);
+  --card-foreground: oklch(0.235 0.005 270);
+  --popover: oklch(0.985 0.005 90);
+  --popover-foreground: oklch(0.235 0.005 270);
+
+  /* Interactive Elements */
+  --primary: oklch(0.235 0.005 270);
+  --primary-foreground: oklch(0.985 0.005 90);
+
+  --secondary: oklch(0.92 0.005 270);
+  --secondary-foreground: oklch(0.235 0.005 270);
+
+  --muted: oklch(0.95 0.005 270);
+  --muted-foreground: oklch(0.45 0.005 270);
+
+  --accent: oklch(0.94 0.24 122);
+  --accent-foreground: oklch(0.235 0.005 270);
+
+  /* Borders & Inputs */
+  --border: oklch(0.88 0.005 270);
+  --input: oklch(0.88 0.005 270);
+  --ring: oklch(0.235 0.005 270);
+
+  --destructive: oklch(0.6 0.22 27);
+  --destructive-foreground: oklch(0.985 0 0);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+    font-weight: 600;
+  }
+
+  ::selection {
+    background-color: var(--color-lime);
+    color: var(--color-lime-foreground);
+  }
+}
+
+/* ============================================================
+   DOSOCKET CUSTOM UTILITIES
+   ============================================================ */
+
+@utility ink-section {
+  background-color: var(--color-ink);
+  color: var(--color-ink-foreground);
+  border-radius: 1.5rem;
+}
+
+@utility cream-section {
+  background-color: var(--color-cream);
+  color: var(--color-cream-foreground);
+  border-radius: 1.5rem;
+}
+
+@utility lime-glow {
+  box-shadow: 0 0 80px -20px oklch(0.94 0.24 122 / 0.55);
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@layer utilities {
+  .container-x {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-x {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+}
