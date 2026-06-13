@@ -28,7 +28,7 @@ export function CustomCursor() {
     };
 
     const handleHoverLeave = () => {
-      gsap.to(cursorRef.current, { scale: 1, backgroundColor: "black", border: "1px solid black", duration: 0.3 });
+      gsap.to(cursorRef.current, { scale: 1, backgroundColor: "white", border: "1px solid white", duration: 0.3 });
     };
 
     window.addEventListener("mousemove", moveCursor);
@@ -53,7 +53,7 @@ export function CustomCursor() {
   return (
     <div
       ref={cursorRef}
-      className="pointer-events-none fixed top-0 left-0 z-[9999] h-6 w-6 -translate-x-1/2 -translate-y-1/2 rounded-full border border-black bg-black"
+      className="pointer-events-none fixed top-0 left-0 z-[9999] h-6 w-6 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white bg-white mix-blend-difference"
       style={{ willChange: "transform" }}
     />
   );
