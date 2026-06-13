@@ -23,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="min-h-screen font-sans antialiased bg-background text-foreground flex flex-col">
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
+      <body className="min-h-screen font-sans antialiased bg-background text-foreground flex flex-col" suppressHydrationWarning>
         <CustomCursor />
         <SmoothScroll>
           <SiteHeader />
