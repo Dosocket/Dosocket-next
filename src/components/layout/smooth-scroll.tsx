@@ -16,7 +16,6 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
       wheelMultiplier: 1,
     });
     
-    // @ts-expect-error - overriding ref for scroll reset
     lenisRef.current = lenis;
 
     // Synchronize Lenis scrolling with GSAP ScrollTrigger
@@ -34,7 +33,6 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     return () => {
       lenis.destroy();
       gsap.ticker.remove(update);
-      // @ts-expect-error
       lenisRef.current = null;
     };
   }, []);
