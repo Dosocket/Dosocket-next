@@ -1,133 +1,138 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import { BRAND } from "@/lib/site-data";
-
-const socials: [string, string][] = [
-  ["Cal.com", BRAND.socials.cal],
-  ["Gmail", BRAND.socials.gmail],
-  ["Facebook", BRAND.socials.facebook],
-  ["Instagram", BRAND.socials.instagram],
-  ["LinkedIn", BRAND.socials.linkedin],
-  ["X", BRAND.socials.x],
-];
 
 export function SiteFooter() {
   return (
-    <footer className="w-full bg-black text-white">
-      <div className="px-8 py-20 md:px-16">
-        <div className="grid items-end gap-12 border-b border-white/10 pb-20 md:grid-cols-2">
-          <div>
-            <h2 className="mb-6 text-5xl font-medium leading-[1.05] tracking-tighter md:text-7xl">
-              Ready to ship
-              <br />
-              something
-              <br />
-              unreasonable?
-            </h2>
-            <p className="max-w-md text-lg text-white/70">
-              Dosocket pairs senior craft with AI-multiplied velocity. Book a 30-minute scoping call
-              — we reply same day.
-            </p>
-          </div>
-          <div className="flex md:justify-end">
-            <a
-              href={BRAND.calcom}
-              target="_blank"
-              rel="noreferrer"
-              className="group flex w-fit items-center gap-4 rounded-full bg-white px-8 py-4 text-sm font-bold text-black transition-transform hover:scale-105"
-            >
-              Book a Call
-              <span className="grid h-8 w-8 place-items-center rounded-full bg-black text-white transition-transform group-hover:rotate-45">
-                <ArrowUpRight className="h-4 w-4" />
-              </span>
-            </a>
-          </div>
-        </div>
+    <footer className="w-full bg-[#f5f5f5] relative overflow-hidden flex flex-col items-center pb-8">
+      
+      {/* ═══════════════════════════════════
+          TOP LIME CTA SECTION
+      ═══════════════════════════════════ */}
+      <div className="w-[calc(100%-32px)] sm:w-[calc(100%-64px)] mt-4 bg-[#E8FF00] rounded-[2.5rem] px-6 py-28 flex flex-col items-center text-center relative z-10 shadow-lg">
+        <h2 className="text-4xl md:text-5xl lg:text-[54px] font-bold tracking-tight text-black">
+          Turn your ideas into reality
+        </h2>
+        <p className="mt-5 text-black/70 max-w-md text-[15px] leading-relaxed">
+          Dosocket makes it effortless to build digital products, uncover insights,
+          and ship faster with your team.
+        </p>
+        <Link
+          href={BRAND.calcom}
+          target="_blank"
+          className="mt-10 bg-black text-white px-8 py-3.5 rounded-full text-sm font-bold hover:bg-neutral-800 transition-transform hover:scale-105 active:scale-95"
+        >
+          Get Started
+        </Link>
+      </div>
 
-        <div className="mt-20 grid gap-12 md:grid-cols-4">
-          <div className="flex flex-col gap-6">
-            <div className="text-xs font-bold uppercase tracking-widest text-white/40">Studio</div>
-            <div className="space-y-1 text-sm text-white/80">
-              <p>Distributed team</p>
-              <p>San Francisco · Bangalore</p>
-              <p className="pt-4">{BRAND.email}</p>
-              <p>{BRAND.handle}</p>
+      {/* ═══════════════════════════════════
+          BOTTOM FLOATING CARD SECTION
+      ═══════════════════════════════════ */}
+      <div className="relative w-full px-4 sm:px-8 flex flex-col items-center mt-[-40px] pt-24 min-h-[450px]">
+
+        {/* Floating White Card */}
+        <div className="relative z-10 w-full max-w-5xl bg-white/80 backdrop-blur-md rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-neutral-100 p-8 md:p-12">
+          
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16">
+            
+            {/* Left Column: Brand & Description */}
+            <div className="md:col-span-5 flex flex-col gap-5">
+              <div className="flex items-center gap-2.5">
+                {/* Brand Logo Icon */}
+                <div className="bg-black text-white p-1.5 rounded-lg flex items-center justify-center">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2.5}
+                    className="w-4 h-4"
+                  >
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                  </svg>
+                </div>
+                <span className="font-semibold text-lg tracking-tight text-neutral-900">
+                  Dosocket
+                </span>
+              </div>
+              <p className="text-sm text-neutral-500 max-w-xs leading-[1.6]">
+                Dosocket helps teams transform complex ideas into clear, engaging
+                products—everything you need to build the future in one place.
+              </p>
+            </div>
+
+            {/* Right Column: Links Grid */}
+            <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
+              <FooterCol
+                title="Product"
+                links={[
+                  ["/features", "Features"],
+                  ["/pricing", "Pricing"],
+                  ["/integrations", "Integrations"],
+                  ["/updates", "Updates"],
+                ]}
+              />
+              <FooterCol
+                title="Resources"
+                links={[
+                  ["/documentation", "Documentation"],
+                  ["/guides", "Guides"],
+                  ["/blog", "Blog"],
+                  ["/support", "Support"],
+                ]}
+              />
+              <FooterCol
+                title="Company"
+                links={[
+                  ["/about", "About"],
+                  ["/careers", "Careers"],
+                  ["/contact", "Contact"],
+                  ["/partners", "Partners"],
+                ]}
+              />
             </div>
           </div>
 
-          <FooterCol
-            title="Explore"
-            links={[
-              ["/", "Home"],
-              ["/about", "About"],
-              ["/works", "Works"],
-              ["/services", "Services"],
-              ["/contact", "Contact"],
-            ]}
-          />
-
-          <FooterCol
-            title="Services"
-            links={[
-              ["/services/digital-brand-experience", "Brand & Experience"],
-              ["/services/high-performance-development", "Development"],
-              ["/services/growth-revenue-systems", "Growth"],
-              ["/services/ai-workflow-automation", "AI & Automation"],
-              ["/services/on-demand-product-teams", "Product Teams"],
-            ]}
-          />
-
-          <div className="flex flex-col gap-6">
-            <div className="text-xs font-bold uppercase tracking-widest text-white/40">Social</div>
-            <ul className="space-y-3 text-sm">
-              {socials.map(([label, href]) => (
-                <li key={label}>
-                  <a
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-white/80 transition-colors hover:text-white"
-                  >
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          {/* Footer Bottom Strip */}
+          <div className="mt-16 flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-neutral-100 pt-8 text-[13px] font-medium text-neutral-400">
+            <p>© {new Date().getFullYear()} Dosocket. All rights reserved.</p>
+            <div className="flex gap-6">
+              <Link href="/terms" className="hover:text-neutral-900 transition-colors underline decoration-transparent hover:decoration-neutral-300 underline-offset-4">
+                Terms of Service
+              </Link>
+              <Link href="/privacy" className="hover:text-neutral-900 transition-colors underline decoration-transparent hover:decoration-neutral-300 underline-offset-4">
+                Privacy Policy
+              </Link>
+            </div>
           </div>
+
         </div>
 
-        <div className="mt-20 flex flex-col items-start justify-between gap-6 text-sm text-white/50 md:flex-row md:items-center">
-          <div>
-            © {new Date().getFullYear()} {BRAND.name}. All rights reserved.
-          </div>
-          <div className="flex gap-6">
-            <a href="#" className="transition-colors hover:text-white">
-              Privacy Policy
-            </a>
-            <a href="#" className="transition-colors hover:text-white">
-              Terms of Service
-            </a>
-          </div>
+        {/* Huge Watermark Background Text (Moved Below the Card) */}
+        <div className="w-full flex justify-center pointer-events-none select-none overflow-hidden mt-12 mb-[-20px]">
+          <h1 className="text-[17vw] font-black leading-none tracking-tighter text-black/10">
+            DOSOCKET
+          </h1>
         </div>
-      </div>
 
-      <div className="flex w-full justify-center overflow-hidden border-t border-white/10 py-10">
-        <h1 className="text-[18vw] font-bold leading-none tracking-tighter text-white md:text-[15vw] font-display">
-          DOSOCKET
-        </h1>
       </div>
     </footer>
   );
 }
 
+/* ─────────────────────────────────────────
+   Footer Column Component
+───────────────────────────────────────── */
 function FooterCol({ title, links }: { title: string; links: [string, string][] }) {
   return (
-    <div className="flex flex-col gap-6">
-      <div className="text-xs font-bold uppercase tracking-widest text-white/40">{title}</div>
-      <ul className="space-y-3 text-sm">
+    <div className="flex flex-col gap-4">
+      <div className="text-sm font-semibold text-neutral-900">{title}</div>
+      <ul className="space-y-3 text-[13px]">
         {links.map(([href, label]) => (
-          <li key={href}>
-            <Link href={href} className="text-white/80 transition-colors hover:text-white">
+          <li key={label}>
+            <Link
+              href={href}
+              className="text-neutral-500 transition-colors hover:text-neutral-900"
+            >
               {label}
             </Link>
           </li>

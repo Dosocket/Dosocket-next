@@ -20,19 +20,21 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full bg-black px-8 md:px-16 text-white">
-      <div className="flex h-12 w-full items-center justify-between">
-        <div className="flex flex-1 items-center justify-start">
+    <header className="fixed top-4 left-1/2 z-50 w-full max-w-[800px] -translate-x-1/2 px-4 md:px-0 transition-all duration-300">
+      <div className="flex h-14 w-full items-center justify-between rounded-full bg-white/95 px-4 pr-2 shadow-[0_8px_32px_rgba(0,0,0,0.08)] ring-1 ring-neutral-200/50 backdrop-blur-md">
+        
+        {/* Logo — text wordmark only */}
+        <div className="flex items-center justify-start pl-2">
           <Link
             href="/"
-            className="flex items-center gap-2 font-display text-lg font-black uppercase tracking-wider"
+            className="font-display text-base font-bold text-black"
           >
-            <span className="h-2 w-2 rounded-full bg-white" />
             Dosocket
           </Link>
         </div>
 
-        <nav className="hidden md:flex flex-none items-center gap-8">
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex flex-none items-center gap-6">
           {nav.map((n) => {
             const isActive = n.to === "/" ? pathname === "/" : pathname.startsWith(n.to);
             return (
@@ -40,8 +42,8 @@ export function SiteHeader() {
                 key={n.to}
                 href={n.to}
                 className={cn(
-                  "text-sm font-medium tracking-wide transition-colors hover:text-white",
-                  isActive ? "text-white font-bold" : "text-white/70"
+                  "text-sm font-medium transition-colors hover:text-black",
+                  isActive ? "text-black" : "text-neutral-500"
                 )}
               >
                 {n.label}
@@ -50,29 +52,31 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="hidden md:flex flex-1 items-center justify-end">
+        {/* Desktop CTA */}
+        <div className="hidden md:flex items-center justify-end">
           <a
             href={BRAND.calcom}
             target="_blank"
             rel="noreferrer"
-            className="group flex items-center gap-2 text-sm font-medium tracking-tight hover:opacity-80 transition-opacity"
+            className="rounded-full bg-[#111113] px-6 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-80"
           >
-            <span>Get in Touch</span>
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            Get in Touch
           </a>
         </div>
 
+        {/* Mobile Toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="grid h-10 w-10 place-items-center rounded-lg text-white md:hidden"
+          className="grid h-10 w-10 place-items-center rounded-full text-black hover:bg-neutral-100 md:hidden"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
+      {/* Mobile Menu Dropdown */}
       {open && (
-        <div className="w-full border-t border-white/10 bg-black px-6 py-4 md:hidden">
-          <div className="flex flex-col gap-2">
+        <div className="absolute left-4 right-4 top-16 mt-2 rounded-3xl bg-white p-4 shadow-xl ring-1 ring-neutral-200/50 md:hidden">
+          <div className="flex flex-col gap-1">
             {nav.map((n) => {
               const isActive = n.to === "/" ? pathname === "/" : pathname.startsWith(n.to);
               return (
@@ -81,8 +85,8 @@ export function SiteHeader() {
                   href={n.to}
                   onClick={() => setOpen(false)}
                   className={cn(
-                    "rounded-lg px-3 py-3 text-sm font-medium transition-colors hover:bg-white/10 hover:text-white",
-                    isActive ? "bg-white/10 text-white font-bold" : "text-white/70"
+                    "rounded-xl px-4 py-3 text-sm font-medium transition-colors hover:bg-neutral-100 hover:text-black",
+                    isActive ? "bg-neutral-50 text-black font-semibold" : "text-neutral-500"
                   )}
                 >
                   {n.label}
@@ -94,9 +98,9 @@ export function SiteHeader() {
               target="_blank"
               rel="noreferrer"
               onClick={() => setOpen(false)}
-              className="mt-4 flex items-center justify-between rounded-xl bg-white px-4 py-3 text-sm font-bold text-black"
+              className="mt-2 flex items-center justify-between rounded-full bg-[#111113] px-5 py-3.5 text-sm font-medium text-white"
             >
-              <span>Book Call</span>
+              <span>Get in Touch</span>
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
