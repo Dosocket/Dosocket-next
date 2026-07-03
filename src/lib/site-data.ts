@@ -1,3 +1,12 @@
+import {
+  Palette,
+  Code2,
+  TrendingUp,
+  Bot,
+  Users,
+  type LucideIcon,
+} from "lucide-react";
+
 export const BRAND = {
   name: "Dosocket",
   handle: "@dosocket",
@@ -16,7 +25,12 @@ export const BRAND = {
 export type Project = {
   slug: string;
   title: string;
-  category: "Brand & Experience" | "Development" | "Growth" | "Automation" | "Product Teams";
+  category:
+    | "Brand & Experience"
+    | "Development"
+    | "Growth"
+    | "Automation"
+    | "Product Teams";
   client: string;
   year: string;
   image: string;
@@ -43,7 +57,8 @@ export const projects: Project[] = [
     year: "2025",
     image: u("photo-1487958449943-2429e8be8625"),
     cover: u("photo-1487958449943-2429e8be8625", 1800, 900),
-    summary: "End-to-end rebrand and digital storefront for a boutique investment firm.",
+    summary:
+      "End-to-end rebrand and digital storefront for a boutique investment firm.",
     outcome: "+184% qualified inbound in 90 days",
     challenge:
       "Northwind had outgrown a 12-year-old identity and a WordPress site that converted at 0.6%.",
@@ -73,7 +88,10 @@ export const projects: Project[] = [
         step: "Identity",
         text: "Custom monospace wordmark, a geometric mark, a tight five-color palette.",
       },
-      { step: "Build", text: "Typed marketing site with predictive heat-map validation." },
+      {
+        step: "Build",
+        text: "Typed marketing site with predictive heat-map validation.",
+      },
     ],
     services: ["Brand", "Web", "AI Validation"],
   },
@@ -85,7 +103,8 @@ export const projects: Project[] = [
     year: "2025",
     image: u("photo-1556742049-0cfed4f6a45d"),
     cover: u("photo-1556742049-0cfed4f6a45d", 1800, 900),
-    summary: "Rebuilt a consumer payments app on a typed edge stack in half the planned time.",
+    summary:
+      "Rebuilt a consumer payments app on a typed edge stack in half the planned time.",
     outcome: "−55% support tickets · 4.8★ store rating",
     challenge:
       "An aging app with a 2.9 rating and a checkout flow losing 38% of users at confirmation.",
@@ -103,10 +122,22 @@ export const projects: Project[] = [
       u("photo-1611162617213-7d7a39e9b1d7"),
     ],
     process: [
-      { step: "Audit", text: "Heuristic review and analytics deep-dive across 14 critical flows." },
-      { step: "Architecture", text: "Edge-first event pipeline with a typed React frontend." },
-      { step: "Build", text: "Six sprints with AI-assisted code review for sub-2-day PRs." },
-      { step: "Handoff", text: "Docs, training, and a 90-day engineering retainer." },
+      {
+        step: "Audit",
+        text: "Heuristic review and analytics deep-dive across 14 critical flows.",
+      },
+      {
+        step: "Architecture",
+        text: "Edge-first event pipeline with a typed React frontend.",
+      },
+      {
+        step: "Build",
+        text: "Six sprints with AI-assisted code review for sub-2-day PRs.",
+      },
+      {
+        step: "Handoff",
+        text: "Docs, training, and a 90-day engineering retainer.",
+      },
     ],
     services: ["Web App", "Edge Infra", "Design System"],
   },
@@ -118,9 +149,11 @@ export const projects: Project[] = [
     year: "2025",
     image: u("photo-1556228720-195a672e8a03"),
     cover: u("photo-1556228720-195a672e8a03", 1800, 900),
-    summary: "Predictive AI-led growth engine for a clinical-skincare DTC launch.",
+    summary:
+      "Predictive AI-led growth engine for a clinical-skincare DTC launch.",
     outcome: "$4.2M Year-One DTC revenue",
-    challenge: "A new clinical-skincare brand entering a saturated category with no paid playbook.",
+    challenge:
+      "A new clinical-skincare brand entering a saturated category with no paid playbook.",
     solution:
       "Hyper-segmented campaigns generated and optimized in real time, paired with CRO across the funnel.",
     results: [
@@ -135,13 +168,22 @@ export const projects: Project[] = [
       u("photo-1620916566398-39f1143ab7be"),
     ],
     process: [
-      { step: "Audit", text: "Funnel teardown and competitive paid audit across 11 brands." },
+      {
+        step: "Audit",
+        text: "Funnel teardown and competitive paid audit across 11 brands.",
+      },
       {
         step: "Segments",
         text: "Predictive AI built 24 audience segments with creative briefs per segment.",
       },
-      { step: "Launch", text: "Always-on testing across Meta, Google, and TikTok." },
-      { step: "CRO", text: "Weekly funnel optimization driven by session replays." },
+      {
+        step: "Launch",
+        text: "Always-on testing across Meta, Google, and TikTok.",
+      },
+      {
+        step: "CRO",
+        text: "Weekly funnel optimization driven by session replays.",
+      },
     ],
     services: ["Performance", "SEO", "CRO"],
   },
@@ -171,10 +213,22 @@ export const projects: Project[] = [
       u("photo-1561070791-2526d30994b8"),
     ],
     process: [
-      { step: "Map", text: "Mapped 14 recurring workflows and the systems each one touched." },
-      { step: "Train", text: "Fine-tuned a domain chatbot on 6 years of style guides and edits." },
-      { step: "Wire", text: "API integrations between Slack, Notion, Airtable, and the CMS." },
-      { step: "Roll out", text: "Two weeks of paired adoption with the editorial team." },
+      {
+        step: "Map",
+        text: "Mapped 14 recurring workflows and the systems each one touched.",
+      },
+      {
+        step: "Train",
+        text: "Fine-tuned a domain chatbot on 6 years of style guides and edits.",
+      },
+      {
+        step: "Wire",
+        text: "API integrations between Slack, Notion, Airtable, and the CMS.",
+      },
+      {
+        step: "Roll out",
+        text: "Two weeks of paired adoption with the editorial team.",
+      },
     ],
     services: ["AI Chatbot", "API Integrations", "Workflow Design"],
   },
@@ -186,7 +240,8 @@ export const projects: Project[] = [
     year: "2025",
     image: u("photo-1551288049-bebda4e38f71"),
     cover: u("photo-1551288049-bebda4e38f71", 1800, 900),
-    summary: "A two-person Dosocket pod embedded with Quantum's product org for six months.",
+    summary:
+      "A two-person Dosocket pod embedded with Quantum's product org for six months.",
     outcome: "3× output vs. previous in-house ramp",
     challenge:
       "Quantum needed senior design + engineering velocity without a six-month hiring cycle.",
@@ -208,7 +263,10 @@ export const projects: Project[] = [
         step: "Match",
         text: "Paired the right designer + engineer to the team's stack and culture.",
       },
-      { step: "Onboard", text: "Embedded in Linear and Slack within the first 48 hours." },
+      {
+        step: "Onboard",
+        text: "Embedded in Linear and Slack within the first 48 hours.",
+      },
       { step: "Ship", text: "Weekly demos with AI-assisted PR velocity." },
       { step: "Extend", text: "Renewed for a second pod on a sister product." },
     ],
@@ -222,7 +280,8 @@ export const projects: Project[] = [
     year: "2024",
     image: u("photo-1607082348824-0a96f2a4b9da"),
     cover: u("photo-1607082348824-0a96f2a4b9da", 1800, 900),
-    summary: "An industrial-luxury Shopify storefront for a small-batch coffee roaster.",
+    summary:
+      "An industrial-luxury Shopify storefront for a small-batch coffee roaster.",
     outcome: "+72% subscription LTV",
     challenge:
       "A specialty roaster moving from cafe-only sales into national grocery needed a storefront that earned shelf-presence credibility online.",
@@ -240,10 +299,22 @@ export const projects: Project[] = [
       u("photo-1559525839-d9acfd3d2bfd"),
     ],
     process: [
-      { step: "Audit", text: "Studied 60+ specialty roasters and three target retailers." },
-      { step: "Identity", text: "Refined the wordmark and built a typographic hierarchy." },
-      { step: "Build", text: "Shopify storefront with a modular subscription flow." },
-      { step: "Launch", text: "Photography, trade collateral, and a 90-day growth engine." },
+      {
+        step: "Audit",
+        text: "Studied 60+ specialty roasters and three target retailers.",
+      },
+      {
+        step: "Identity",
+        text: "Refined the wordmark and built a typographic hierarchy.",
+      },
+      {
+        step: "Build",
+        text: "Shopify storefront with a modular subscription flow.",
+      },
+      {
+        step: "Launch",
+        text: "Photography, trade collateral, and a 90-day growth engine.",
+      },
     ],
     services: ["Brand", "eCommerce", "Growth"],
   },
@@ -254,17 +325,21 @@ export type Service = {
   title: string;
   short: string;
   description: string;
+  image: string;
+  icon: LucideIcon;
   inclusions: string[];
   philosophy: string;
   process: { step: string; text: string }[];
   relatedSlugs: string[];
 };
-
+// G:\Projects\DoSocket\dosocket-demo\src\lib\site-data.ts
 export const services: Service[] = [
   {
     slug: "digital-brand-experience",
     title: "Digital Brand & Experience",
     short: "Brand identity, UI/UX design, and web architecture.",
+    image: "/Digital%20Brand%20%26%20Experience.png",
+    icon: Palette,
     description:
       "Brand identity, UI/UX design, and web architecture. We use AI for rapid prototyping and heat-map prediction to build digital storefronts that convert.",
     inclusions: [
@@ -286,8 +361,14 @@ export const services: Service[] = [
         step: "Strategy",
         text: "Positioning and the strategic core every artifact will reference.",
       },
-      { step: "Design", text: "Identity, UI, and motion validated against predictive heat-maps." },
-      { step: "Ship", text: "A typed, scalable system your team can extend from day one." },
+      {
+        step: "Design",
+        text: "Identity, UI, and motion validated against predictive heat-maps.",
+      },
+      {
+        step: "Ship",
+        text: "A typed, scalable system your team can extend from day one.",
+      },
     ],
     relatedSlugs: ["high-performance-development", "growth-revenue-systems"],
   },
@@ -295,6 +376,8 @@ export const services: Service[] = [
     slug: "high-performance-development",
     title: "High-Performance Development",
     short: "Scalable web, app, and eCommerce platforms.",
+    image: "/HighPerformanceDevelopment.png",
+    icon: Code2,
     description:
       "Scalable web, app, and eCommerce platforms built in half the time using AI coding assistants for cleaner, faster backend infrastructure.",
     inclusions: [
@@ -308,9 +391,18 @@ export const services: Service[] = [
     philosophy:
       "Code should be as beautiful as the design. We ship typed, accessible, performance-budgeted platforms — twice as fast, half the surface area.",
     process: [
-      { step: "Scope", text: "Architecture, integrations, and a performance budget." },
-      { step: "Build", text: "Component-first delivery with AI-assisted PR velocity." },
-      { step: "QA", text: "Accessibility, performance, and cross-device review." },
+      {
+        step: "Scope",
+        text: "Architecture, integrations, and a performance budget.",
+      },
+      {
+        step: "Build",
+        text: "Component-first delivery with AI-assisted PR velocity.",
+      },
+      {
+        step: "QA",
+        text: "Accessibility, performance, and cross-device review.",
+      },
       { step: "Handoff", text: "Docs, training, and a maintenance plan." },
     ],
     relatedSlugs: ["digital-brand-experience", "ai-workflow-automation"],
@@ -319,6 +411,8 @@ export const services: Service[] = [
     slug: "growth-revenue-systems",
     title: "Growth & Revenue Systems",
     short: "SEO, performance marketing, and CRO.",
+    image: "/GrowthandRevenueSystems.png",
+    icon: TrendingUp,
     description:
       "SEO, performance marketing, and CRO. We use predictive AI to analyze markets, generate hyper-segmented campaigns, and optimize conversion rates in real-time.",
     inclusions: [
@@ -332,10 +426,22 @@ export const services: Service[] = [
     philosophy:
       "Growth is an engineering discipline. We instrument the funnel, let predictive AI find the lift, and ship the wins weekly.",
     process: [
-      { step: "Audit", text: "Funnel teardown and competitive paid + organic audit." },
-      { step: "Segment", text: "AI-built audience segments with bespoke creative briefs." },
-      { step: "Launch", text: "Always-on testing across paid, SEO, and lifecycle." },
-      { step: "Optimize", text: "Weekly CRO sprints driven by session and event data." },
+      {
+        step: "Audit",
+        text: "Funnel teardown and competitive paid + organic audit.",
+      },
+      {
+        step: "Segment",
+        text: "AI-built audience segments with bespoke creative briefs.",
+      },
+      {
+        step: "Launch",
+        text: "Always-on testing across paid, SEO, and lifecycle.",
+      },
+      {
+        step: "Optimize",
+        text: "Weekly CRO sprints driven by session and event data.",
+      },
     ],
     relatedSlugs: ["digital-brand-experience", "ai-workflow-automation"],
   },
@@ -343,6 +449,8 @@ export const services: Service[] = [
     slug: "ai-workflow-automation",
     title: "AI & Workflow Automation",
     short: "Custom internal workflows, AI chatbots, and API integrations.",
+    image: "/AIandWorkflowAutomation.png",
+    icon: Bot,
     description:
       "Custom internal workflows, AI chatbots trained on your company data, and API integrations to automate manual tasks and lead qualification.",
     inclusions: [
@@ -356,10 +464,19 @@ export const services: Service[] = [
     philosophy:
       "The best AI work is the work nobody sees — it just removes the manual step that used to live there.",
     process: [
-      { step: "Map", text: "Identify the recurring workflows and the systems they touch." },
-      { step: "Train", text: "Fine-tune on your company data with proper evals." },
+      {
+        step: "Map",
+        text: "Identify the recurring workflows and the systems they touch.",
+      },
+      {
+        step: "Train",
+        text: "Fine-tune on your company data with proper evals.",
+      },
       { step: "Wire", text: "API integrations across your existing stack." },
-      { step: "Roll out", text: "Paired adoption with the team that uses it daily." },
+      {
+        step: "Roll out",
+        text: "Paired adoption with the team that uses it daily.",
+      },
     ],
     relatedSlugs: ["high-performance-development", "on-demand-product-teams"],
   },
@@ -367,6 +484,8 @@ export const services: Service[] = [
     slug: "on-demand-product-teams",
     title: "On-Demand Product Teams",
     short: "Dedicated designers and developers on a monthly retainer.",
+    image: "/OnDemandProductTeams.png",
+    icon: Users,
     description:
       "Dedicated designers and developers integrated directly into your company on a monthly retainer, utilizing AI to output the volume of three traditional employees.",
     inclusions: [
@@ -380,7 +499,10 @@ export const services: Service[] = [
     philosophy:
       "Hiring takes six months. We embed in a week — and ship like a team that's been there for a year.",
     process: [
-      { step: "Match", text: "Pair the right talent to your stack and culture." },
+      {
+        step: "Match",
+        text: "Pair the right talent to your stack and culture.",
+      },
       { step: "Onboard", text: "Embedded in your tools within 48 hours." },
       { step: "Ship", text: "Weekly demos with AI-assisted PR velocity." },
       { step: "Extend", text: "Renew, flex, or graduate to a permanent hire." },

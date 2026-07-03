@@ -1,3 +1,4 @@
+// G:\Projects\DoSocket\dosocket-demo\src\app\services\[slug]\page.tsx
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";

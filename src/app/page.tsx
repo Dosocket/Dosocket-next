@@ -11,7 +11,7 @@
  * 7. Testimonials  — reviews (unchanged)
  */
 
-import { Hero } from "@/components/sections/hero";
+import Hero from "@/components/sections/hero";
 import { Marquee } from "@/components/sections/marquee";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { AboutCompany } from "@/components/sections/about-section";
