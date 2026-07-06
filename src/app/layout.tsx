@@ -24,13 +24,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
-      <body className="min-h-screen font-sans antialiased bg-background text-foreground flex flex-col" suppressHydrationWarning>
+      <body className="min-h-screen font-sans antialiased bg-background text-foreground" suppressHydrationWarning>
         <CustomCursor />
         <SmoothScroll>
-          <SiteHeader />
-          <main className="flex-1">
-            {children}
-          </main>
+          {/* SLIDING PANEL — the page content. Sits ABOVE the footer (z-10) with a
+              solid background so it fully hides the footer until scrolled past.
+              The bottom shadow sells the "solid slab lifting off the footer" seam.
+              (Shadow points DOWNWARD onto the footer; flip the sign to taste.)
+              min-h-screen guarantees the panel always fills the viewport, so the
+              footer never peeks out on short pages. */}
+          <div className="relative z-10 min-h-screen bg-background shadow-[0_24px_50px_-6px_rgba(0,0,0,0.55)]">
+            <SiteHeader />
+            <main>{children}</main>
+          </div>
+
+          {/* REVEAL-DOOR FOOTER — rendered BEHIND the panel at z-0. */}
           <SiteFooter />
         </SmoothScroll>
         <Toaster />

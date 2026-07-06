@@ -1,143 +1,145 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { BRAND } from "@/lib/site-data";
+
+/**
+ * SITE FOOTER — "Scroll Reveal Door" bed
+ * ============================================================================
+ * The stationary bed the page slides up to reveal. Reveal mechanics live in the
+ * layout (src/app/layout.tsx): the page panel sits at `z-10` with a bottom
+ * shadow; this footer sits BEHIND it at `z-0`, pinned to the viewport bottom.
+ *
+ * HEIGHT: mobile runs in normal flow (`relative`); desktop is the reveal bed
+ * (`md:sticky md:bottom-0`). Keep the md height ≤ a typical desktop viewport so
+ * the whole footer shows on reveal. The big wordmark is pinned to the bottom, so
+ * it's always visible regardless of the content above it.
+ */
+
+const NAV: [string, string][] = [
+  ["/", "Home"],
+  ["/about", "About"],
+  ["/services", "Services"],
+  ["/works", "Projects"],
+  ["/contact", "Contact"],
+];
+
+const SOCIALS: [string, string][] = [
+  [BRAND.socials.linkedin, "LinkedIn"],
+  [BRAND.socials.instagram, "Instagram"],
+];
+
+const LEGAL: [string, string][] = [
+  ["#", "Terms & Conditions"],
+  ["#", "Privacy Policy"],
+];
 
 export function SiteFooter() {
   return (
-    <footer className="w-full bg-[#f5f5f5] relative overflow-hidden flex flex-col items-center pb-8">
-      
-      {/* ═══════════════════════════════════
-          TOP LIME CTA SECTION
-      ═══════════════════════════════════ */}
-      <div className="w-[calc(100%-32px)] sm:w-[calc(100%-64px)] mt-4 bg-[#E8FF00] rounded-[2.5rem] px-6 py-28 flex flex-col items-center text-center relative z-10 shadow-lg">
-        <h2 className="text-4xl md:text-5xl lg:text-[54px] font-bold tracking-tight text-black">
-          Turn your ideas into reality
-        </h2>
-        <p className="mt-5 text-black/70 max-w-md text-[15px] leading-relaxed">
-          Dosocket makes it effortless to build digital products, uncover insights,
-          and ship faster with your team.
-        </p>
-        <Link
-          href={BRAND.calcom}
-          target="_blank"
-          className="mt-10 bg-black text-white px-8 py-3.5 rounded-full text-sm font-bold hover:bg-neutral-800 transition-transform hover:scale-105 active:scale-95"
-        >
-          Get Started
-        </Link>
+    <footer className="relative z-0 h-[44rem] w-full overflow-hidden bg-neutral-950 text-neutral-400 md:sticky md:bottom-0 md:h-[34rem]">
+      {/* Faint top hairline so the seam with the sliding panel reads crisply. */}
+      <div className="absolute inset-x-0 top-0 h-px bg-white/10" />
+
+      {/* CONTENT — flows from the top; `mt-auto` drops the legal bar to the bottom.
+          NAVBAR CLEARANCE: because the footer is pinned to the viewport bottom, its
+          top sits at (viewportHeight − footerHeight). The md height above is kept
+          COMFORTABLY SHORTER than a typical desktop viewport so the top never rises
+          under the fixed header, and `pt-24` adds extra clearance for short screens.
+          The bottom padding RESERVES room for the pinned wordmark below. */}
+      <div className="container-x relative z-10 flex h-full flex-col pt-24 pb-[24vw] md:pt-24 md:pb-40">
+        {/* ══════════ TOP: CTA (left) + nav (right) ══════════ */}
+        <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
+          {/* CTA */}
+          <div className="max-w-2xl">
+            <h2
+              className="font-display font-bold uppercase leading-[0.9] tracking-tighter text-white"
+              // clamp(min, fluid, max) keeps the CTA bold but sized for the shorter footer.
+              style={{ fontSize: "clamp(1.75rem, 4.5vw, 3.5rem)" }}
+            >
+              Let&apos;s build
+              <br />
+              the system<span className="text-[#E8FF00]">.</span>
+            </h2>
+            <Link
+              href={BRAND.calcom}
+              target="_blank"
+              rel="noreferrer"
+              className="group mt-7 inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:text-[#E8FF00]"
+            >
+              <span className="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-[#E8FF00] after:transition-transform after:duration-500 group-hover:after:scale-x-100">
+                Book a call
+              </span>
+              <span className="grid size-9 place-items-center rounded-full border border-white/20 transition-all duration-500 group-hover:border-[#E8FF00] group-hover:bg-[#E8FF00]/10">
+                <ArrowUpRight className="size-4 transition-transform duration-500 group-hover:rotate-45" />
+              </span>
+            </Link>
+          </div>
+
+          {/* Primary navigation — right-aligned on desktop. */}
+          <nav className="flex flex-col gap-3 md:items-end">
+            {NAV.map(([href, label]) => (
+              <Link
+                key={label}
+                href={href}
+                className="text-sm font-medium uppercase tracking-wide text-neutral-400 transition-colors hover:text-white"
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+
+        {/* ══════════ BOTTOM BAR: socials + legal (left) · copyright (right) ══════════ */}
+        <div className="mt-auto flex flex-col gap-4 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium uppercase tracking-wider text-neutral-500">
+            {SOCIALS.map(([href, label]) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors hover:text-white"
+              >
+                {label}
+              </a>
+            ))}
+            {/* subtle divider between socials and legal */}
+            <span className="hidden h-3 w-px bg-white/15 sm:inline-block" />
+            {LEGAL.map(([href, label]) => (
+              <Link
+                key={label}
+                href={href}
+                className="transition-colors hover:text-white"
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+
+          <p className="text-xs uppercase tracking-wider text-neutral-500">
+            Copyright © 2026 DOSOCKET. All rights reserved.
+          </p>
+        </div>
       </div>
 
-      {/* ═══════════════════════════════════
-          BOTTOM FLOATING CARD SECTION
-      ═══════════════════════════════════ */}
-      <div className="relative w-full px-4 sm:px-8 flex flex-col items-center mt-[-40px] pt-24 min-h-[450px]">
+      {/* ══════════ MONOLITHIC WORDMARK ══════════
+          Pinned to the footer's BOTTOM so it's always visible regardless of the
+          content above. Tucked so ~80% shows and the bottom ~20% bleeds past the
+          footer edge (= the viewport bottom on reveal). The wrapper's
+          `overflow-hidden` clips the tucked portion.
 
-        {/* Floating White Card */}
-        <div className="relative z-10 w-full max-w-5xl bg-white/80 backdrop-blur-md rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-neutral-100 p-8 md:p-12">
-          
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16">
-            
-            {/* Left Column: Brand & Description */}
-            <div className="md:col-span-5 flex flex-col gap-5">
-              <div className="flex items-center gap-2.5">
-                {/* Brand Logo Icon */}
-                <div className="bg-black text-white p-1.5 rounded-lg flex items-center justify-center">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2.5}
-                    className="w-4 h-4"
-                  >
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                  </svg>
-                </div>
-                <span className="font-semibold text-lg tracking-tight text-neutral-900">
-                  Dosocket
-                </span>
-              </div>
-              <p className="text-sm text-neutral-500 max-w-xs leading-[1.6]">
-                Dosocket helps teams transform complex ideas into clear, engaging
-                products—everything you need to build the future in one place.
-              </p>
-            </div>
-
-            {/* Right Column: Links Grid */}
-            <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
-              <FooterCol
-                title="Product"
-                links={[
-                  ["/features", "Features"],
-                  ["/pricing", "Pricing"],
-                  ["/integrations", "Integrations"],
-                  ["/updates", "Updates"],
-                ]}
-              />
-              <FooterCol
-                title="Resources"
-                links={[
-                  ["/documentation", "Documentation"],
-                  ["/guides", "Guides"],
-                  ["/blog", "Blog"],
-                  ["/support", "Support"],
-                ]}
-              />
-              <FooterCol
-                title="Company"
-                links={[
-                  ["/about", "About"],
-                  ["/careers", "Careers"],
-                  ["/contact", "Contact"],
-                  ["/partners", "Partners"],
-                ]}
-              />
-            </div>
-          </div>
-
-          {/* Footer Bottom Strip */}
-          <div className="mt-16 flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-neutral-100 pt-8 text-[13px] font-medium text-neutral-400">
-            <p>© {new Date().getFullYear()} Dosocket. All rights reserved.</p>
-            <div className="flex gap-6">
-              <Link href="/terms" className="hover:text-neutral-900 transition-colors underline decoration-transparent hover:decoration-neutral-300 underline-offset-4">
-                Terms of Service
-              </Link>
-              <Link href="/privacy" className="hover:text-neutral-900 transition-colors underline decoration-transparent hover:decoration-neutral-300 underline-offset-4">
-                Privacy Policy
-              </Link>
-            </div>
-          </div>
-
+          TUCK: `translate-y-[0.18em]` = how far it drops below the edge (≈20%).
+          Reserved space above comes from the content's `pb-[26vw] md:pb-[10rem]`. */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 select-none overflow-hidden">
+        <div className="container-x justify-center flex">
+          <h2
+            className="translate-y-[0.18em] whitespace-nowrap font-display font-bold uppercase leading-[0.78] tracking-tighter text-white"
+            // Sized to the shorter footer; capped so ultra-wide screens don't overflow.
+            style={{ fontSize: "min(18vw, 15rem)" }}
+          >
+            Dosocket
+          </h2>
         </div>
-
-        {/* Huge Watermark Background Text (Moved Below the Card) */}
-        <div className="w-full flex justify-center pointer-events-none select-none overflow-hidden mt-12 mb-[-20px]">
-          <h1 className="text-[17vw] font-black leading-none tracking-tighter text-black/10">
-            DOSOCKET
-          </h1>
-        </div>
-
       </div>
     </footer>
-  );
-}
-
-/* ─────────────────────────────────────────
-   Footer Column Component
-───────────────────────────────────────── */
-function FooterCol({ title, links }: { title: string; links: [string, string][] }) {
-  return (
-    <div className="flex flex-col gap-4">
-      <div className="text-sm font-semibold text-neutral-900">{title}</div>
-      <ul className="space-y-3 text-[13px]">
-        {links.map(([href, label]) => (
-          <li key={label}>
-            <Link
-              href={href}
-              className="text-neutral-500 transition-colors hover:text-neutral-900"
-            >
-              {label}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 }
