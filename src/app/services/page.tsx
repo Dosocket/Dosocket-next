@@ -3,6 +3,9 @@ import { ArrowUpRight } from "lucide-react";
 import { ServicesHero } from "@/components/services/services-hero";
 import { ServicesIntro } from "@/components/services/services-intro";
 import { ServicesBento } from "@/components/services/services-bento";
+import OurProcessScroll from "@/components/services/OurProcessScroll";
+import ServicesFAQ from "@/components/services/ServicesFAQ ";
+import GrowFasterParallax from "@/components/services/GrowFasterParallax";
 
 export default function ServicesPage() {
   return (
@@ -16,6 +19,15 @@ export default function ServicesPage() {
 
       {/* Section 3 — service cards grid (image + bottom text) */}
       <ServicesBento />
+
+      {/* Section 4 — scroll-driven word wheel */}
+      <OurProcessScroll />
+
+      {/* Section 5 — ServicesFAQ */}
+      <ServicesFAQ />
+
+      {/* Section 6 — cursor-parallax heading with floating imagery */}
+      <GrowFasterParallax />
 
       {/* Closing CTA strip */}
       <section className="container-x pb-32">
