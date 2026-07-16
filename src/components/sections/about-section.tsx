@@ -82,7 +82,7 @@ export function AboutCompany() {
           {/* Left: Label + Heading */}
           <Reveal>
             <div>
-              <p className="text-sm font-medium text-blue-600 tracking-wide">About Our Company</p>
+              <p className="text-sm font-medium text-black tracking-wide">About Our Company</p>
               <h2 className="mt-3 max-w-lg text-3xl font-bold leading-[1.15] tracking-tight text-neutral-900 md:text-4xl">
                 Innovative Product Execution to Boost Your Business
               </h2>
@@ -94,7 +94,7 @@ export function AboutCompany() {
             <div className="flex gap-8 sm:gap-12">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <p className="text-2xl font-bold text-blue-600 md:text-3xl">{stat.value}</p>
+                  <p className="text-2xl font-bold text-black md:text-3xl">{stat.value}</p>
                   <p className="mt-1 text-xs text-neutral-500 sm:text-sm">{stat.label}</p>
                 </div>
               ))}

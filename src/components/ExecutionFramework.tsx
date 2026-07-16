@@ -73,12 +73,13 @@ export default function ExecutionFramework() {
   const outerGlowRef = useRef<SVGCircleElement>(null);
   const innerCoreRef = useRef<SVGCircleElement>(null);
   const dotGroupRef = useRef<SVGGElement>(null);
-  
+  const revealPathRef = useRef<SVGPathElement>(null);
+  const pathLengthRef = useRef(0);
+
   const [activeIndex, setActiveIndex] = useState(0);
   const [scale, setScale] = useState(1);
   const activeIndexRef = useRef(0);
 
-  // Render Loop variables
   const currentProgressRef = useRef(0);
   const targetProgressRef = useRef(0);
   const rafRef = useRef<number | null>(null);
@@ -92,7 +93,7 @@ export default function ExecutionFramework() {
 
       const scrolled = -rect.top;
       const scrollRatio = Math.max(0, Math.min(1, scrolled / totalScrollableHeight));
-      
+
       let mappedProgress;
       if (scrollRatio <= 0.85) {
         mappedProgress = (scrollRatio / 0.85) * 4.0;
@@ -100,7 +101,7 @@ export default function ExecutionFramework() {
         const exitRatio = (scrollRatio - 0.85) / 0.15;
         mappedProgress = 4.0 + exitRatio * 0.8;
       }
-      
+
       targetProgressRef.current = Math.max(0, Math.min(4.8, mappedProgress));
     };
 
@@ -116,30 +117,34 @@ export default function ExecutionFramework() {
     handleResize();
     window.addEventListener("resize", handleResize);
 
+    // Measure the S-curve for the revealing line
+    if (revealPathRef.current) {
+      const measuredLength = revealPathRef.current.getTotalLength();
+      pathLengthRef.current = measuredLength;
+      revealPathRef.current.style.strokeDasharray = `${measuredLength}`;
+      revealPathRef.current.style.strokeDashoffset = `${measuredLength}`;
+    }
+
     const loop = () => {
-      // Lerp for buttery smooth physics
       currentProgressRef.current += (targetProgressRef.current - currentProgressRef.current) * 0.09;
       const p = currentProgressRef.current;
 
-      // Update Dot Position along the static cubic bezier S-curve
+      // Calculate dot position along the S-curve
       let dotX = 140;
       let activeY = 50;
-      
+
       if (p <= 2) {
-        // Top half curve mapping
-        const t = Math.max(0, p / 2); // 0 to 1
+        const t = Math.max(0, p / 2);
         const u = 1 - t;
         dotX = 140 * u * u * u + 420 * u * u * t + 120 * u * t * t + 40 * t * t * t;
         activeY = 50 + 300 * t - 300 * t * t + 200 * t * t * t;
       } else {
-        // Bottom half curve mapping
-        const t = Math.min(1, (p - 2) / 2); // 0 to 1
+        const t = Math.min(1, (p - 2) / 2);
         const u = 1 - t;
         dotX = 40 * u * u * u + 120 * u * u * t + 420 * u * t * t + 140 * t * t * t;
         activeY = 250 + 300 * t - 300 * t * t + 200 * t * t * t;
       }
 
-      // Linear extensions for exiting bounds gracefully
       if (p > 4) {
         dotX = 140;
         activeY = 450 + (p - 4) * 100;
@@ -148,7 +153,22 @@ export default function ExecutionFramework() {
         activeY = 50 + p * 100;
       }
 
-      // Hide dot when significantly out of bounds
+      // Reveal the line beneath the dot
+      if (revealPathRef.current && pathLengthRef.current > 0) {
+        const totalLen = pathLengthRef.current;
+        const STUB = 50;
+        const midLen = Math.max(totalLen - STUB * 2, 0);
+
+        const midProgress = Math.max(0, Math.min(1, p / 4));
+        const tailProgress = Math.max(0, Math.min(1, (p - 4) / 0.5));
+
+        const revealLength = STUB + midProgress * midLen + tailProgress * STUB;
+        const clampedReveal = Math.min(totalLen, Math.max(0, revealLength));
+
+        revealPathRef.current.style.strokeDashoffset = `${totalLen - clampedReveal}`;
+      }
+
+      // Hide dot when out of bounds
       const isOutOfBounds = p < -0.1 || p > 4.5;
       if (dotGroupRef.current) {
         if (isOutOfBounds) {
@@ -166,7 +186,6 @@ export default function ExecutionFramework() {
         }
       }
 
-      // Sync active step
       const nearestActive = Math.max(0, Math.min(4, Math.round(p)));
       if (nearestActive !== activeIndexRef.current) {
         activeIndexRef.current = nearestActive;
@@ -190,8 +209,8 @@ export default function ExecutionFramework() {
     <div ref={containerRef} className="relative h-[320vh] w-full bg-[#F5F5F5]">
       {/* Sticky Section */}
       <div className="sticky top-0 h-screen w-full flex flex-col justify-center items-center px-4 md:px-8">
-        
-        <div 
+
+        <div
           className="flex flex-col items-center w-full"
           style={{ transform: `scale(${scale})`, transformOrigin: 'center center' }}
         >
@@ -210,22 +229,22 @@ export default function ExecutionFramework() {
 
           {/* Dashboard Container */}
           <div className="relative w-full max-w-[1000px] h-[600px] bg-white rounded-[32px] border border-gray-200 p-6 md:p-10 flex flex-col shadow-xl z-10">
-          
+
           <div className="grid grid-cols-12 gap-4 md:gap-8 items-center h-full relative w-full">
-            
+
             {/* Left Column: Steps */}
             <div className="col-span-4 h-[500px] relative z-10 select-none hidden sm:block">
               {STEPS.map((step, idx) => {
                 const isActive = activeIndex === idx;
                 const isPast = activeIndex > idx;
                 const Icon = ICONS[idx];
-                
+
                 return (
                   <div
                     key={idx}
                     className="absolute right-0 w-full flex items-center justify-end gap-4 transition-all duration-500"
-                    style={{ 
-                      top: `${50 + idx * 100}px`, 
+                    style={{
+                      top: `${50 + idx * 100}px`,
                       transform: `translateY(-50%) translateX(${isActive ? '-12px' : '0px'})`,
                       opacity: isActive ? 1 : 0.4
                     }}
@@ -238,13 +257,13 @@ export default function ExecutionFramework() {
                         {step.subtitle}
                       </p>
                     </div>
-                    
+
                     {/* Icon Circle */}
                     <div className={`w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center transition-all duration-500 border shadow-sm ${
-                      isActive 
-                        ? 'bg-[#D6FC00] text-black border-[#D6FC00] scale-110 shadow-lg shadow-[#D6FC00]/20' 
-                        : isPast 
-                          ? 'bg-black text-white border-black' 
+                      isActive
+                        ? 'bg-[#D6FC00] text-black border-[#D6FC00] scale-110 shadow-lg shadow-[#D6FC00]/20'
+                        : isPast
+                          ? 'bg-black text-white border-black'
                           : 'bg-white text-gray-400 border-gray-200'
                     }`}>
                       <Icon className="w-6 h-6 md:w-7 md:h-7" />
@@ -265,30 +284,58 @@ export default function ExecutionFramework() {
                       <feMergeNode in="SourceGraphic" />
                     </feMerge>
                   </filter>
-                  <linearGradient id="curve-gradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#000000" stopOpacity="0.05" />
-                    <stop offset="25%" stopColor="#000000" stopOpacity="0.4" />
-                    <stop offset="50%" stopColor="#000000" stopOpacity="0.9" />
-                    <stop offset="75%" stopColor="#000000" stopOpacity="0.4" />
-                    <stop offset="100%" stopColor="#000000" stopOpacity="0.05" />
-                  </linearGradient>
                 </defs>
 
-                {/* Static SVG Path - centered with a gentle sweeping slope */}
-                <path 
-                  d="M 140 0 L 140 50 C 140 150, 40 150, 40 250 C 40 350, 140 350, 140 450 L 140 500" 
-                  fill="none" 
-                  stroke="url(#curve-gradient)" 
-                  strokeWidth="3" 
+                {/* NO FAINT LINE - Completely removed the static track */}
+
+                {/* The revealing line - appears as user scrolls */}
+                <path
+                  ref={revealPathRef}
+                  d="M 140 0 L 140 50 C 140 150, 40 150, 40 250 C 40 350, 140 350, 140 450 L 140 500"
+                  fill="none"
+                  stroke="#000000"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  style={{ strokeDasharray: 1200, strokeDashoffset: 1200 }}
                 />
 
-                {/* Static node markers along the path */}
+                {/* Static node markers - only show AFTER they've been passed */}
                 <g>
-                  <circle cx="140" cy="50" r="4" fill="#E5E5E5" className={`transition-opacity duration-300 ${activeIndex === 0 ? 'opacity-0' : 'opacity-100'}`} />
-                  <circle cx="90" cy="150" r="4" fill="#E5E5E5" className={`transition-opacity duration-300 ${activeIndex === 1 ? 'opacity-0' : 'opacity-100'}`} />
-                  <circle cx="40" cy="250" r="4" fill="#E5E5E5" className={`transition-opacity duration-300 ${activeIndex === 2 ? 'opacity-0' : 'opacity-100'}`} />
-                  <circle cx="90" cy="350" r="4" fill="#E5E5E5" className={`transition-opacity duration-300 ${activeIndex === 3 ? 'opacity-0' : 'opacity-100'}`} />
-                  <circle cx="140" cy="450" r="4" fill="#E5E5E5" className={`transition-opacity duration-300 ${activeIndex === 4 ? 'opacity-0' : 'opacity-100'}`} />
+                  <circle 
+                    cx="140" 
+                    cy="50" 
+                    r="4" 
+                    fill="#E5E5E5" 
+                    className={`transition-opacity duration-300 ${activeIndex >= 0 ? 'opacity-100' : 'opacity-0'}`} 
+                  />
+                  <circle 
+                    cx="90" 
+                    cy="150" 
+                    r="4" 
+                    fill="#E5E5E5" 
+                    className={`transition-opacity duration-300 ${activeIndex >= 1 ? 'opacity-100' : 'opacity-0'}`} 
+                  />
+                  <circle 
+                    cx="40" 
+                    cy="250" 
+                    r="4" 
+                    fill="#E5E5E5" 
+                    className={`transition-opacity duration-300 ${activeIndex >= 2 ? 'opacity-100' : 'opacity-0'}`} 
+                  />
+                  <circle 
+                    cx="90" 
+                    cy="350" 
+                    r="4" 
+                    fill="#E5E5E5" 
+                    className={`transition-opacity duration-300 ${activeIndex >= 3 ? 'opacity-100' : 'opacity-0'}`} 
+                  />
+                  <circle 
+                    cx="140" 
+                    cy="450" 
+                    r="4" 
+                    fill="#E5E5E5" 
+                    className={`transition-opacity duration-300 ${activeIndex >= 4 ? 'opacity-100' : 'opacity-0'}`} 
+                  />
                 </g>
 
                 {/* Travelling dot */}
@@ -304,7 +351,7 @@ export default function ExecutionFramework() {
               <div className="w-full bg-black rounded-[24px] p-6 md:p-8 text-white shadow-2xl transition-all duration-300 relative overflow-hidden border border-gray-800">
                 {/* Subtle bg glow */}
                 <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#D6FC00]/10 blur-[80px] rounded-full pointer-events-none"></div>
-                
+
                 <div className="flex justify-between items-start mb-6 md:mb-8">
                   <div className="bg-[#D6FC00]/10 text-[#D6FC00] px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase border border-[#D6FC00]/20">
                     Phase {activeData.num}
@@ -314,7 +361,7 @@ export default function ExecutionFramework() {
                 <h3 className="text-3xl md:text-4xl font-medium tracking-tight mb-3">
                   {activeData.title}
                 </h3>
-                
+
                 <p className="text-gray-400 text-sm md:text-base font-medium mb-6 uppercase tracking-wider">
                   {activeData.subtitle}
                 </p>

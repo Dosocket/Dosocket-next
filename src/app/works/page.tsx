@@ -36,7 +36,7 @@ export default function WorksPage() {
           <h1 className="mt-6 font-display text-5xl font-semibold leading-[0.95] md:text-7xl">
             Outcomes.
             <br />
-            <span className="text-lime">Receipts.</span>
+            <span className="text-[#A1A1A1]">Receipts.</span>
           </h1>
         </Reveal>
         <Reveal>

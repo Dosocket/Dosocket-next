@@ -12,7 +12,7 @@ interface FlipTextProps {
   colors?: string[];
 }
 
-const DEFAULT_COLORS = ["#FF0000", "#0000FF", "#E8FF00"];
+const DEFAULT_COLORS = [""];
 
 const ENTER_EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const EXIT_EASE: [number, number, number, number] = [0.55, 0, 1, 0.45];

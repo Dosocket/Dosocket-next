@@ -46,7 +46,7 @@ export default function ContactPage() {
           <h1 className="mt-6 font-display text-5xl font-semibold leading-[0.95] md:text-7xl">
             Let's ship
             <br />
-            something <span className="text-lime">unreasonable.</span>
+            something <span className="text-black bg-lime">unreasonable.</span>
           </h1>
         </Reveal>
         <Reveal>
