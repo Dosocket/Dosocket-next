@@ -45,24 +45,23 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative flex min-h-screen sm:min-h-[95vh] w-full flex-col justify-center bg-white pt-16 pb-12 sm:pt-20 sm:pb-16 md:pt-24 md:pb-20 text-black overflow-hidden select-none"
+      className="relative flex min-h-screen sm:min-h-[95vh] w-full flex-col justify-center items-center bg-white pt-16 pb-0 sm:pt-20 md:pt-24 text-black overflow-hidden select-none"
     >
       {/* Decorative side rules */}
       <div className="absolute top-0 left-12 h-full w-px bg-neutral-200/60 pointer-events-none hidden lg:block" />
       <div className="absolute top-0 right-12 h-full w-px bg-neutral-200/60 pointer-events-none hidden lg:block" />
 
-      <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 md:px-16 flex flex-col justify-center">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 flex flex-col justify-center items-center text-center">
 
-        {/* Small top-line agency descriptor (Uses standard font-sans / Inter) */}
-        <p className="animate-fade-in text-balance text-xs sm:text-sm tracking-wide uppercase pt-10 text-black mb-3 sm:mb-4 font-extrabold font-sans">
+        {/* Small top-line agency descriptor */}
+        <p className="animate-fade-in text-balance text-xs sm:text-sm tracking-widest uppercase pt-6 text-neutral-500 mb-4 sm:mb-6 font-extrabold font-sans">
           DOSOCKET® is a LEADING PAKISTANI WEB DESIGN AGENCY.
         </p>
 
         {/* 
-          Main Headline using 'font-space' (Space Grotesk) instead of the local font.
-          Kept the font-bold and tracking properties to preserve the dense, modern typography.
+          Main Headline
         */}
-        <div className="font-space text-[clamp(2.1rem,9.8vw,3.1rem)] sm:text-[clamp(2.7rem,4vw,4rem)] md:text-[6vw] lg:text-[8.1vw] leading-[0.95] tracking-tighter uppercase font-bold">
+        <div className="font-space text-[clamp(2rem,7vw,2.8rem)] sm:text-[clamp(2.5rem,4vw,3.5rem)] md:text-[5vw] lg:text-[6vw] leading-[0.95] tracking-tighter uppercase font-bold flex flex-col items-center w-full">
 
           <div className="animate-txt-line block">
             <span className="animate-txt-inner block text-neutral-400">
@@ -82,21 +81,56 @@ export default function Hero() {
             </span>
           </div>
 
-          <div className="animate-fade-in block min-h-[1.3em] sm:text-[clamp(2.7rem,5vw,4rem)] md:text-[7vw] lg:text-[9vw]">
+          <div className="animate-fade-in block min-h-[1.3em] sm:text-[clamp(2.5rem,5vw,3.5rem)] md:text-[6vw] lg:text-[6.5vw]">
             <FlipText
               words={FLIP_WORDS}
-              className="font-space tracking-tighter font-bold"
+              className="font-space tracking-tighter font-bold text-neutral-400"
             />
           </div>
         </div>
 
-        {/* Supporting copy (Uses default font-sans / Inter) */}
-        <div className="mt-8 sm:mt-10 md:mt-12 max-w-2xl animate-fade-in">
-          <p className="text-balance text-base sm:text-lg md:text-xl lg:text-2xl font-light leading-relaxed text-neutral-600 font-sans">
+        {/* Supporting copy */}
+        <div className="mt-6 sm:mt-8 md:mt-10 max-w-3xl animate-fade-in">
+          <p className="text-balance text-base sm:text-lg md:text-xl font-light leading-relaxed text-neutral-500 font-sans">
             We supercharge structural web capabilities across regional sectors by building digital architectures optimized for high performance.
           </p>
         </div>
+
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 mb-12 sm:mb-16 animate-fade-in w-full sm:w-auto">
+          <button className="w-full sm:w-auto px-8 py-3 bg-black text-white rounded-lg font-medium hover:bg-black/90 transition-colors text-sm sm:text-base">
+            Explore Our Work
+          </button>
+          <button className="w-full sm:w-auto px-8 py-3 bg-white text-black border border-neutral-300 rounded-lg font-medium hover:bg-neutral-50 transition-colors text-sm sm:text-base">
+            Contact Us
+          </button>
+        </div>
       </div>
+
+      {/* Stats Card - End to End */}
+      <div className="w-full animate-fade-in mt-auto border-t border-b border-neutral-200/80 bg-white">
+        <div className="w-full max-w-7xl mx-auto p-8 md:p-10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10 lg:gap-y-0 lg:divide-x divide-neutral-200/80">
+            <div className="flex flex-col items-center justify-center">
+              <span className="text-4xl md:text-5xl lg:text-6xl font-bold font-space text-black mb-2">100%</span>
+              <span className="text-[10px] md:text-xs font-bold text-neutral-500 uppercase tracking-widest text-center">Client Satisfaction</span>
+            </div>
+            <div className="flex flex-col items-center justify-center">
+              <span className="text-4xl md:text-5xl lg:text-6xl font-bold font-space text-black mb-2">60+</span>
+              <span className="text-[10px] md:text-xs font-bold text-neutral-500 uppercase tracking-widest text-center">Projects Delivered</span>
+            </div>
+            <div className="flex flex-col items-center justify-center">
+              <span className="text-4xl md:text-5xl lg:text-6xl font-bold font-space text-black mb-2">16+</span>
+              <span className="text-[10px] md:text-xs font-bold text-neutral-500 uppercase tracking-widest text-center">Global Clients</span>
+            </div>
+            <div className="flex flex-col items-center justify-center">
+              <span className="text-4xl md:text-5xl lg:text-6xl font-bold font-space text-black mb-2">4X</span>
+              <span className="text-[10px] md:text-xs font-bold text-neutral-500 uppercase tracking-widest text-center">Faster Delivery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </section>
   );
 }

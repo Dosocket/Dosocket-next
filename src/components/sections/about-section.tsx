@@ -74,7 +74,6 @@ export function AboutCompany() {
     <section className="bg-[#f5f5f5] py-20 lg:py-28">
       {/* ── Container with 80px margins ── */}
       <div className="mx-auto w-full max-w-[calc(100%-48px)] sm:max-w-[calc(100%-80px)] lg:max-w-[calc(100%-160px)]">
-
         {/* ═══════════════════════════════════
             TOP ROW: Heading + Stats
         ═══════════════════════════════════ */}
@@ -82,7 +81,9 @@ export function AboutCompany() {
           {/* Left: Label + Heading */}
           <Reveal>
             <div>
-              <p className="text-sm font-medium text-black tracking-wide">About Our Company</p>
+              <p className="text-sm font-medium text-black tracking-wide">
+                About Our Company
+              </p>
               <h2 className="mt-3 max-w-lg text-3xl font-bold leading-[1.15] tracking-tight text-neutral-900 md:text-4xl">
                 Innovative Product Execution to Boost Your Business
               </h2>
@@ -94,8 +95,12 @@ export function AboutCompany() {
             <div className="flex gap-8 sm:gap-12">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <p className="text-2xl font-bold text-black md:text-3xl">{stat.value}</p>
-                  <p className="mt-1 text-xs text-neutral-500 sm:text-sm">{stat.label}</p>
+                  <p className="text-2xl font-bold text-black md:text-3xl">
+                    {stat.value}
+                  </p>
+                  <p className="mt-1 text-xs text-neutral-500 sm:text-sm">
+                    {stat.label}
+                  </p>
                 </div>
               ))}
             </div>
@@ -108,31 +113,19 @@ export function AboutCompany() {
                      then       [image | card spanning 2 cols]
         ═══════════════════════════════════ */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-
           {/* ── Large Image Placeholder (spanning 2 rows on desktop) ── */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative flex min-h-[320px] items-center justify-center overflow-hidden rounded-2xl bg-neutral-200 md:row-span-2 md:min-h-0"
+            className="relative flex min-h-80 items-center justify-center overflow-hidden rounded-2xl bg-neutral-200 md:row-span-2 md:min-h-0"
           >
-            {/* Placeholder icon + label */}
-            <div className="flex flex-col items-center gap-3 text-neutral-400">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={1.5}
-                className="h-12 w-12"
-              >
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <circle cx="8.5" cy="8.5" r="1.5" />
-                <path d="m21 15-5-5L5 21" />
-              </svg>
-              <span className="text-sm font-medium">Team Photo</span>
-            </div>
+            <img
+              src="/AboutOurCompany.jpg"
+              alt="Team Photo"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
           </motion.div>
 
           {/* ── Card 1: Top-middle ── */}
@@ -144,8 +137,12 @@ export function AboutCompany() {
             className="flex flex-col justify-between rounded-2xl border border-neutral-200 bg-white p-6"
           >
             <div>
-              <h3 className="text-xl font-bold text-neutral-900">{cards[0].title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-neutral-500">{cards[0].description}</p>
+              <h3 className="text-xl font-bold text-neutral-900">
+                {cards[0].title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-neutral-500">
+                {cards[0].description}
+              </p>
             </div>
             <ReadMoreButton href={cards[0].href} />
           </motion.div>
@@ -159,8 +156,12 @@ export function AboutCompany() {
             className="flex flex-col justify-between rounded-2xl border border-neutral-200 bg-white p-6"
           >
             <div>
-              <h3 className="text-xl font-bold text-neutral-900">{cards[1].title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-neutral-500">{cards[1].description}</p>
+              <h3 className="text-xl font-bold text-neutral-900">
+                {cards[1].title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-neutral-500">
+                {cards[1].description}
+              </p>
             </div>
             <ReadMoreButton href={cards[1].href} />
           </motion.div>
@@ -174,8 +175,12 @@ export function AboutCompany() {
             className="flex flex-col justify-between rounded-2xl border border-neutral-200 bg-white p-6 md:col-span-2"
           >
             <div>
-              <h3 className="text-xl font-bold text-neutral-900">{cards[2].title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-neutral-500">{cards[2].description}</p>
+              <h3 className="text-xl font-bold text-neutral-900">
+                {cards[2].title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-neutral-500">
+                {cards[2].description}
+              </p>
             </div>
             <ReadMoreButton href={cards[2].href} />
           </motion.div>

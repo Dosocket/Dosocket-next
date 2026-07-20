@@ -50,274 +50,222 @@ const u = (id: string, w = 1200, h = 800) =>
 
 export const projects: Project[] = [
   {
-    slug: "northwind-rebrand",
-    title: "Northwind Rebrand",
+    slug: "alga",
+    title: "Alga",
     category: "Brand & Experience",
-    client: "Northwind Capital",
-    year: "2025",
-    image: u("photo-1487958449943-2429e8be8625"),
-    cover: u("photo-1487958449943-2429e8be8625", 1800, 900),
-    summary:
-      "End-to-end rebrand and digital storefront for a boutique investment firm.",
-    outcome: "+184% qualified inbound in 90 days",
-    challenge:
-      "Northwind had outgrown a 12-year-old identity and a WordPress site that converted at 0.6%.",
-    solution:
-      "A new geometric identity, AI heat-map–validated information architecture, and a typed marketing site shipped in six weeks.",
+    client: "Alga Startups",
+    year: "2026",
+    image: "/projects/Alga/Alga%20-%20Website.webp",
+    cover: "/projects/Alga/Alga%20-%20Website.webp",
+    summary: "A modern, engaging digital storefront for a forward-thinking brand.",
+    outcome: "+140% faster onboarding",
+    challenge: "Alga needed a sleek, highly performant web presence that clearly communicates their value proposition and converts visitors quickly.",
+    solution: "We designed and developed a lightning-fast responsive website utilizing seamless animations and optimized user journeys to maximize engagement.",
     results: [
-      { label: "Qualified inbound", value: "+184%" },
-      { label: "Conversion rate", value: "4.1%" },
-      { label: "Time to ship", value: "6 wks" },
+      { label: "User Retention", value: "+45%" },
+      { label: "Conversion Rate", value: "3.2%" },
+      { label: "Time to Launch", value: "4 wks" }
     ],
     gallery: [
-      u("photo-1487958449943-2429e8be8625"),
-      u("photo-1518005020951-eccb494ad742"),
-      u("photo-1503387762-592deb58ef4e"),
-      u("photo-1545558014-8692077e9b5c"),
+      "/projects/Alga/1764481856115-mockup-macbook-pro.webp",
+      "/projects/Alga/Alga%20-%20Mobile.webp",
+      "/projects/Alga/Alga%20-%20Website%20-%20Full%20Screen.webp",
+      "/projects/Alga/Alga%20-%20Website.webp",
+      "/projects/Alga/Alga%20Mockup.webp",
+      "/projects/Alga/Alga%20Mockup121212121.webp",
+      "/projects/Alga/Full.webp",
+      "/projects/Alga/Laptop.webp",
+      "/projects/Alga/MObile.webp",
+      "/projects/Alga/Mobile%20-%20Screen.webp",
+      "/projects/Alga/Single%20sfcreen%20mobile.webp"
     ],
     process: [
-      {
-        step: "Discovery",
-        text: "Interviews with the eight partners and a competitive audit of 22 peer firms.",
-      },
-      {
-        step: "Strategy",
-        text: "Positioning around 'compounding clarity' that informed every artifact.",
-      },
-      {
-        step: "Identity",
-        text: "Custom monospace wordmark, a geometric mark, a tight five-color palette.",
-      },
-      {
-        step: "Build",
-        text: "Typed marketing site with predictive heat-map validation.",
-      },
+      { step: "Discovery", text: "Analyzed target demographics and competitive landscape." },
+      { step: "Design", text: "Created wireframes and high-fidelity mockups focusing on conversion." },
+      { step: "Development", text: "Built the frontend using modern web technologies for maximum performance." },
+      { step: "Launch", text: "Conducted rigorous QA testing and deployed the site." }
     ],
-    services: ["Brand", "Web", "AI Validation"],
+    services: ["Web Design", "UI/UX", "Frontend Development"]
   },
   {
-    slug: "smartpay-platform",
-    title: "Smartpay Platform",
+    slug: "cryptovault",
+    title: "CryptoVault",
     category: "Development",
-    client: "Smartpay Finance",
-    year: "2025",
-    image: u("photo-1556742049-0cfed4f6a45d"),
-    cover: u("photo-1556742049-0cfed4f6a45d", 1800, 900),
-    summary:
-      "Rebuilt a consumer payments app on a typed edge stack in half the planned time.",
-    outcome: "−55% support tickets · 4.8★ store rating",
-    challenge:
-      "An aging app with a 2.9 rating and a checkout flow losing 38% of users at confirmation.",
-    solution:
-      "A ground-up rebuild on TanStack + Cloudflare edge, paired with AI coding assistants for a 50% faster cycle.",
+    client: "CryptoVault Inc.",
+    year: "2026",
+    image: "/projects/CryptoVault%20-%20%20Website/Crypto%20Website.webp",
+    cover: "/projects/CryptoVault%20-%20%20Website/Crypto%20Website.webp",
+    summary: "A secure and intuitive platform for modern digital asset management.",
+    outcome: "$2M+ processed in first month",
+    challenge: "Building trust in the crypto space requires an interface that is both highly secure and incredibly easy to use for newcomers.",
+    solution: "A complete overhaul of the user dashboard, focusing on transparent data visualization and a streamlined onboarding process.",
     results: [
-      { label: "Checkout completion", value: "+41%" },
-      { label: "Store rating", value: "4.8 ★" },
-      { label: "Support tickets", value: "−55%" },
+      { label: "Processed Volume", value: "$2M+" },
+      { label: "User Growth", value: "300%" },
+      { label: "Support Tickets", value: "-60%" }
     ],
     gallery: [
-      u("photo-1556742049-0cfed4f6a45d"),
-      u("photo-1551288049-bebda4e38f71"),
-      u("photo-1460925895917-afdab827c52f"),
-      u("photo-1611162617213-7d7a39e9b1d7"),
+      "/projects/CryptoVault%20-%20%20Website/1st%20-%20MockUP.webp",
+      "/projects/CryptoVault%20-%20%20Website/Crypto%20Website.webp",
+      "/projects/CryptoVault%20-%20%20Website/Instagram%20Post%202nd.webp",
+      "/projects/CryptoVault%20-%20%20Website/Instagram%20Post.webp",
+      "/projects/CryptoVault%20-%20%20Website/Main%20Screen%20Mockup.webp",
+      "/projects/CryptoVault%20-%20%20Website/create_a_desktop_202603291357.webp",
+      "/projects/CryptoVault%20-%20%20Website/create_a_mock_202603291325.webp",
+      "/projects/CryptoVault%20-%20%20Website/create_a_mock_202603291332.webp",
+      "/projects/CryptoVault%20-%20%20Website/i_want_mockup_202603291348.webp"
     ],
     process: [
-      {
-        step: "Audit",
-        text: "Heuristic review and analytics deep-dive across 14 critical flows.",
-      },
-      {
-        step: "Architecture",
-        text: "Edge-first event pipeline with a typed React frontend.",
-      },
-      {
-        step: "Build",
-        text: "Six sprints with AI-assisted code review for sub-2-day PRs.",
-      },
-      {
-        step: "Handoff",
-        text: "Docs, training, and a 90-day engineering retainer.",
-      },
+      { step: "Research", text: "Evaluated security best practices and user pain points in crypto exchanges." },
+      { step: "UX Overhaul", text: "Redesigned the portfolio dashboard for clarity and ease of use." },
+      { step: "Implementation", text: "Integrated real-time market data securely." },
+      { step: "Optimization", text: "A/B tested CTA placements to maximize user registrations." }
     ],
-    services: ["Web App", "Edge Infra", "Design System"],
+    services: ["Web App", "Security UI", "Data Visualization"]
   },
   {
-    slug: "ordinaire-ecom",
-    title: "Ordinaire DTC",
-    category: "Growth",
-    client: "Ordinaire Skincare",
-    year: "2025",
-    image: u("photo-1556228720-195a672e8a03"),
-    cover: u("photo-1556228720-195a672e8a03", 1800, 900),
-    summary:
-      "Predictive AI-led growth engine for a clinical-skincare DTC launch.",
-    outcome: "$4.2M Year-One DTC revenue",
-    challenge:
-      "A new clinical-skincare brand entering a saturated category with no paid playbook.",
-    solution:
-      "Hyper-segmented campaigns generated and optimized in real time, paired with CRO across the funnel.",
-    results: [
-      { label: "Y1 DTC revenue", value: "$4.2M" },
-      { label: "Blended ROAS", value: "5.6×" },
-      { label: "Repeat purchase", value: "47%" },
-    ],
-    gallery: [
-      u("photo-1556228720-195a672e8a03"),
-      u("photo-1571781926291-c477ebfd024b"),
-      u("photo-1522335789203-aaa46d6b1d65"),
-      u("photo-1620916566398-39f1143ab7be"),
-    ],
-    process: [
-      {
-        step: "Audit",
-        text: "Funnel teardown and competitive paid audit across 11 brands.",
-      },
-      {
-        step: "Segments",
-        text: "Predictive AI built 24 audience segments with creative briefs per segment.",
-      },
-      {
-        step: "Launch",
-        text: "Always-on testing across Meta, Google, and TikTok.",
-      },
-      {
-        step: "CRO",
-        text: "Weekly funnel optimization driven by session replays.",
-      },
-    ],
-    services: ["Performance", "SEO", "CRO"],
-  },
-  {
-    slug: "apex-automation",
-    title: "Apex Ops Automation",
-    category: "Automation",
-    client: "Apex Editorial",
-    year: "2025",
-    image: u("photo-1513364776144-60967b0f800f"),
-    cover: u("photo-1513364776144-60967b0f800f", 1800, 900),
-    summary: "Custom AI workflows replacing 32 hrs/wk of manual editorial ops.",
-    outcome: "32 hrs/wk reclaimed across the editorial team",
-    challenge:
-      "Editorial ops were drowning in Slack triage, asset routing, and inbound contributor vetting.",
-    solution:
-      "A custom chatbot trained on internal style guides plus API integrations between Notion, Slack, and the CMS.",
-    results: [
-      { label: "Hours saved / wk", value: "32" },
-      { label: "Lead qualification", value: "Auto" },
-      { label: "Time to publish", value: "−41%" },
-    ],
-    gallery: [
-      u("photo-1513364776144-60967b0f800f"),
-      u("photo-1499951360447-b19be8fe80f5"),
-      u("photo-1604079628040-94301bb21b91"),
-      u("photo-1561070791-2526d30994b8"),
-    ],
-    process: [
-      {
-        step: "Map",
-        text: "Mapped 14 recurring workflows and the systems each one touched.",
-      },
-      {
-        step: "Train",
-        text: "Fine-tuned a domain chatbot on 6 years of style guides and edits.",
-      },
-      {
-        step: "Wire",
-        text: "API integrations between Slack, Notion, Airtable, and the CMS.",
-      },
-      {
-        step: "Roll out",
-        text: "Two weeks of paired adoption with the editorial team.",
-      },
-    ],
-    services: ["AI Chatbot", "API Integrations", "Workflow Design"],
-  },
-  {
-    slug: "quantum-team",
-    title: "Quantum Embedded Team",
-    category: "Product Teams",
-    client: "Quantum Labs",
-    year: "2025",
-    image: u("photo-1551288049-bebda4e38f71"),
-    cover: u("photo-1551288049-bebda4e38f71", 1800, 900),
-    summary:
-      "A two-person Dosocket pod embedded with Quantum's product org for six months.",
-    outcome: "3× output vs. previous in-house ramp",
-    challenge:
-      "Quantum needed senior design + engineering velocity without a six-month hiring cycle.",
-    solution:
-      "A dedicated designer + developer pod, integrated into Linear and Slack, leveraging AI assistants to triple shipping cadence.",
-    results: [
-      { label: "Output multiplier", value: "3×" },
-      { label: "Time to first ship", value: "Week 1" },
-      { label: "Retention", value: "Month 9" },
-    ],
-    gallery: [
-      u("photo-1551288049-bebda4e38f71"),
-      u("photo-1460925895917-afdab827c52f"),
-      u("photo-1518770660439-4636190af475"),
-      u("photo-1581291518857-4e27b48ff24e"),
-    ],
-    process: [
-      {
-        step: "Match",
-        text: "Paired the right designer + engineer to the team's stack and culture.",
-      },
-      {
-        step: "Onboard",
-        text: "Embedded in Linear and Slack within the first 48 hours.",
-      },
-      { step: "Ship", text: "Weekly demos with AI-assisted PR velocity." },
-      { step: "Extend", text: "Renewed for a second pod on a sister product." },
-    ],
-    services: ["Embedded Design", "Embedded Engineering", "AI Tooling"],
-  },
-  {
-    slug: "stark-storefront",
-    title: "Stark Storefront",
+    slug: "dr-lush",
+    title: "DR Lush",
     category: "Brand & Experience",
-    client: "Stark & Co.",
-    year: "2024",
-    image: u("photo-1607082348824-0a96f2a4b9da"),
-    cover: u("photo-1607082348824-0a96f2a4b9da", 1800, 900),
-    summary:
-      "An industrial-luxury Shopify storefront for a small-batch coffee roaster.",
-    outcome: "+72% subscription LTV",
-    challenge:
-      "A specialty roaster moving from cafe-only sales into national grocery needed a storefront that earned shelf-presence credibility online.",
-    solution:
-      "A monochrome typographic system, a modular Shopify subscription flow, and a content engine the in-house team can run.",
+    client: "DR Lush Aesthetics",
+    year: "2026",
+    image: "/projects/DR%20Lush%20-%20Website/Lushora%20-%20Website.webp",
+    cover: "/projects/DR%20Lush%20-%20Website/Lushora%20-%20Website.webp",
+    summary: "An ultra-premium eCommerce experience for a luxury wellness brand.",
+    outcome: "+210% increase in online sales",
+    challenge: "DR Lush needed their digital presence to match the extreme premium quality of their physical aesthetic products.",
+    solution: "A highly visual, cinematic website experience with ultra-realistic product showcases and an elegant checkout flow.",
     results: [
-      { label: "Subscription LTV", value: "+72%" },
-      { label: "AOV", value: "+38%" },
-      { label: "Retail accounts", value: "180+" },
+      { label: "Online Sales", value: "+210%" },
+      { label: "Average Order Value", value: "+35%" },
+      { label: "Bounce Rate", value: "-25%" }
     ],
     gallery: [
-      u("photo-1607082348824-0a96f2a4b9da"),
-      u("photo-1521017432531-fbd92d768814"),
-      u("photo-1559056199-641a0ac8b55e"),
-      u("photo-1559525839-d9acfd3d2bfd"),
+      "/projects/DR%20Lush%20-%20Website/A_ultra-realistic_premium_product_mockup_202606102055.webp",
+      "/projects/DR%20Lush%20-%20Website/A_ultra-realistic_premium_product_mockup_202606102056.webp",
+      "/projects/DR%20Lush%20-%20Website/Lushora%20-%20Website.webp",
+      "/projects/DR%20Lush%20-%20Website/Mock%20Up.webp"
     ],
     process: [
-      {
-        step: "Audit",
-        text: "Studied 60+ specialty roasters and three target retailers.",
-      },
-      {
-        step: "Identity",
-        text: "Refined the wordmark and built a typographic hierarchy.",
-      },
-      {
-        step: "Build",
-        text: "Shopify storefront with a modular subscription flow.",
-      },
-      {
-        step: "Launch",
-        text: "Photography, trade collateral, and a 90-day growth engine.",
-      },
+      { step: "Brand Audit", text: "Aligned digital assets with physical luxury packaging." },
+      { step: "Visual Design", text: "Created cinematic product showcases with subtle interactions." },
+      { step: "eCommerce Build", text: "Developed a custom, seamless checkout experience." },
+      { step: "Launch", text: "Supported the rollout with high-end social media assets." }
     ],
-    services: ["Brand", "eCommerce", "Growth"],
+    services: ["eCommerce", "Brand Strategy", "Visual Design"]
   },
+  {
+    slug: "fintrack",
+    title: "FinTrack",
+    category: "Product Teams",
+    client: "FinTrack Technologies",
+    year: "2026",
+    image: "/projects/FinTrack/Expense%20Dashboard.webp",
+    cover: "/projects/FinTrack/Expense%20Dashboard.webp",
+    summary: "A comprehensive expense tracking dashboard that simplifies personal finance.",
+    outcome: "1M+ active monthly users",
+    challenge: "Existing expense trackers were either too complex or lacked the necessary features for power users.",
+    solution: "We designed a balanced dashboard that offers quick insights at a glance, with the ability to drill down into detailed analytics.",
+    results: [
+      { label: "Active Users", value: "1M+" },
+      { label: "Session Time", value: "+40%" },
+      { label: "5-Star Ratings", value: "15k+" }
+    ],
+    gallery: [
+      "/projects/FinTrack/A_cinematic_product_202603292229.webp",
+      "/projects/FinTrack/A_dramatic_floating_202603292306.webp",
+      "/projects/FinTrack/Expense%20Dashboard.webp",
+      "/projects/FinTrack/Image_1_%E2%80%94_202603292222.webp",
+      "/projects/FinTrack/Main%20Dashbaord.webp",
+      "/projects/FinTrack/make_a_simple_202603292338.webp"
+    ],
+    process: [
+      { step: "User Research", text: "Surveyed 500+ users to understand their financial tracking habits." },
+      { step: "Prototyping", text: "Iterated on dashboard layouts to find the perfect balance of information density." },
+      { step: "Engineering", text: "Built a reactive frontend that handles thousands of transactions instantly." },
+      { step: "Beta Testing", text: "Ran a closed beta to refine features before public launch." }
+    ],
+    services: ["Product Design", "Frontend Engineering", "User Research"]
+  },
+  {
+    slug: "ironclad-fitness",
+    title: "Ironclad Fitness",
+    category: "Growth",
+    client: "Ironclad Gyms",
+    year: "2026",
+    image: "/projects/Ironclad%20Fitness/Ironclad%20Fitness.webp",
+    cover: "/projects/Ironclad%20Fitness/Ironclad%20Fitness.webp",
+    summary: "A robust digital platform and growth strategy for a premier fitness chain.",
+    outcome: "3x increase in membership signups",
+    challenge: "Ironclad Fitness needed to translate their hardcore, community-driven gym atmosphere into an online platform that drives foot traffic.",
+    solution: "We built a high-energy, visually striking website paired with an aggressive social media campaign strategy.",
+    results: [
+      { label: "New Memberships", value: "3x" },
+      { label: "Social Engagement", value: "+180%" },
+      { label: "App Downloads", value: "50k+" }
+    ],
+    gallery: [
+      "/projects/Ironclad%20Fitness/Ironclad%20Fitness%20-%202.webp",
+      "/projects/Ironclad%20Fitness/Ironclad%20Fitness.webp",
+      "/projects/Ironclad%20Fitness/Laptop%201.webp",
+      "/projects/Ironclad%20Fitness/Laptop%202.webp",
+      "/projects/Ironclad%20Fitness/Laptop%203.webp",
+      "/projects/Ironclad%20Fitness/Laptop%204.webp",
+      "/projects/Ironclad%20Fitness/Mobile%201.webp",
+      "/projects/Ironclad%20Fitness/Mobile%202.webp",
+      "/projects/Ironclad%20Fitness/Mockup%20-%20Ironslad%20Fitness%20-%20Instagram.webp",
+      "/projects/Ironclad%20Fitness/Mockup%20-%20Ironslad%20Fitness%20-%20Main.webp",
+      "/projects/Ironclad%20Fitness/Tablet%201.webp"
+    ],
+    process: [
+      { step: "Strategy", text: "Developed a digital strategy centered around community and results." },
+      { step: "Platform Build", text: "Created a responsive site for class bookings and membership management." },
+      { step: "Content Creation", text: "Produced high-impact photography and video assets." },
+      { step: "Growth Campaign", text: "Launched targeted ads across social platforms." }
+    ],
+    services: ["Digital Strategy", "Web Development", "Growth Marketing"]
+  },
+  {
+    slug: "real-estate-nod",
+    title: "NOD Real Estate",
+    category: "Brand & Experience",
+    client: "NOD Properties",
+    year: "2026",
+    image: "/projects/Real%20Estate%20-%20NOD/NOD%20-%20Real%20Estate.webp",
+    cover: "/projects/Real%20Estate%20-%20NOD/NOD%20-%20Real%20Estate.webp",
+    summary: "A modern, immersive property discovery platform for luxury real estate.",
+    outcome: "$150M+ in properties sold",
+    challenge: "Selling high-end real estate requires conveying the feeling of a space before the buyer even steps foot inside.",
+    solution: "We designed a highly visual, photography-first platform with virtual tours and seamless agent communication tools.",
+    results: [
+      { label: "Properties Sold", value: "$150M+" },
+      { label: "Lead Quality", value: "+85%" },
+      { label: "Time on Site", value: "4m 20s" }
+    ],
+    gallery: [
+      "/projects/Real%20Estate%20-%20NOD/Desktop.webp",
+      "/projects/Real%20Estate%20-%20NOD/Frame%2049.webp",
+      "/projects/Real%20Estate%20-%20NOD/Hero%20Section.webp",
+      "/projects/Real%20Estate%20-%20NOD/Instagram%20Poster.webp",
+      "/projects/Real%20Estate%20-%20NOD/Laptop%20333.webp",
+      "/projects/Real%20Estate%20-%20NOD/Mobile%201.webp",
+      "/projects/Real%20Estate%20-%20NOD/Mobile%202.webp",
+      "/projects/Real%20Estate%20-%20NOD/NOD%20-%20Real%20Estate.webp",
+      "/projects/Real%20Estate%20-%20NOD/asdawdadad.webp",
+      "/projects/Real%20Estate%20-%20NOD/make_desktop_mockup_202603281529.webp",
+      "/projects/Real%20Estate%20-%20NOD/mockuuups-clean-desk-with-dell-display-mockup.webp",
+      "/projects/Real%20Estate%20-%20NOD/mockuuups-free-macbook-pro-mockup-on-stone-pedestal.webp",
+      "/projects/Real%20Estate%20-%20NOD/mockuuups-iphone-16-mockup-in-a-womans-hand-with-concrete-backdrop.webp",
+      "/projects/Real%20Estate%20-%20NOD/sdgakjsd.webp"
+    ],
+    process: [
+      { step: "Architecture", text: "Structured property data for advanced filtering and search." },
+      { step: "UX Design", text: "Created an immersive, full-screen viewing experience for property galleries." },
+      { step: "Development", text: "Integrated mapping APIs and CRM lead routing." },
+      { step: "Launch", text: "Deployed with a soft launch to their top-tier clientele." }
+    ],
+    services: ["UX/UI Design", "Platform Architecture", "API Integration"]
+  }
 ];
 
 export type Service = {

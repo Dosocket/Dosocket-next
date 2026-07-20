@@ -114,46 +114,22 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
       </section>
 
       {/* Gallery */}
-      <section className="container-x pb-24">
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-6">
-          <div className="md:col-span-4 relative aspect-[16/10]">
-            <Image
-              src={p.gallery[0]}
-              alt=""
-              fill
-              className="rounded-2xl object-cover"
-              sizes="(max-width: 768px) 100vw, 66vw"
-            />
+      {p.gallery.length > 0 && (
+        <section className="container-x pb-24">
+          <div className="columns-1 gap-6 md:columns-2 lg:columns-3 [column-fill:_balance]">
+            {p.gallery.map((img, i) => (
+              <div key={i} className="mb-6 break-inside-avoid relative rounded-2xl overflow-hidden bg-muted/20">
+                <img
+                  src={img}
+                  alt={`${p.title} gallery image ${i + 1}`}
+                  className="w-full h-auto block"
+                  loading="lazy"
+                />
+              </div>
+            ))}
           </div>
-          <div className="md:col-span-2 relative aspect-[4/5] md:aspect-auto">
-            <Image
-              src={p.gallery[1]}
-              alt=""
-              fill
-              className="rounded-2xl object-cover"
-              sizes="(max-width: 768px) 100vw, 33vw"
-            />
-          </div>
-          <div className="md:col-span-2 relative aspect-[4/5] md:aspect-auto">
-            <Image
-              src={p.gallery[2]}
-              alt=""
-              fill
-              className="rounded-2xl object-cover"
-              sizes="(max-width: 768px) 100vw, 33vw"
-            />
-          </div>
-          <div className="md:col-span-4 relative aspect-[16/10]">
-            <Image
-              src={p.gallery[3]}
-              alt=""
-              fill
-              className="rounded-2xl object-cover"
-              sizes="(max-width: 768px) 100vw, 66vw"
-            />
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Process */}
       <section className="container-x pb-24">

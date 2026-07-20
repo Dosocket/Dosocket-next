@@ -2,15 +2,18 @@
 
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/ui/reveal";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight, Plus } from "lucide-react";
 import ExecutionFramework from "@/components/ExecutionFramework";
+import { AboutHero } from "@/components/sections/about-hero";
+import { useState } from "react";
 
 // Types
 interface TeamMember {
   name: string;
   role: string;
   img: string;
-  portfolioUrl: string;
+  portfolioUrl?: string;
+  linkedinUrl?: string;
 }
 
 interface Value {
@@ -37,141 +40,48 @@ const values: Value[] = [
   },
 ];
 
-// Team data with individual portfolio links
+// Team data with individual links
 const teamMembers: TeamMember[] = [
   {
     name: "Qasim",
     role: "CEO",
     img: "/Qasim.jpeg",
     portfolioUrl: "https://icuxali.framer.ai/",
+    linkedinUrl: "https://www.linkedin.com/in/icuxqasimali?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
   {
     name: "Fatima",
     role: "UI/UX Designer",
     img: "/Fatima-Rashid.jpeg",
-    portfolioUrl: "#", // Add Fatima's portfolio link here
+    portfolioUrl: "https://www.behance.net/fatimarashid23",
+    linkedinUrl: "https://www.linkedin.com/in/fatimarashi",
   },
   {
     name: "Minhaj",
     role: "Full Stack Developer",
     img: "/Minhaj.jpeg",
     portfolioUrl: "https://minhaj-psi.vercel.app/",
+    linkedinUrl: "https://www.linkedin.com/in/minhaj-arshad-8aa522372/",
   },
   {
     name: "Ayesha",
     role: "Sales Manager",
     img: "/Ayesha-Janjua.jpeg",
-    portfolioUrl: "#", // Add Ayesha's portfolio link here
+    linkedinUrl: "https://www.linkedin.com/in/ayesha-j-834008413?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
 ];
 
 export default function AboutPage() {
-  const handlePortfolioClick = (member: TeamMember) => {
-    // Open portfolio in new tab
-    if (member.portfolioUrl && member.portfolioUrl !== "#") {
-      window.open(member.portfolioUrl, "_blank");
-    }
+  const [activeMember, setActiveMember] = useState<string | null>(null);
+
+  const toggleMemberDetails = (name: string) => {
+    setActiveMember(activeMember === name ? null : name);
   };
 
   return (
     <div className="bg-black text-white overflow-clip">
       {/* ================= HERO ================= */}
-      <section className="bg-[#F5F5F5] text-black px-6 md:px-20 pt-24 md:pt-32 pb-24">
-        <div className="flex flex-col items-center text-center mb-12">
-          <div className="bg-black text-white text-[10px] font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
-            About Dosocket
-          </div>
-          <h1 className="text-3xl md:text-5xl font-medium tracking-tight mb-4 leading-tight text-black">
-            Why founders choose DOSOCKET
-          </h1>
-          <p className="text-gray-600 text-[15px] md:text-base leading-relaxed max-w-xl">
-            Senior-led product execution and AI-accelerated workflows that
-            <br className="hidden md:block" /> compress build cycles and amplify
-            output.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {/* Card 1 - Architecture */}
-          <div className="md:row-span-2 bg-white rounded-3xl p-6 flex flex-col justify-between border border-gray-200">
-            <div className="bg-[#F5F5F5] rounded-2xl aspect-4/5 w-full mb-6 overflow-hidden relative border border-gray-100">
-              <img
-                src="/Architecture.jpg"
-                alt="Architecture"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-              <p className="text-lg md:text-xl font-medium leading-[1.4] mb-6 text-black">
-                Built by senior experts to deliver scalable systems and
-                unmatched code quality.
-              </p>
-              <button className="bg-black text-white rounded-full px-5 py-2.5 flex items-center gap-2 text-sm font-semibold hover:bg-gray-800 transition">
-                Explore Our Work
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-
-          {/* Card 2 - Partnership */}
-          <div className="bg-white rounded-3xl overflow-hidden flex flex-col border border-gray-200">
-            <div className="h-40 md:h-45 w-full relative bg-[#F5F5F5] overflow-hidden">
-              <img
-                src="/Partnership.jpg"
-                alt="Partnership"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-6">
-              <p className="text-lg md:text-xl font-medium leading-[1.4] text-black">
-                Trusted by{" "}
-                <span className="text-gray-500">
-                  fast-growing
-                  <br className="hidden md:block" /> startups worldwide.
-                </span>
-              </p>
-            </div>
-          </div>
-
-          {/* Card 3 - Speed */}
-          <div className="bg-black rounded-3xl p-6 flex flex-row items-end justify-between text-white">
-            <div className="flex flex-col">
-              <h2 className="text-4xl md:text-5xl font-medium leading-none mb-2 text-[#D6FC00]">
-                2x
-              </h2>
-              <p className="text-gray-400 text-xs md:text-[13px] font-medium max-w-30">
-                Faster delivery with AI workflows.
-              </p>
-            </div>
-            <div className="w-20 h-25 md:w-25 md:h-30 rounded-xl relative ml-4 overflow-hidden bg-gray-900 flex-shrink-0">
-              <img
-                src="/Speed.jpg"
-                alt="Speed"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
-          {/* Card 4 - Product Interface */}
-          <div className="md:col-span-2 bg-white rounded-3xl flex flex-col md:flex-row overflow-hidden border border-gray-200">
-            <div className="p-6 flex-1 flex flex-col justify-end">
-              <p className="text-lg md:text-xl font-medium leading-[1.4] max-w-sm text-black">
-                Transforms your vision{" "}
-                <span className="text-gray-500">
-                  into a robust, market-ready reality.
-                </span>
-              </p>
-            </div>
-            <div className="h-40 md:h-auto md:w-[40%] relative bg-[#F5F5F5] overflow-hidden">
-              <img
-                src="/Product-Interface.jpg"
-                alt="Product Interface"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <AboutHero />
 
       {/* ================= PRINCIPLES ================= */}
       <section className="bg-black text-[#F5F5F5] px-6 md:px-16 py-32 relative overflow-hidden">
@@ -255,15 +165,45 @@ export default function AboutPage() {
                   <p className="text-white/80 text-xs mt-1">{member.role}</p>
                 </div>
 
-                {/* Portfolio button */}
+                {/* Plus button & details popup */}
                 <div className="absolute bottom-0 right-0 bg-[#F5F5F5] pt-2 pl-2 rounded-tl-[20px]">
                   <button
-                    onClick={() => handlePortfolioClick(member)}
-                    className="bg-white w-10 h-10 rounded-[14px] flex items-center justify-center hover:bg-black hover:text-white transition cursor-pointer text-black border border-gray-100 shadow-sm group/btn"
-                    aria-label={`View ${member.name}'s portfolio`}
+                    onClick={() => toggleMemberDetails(member.name)}
+                    className="bg-white w-10 h-10 rounded-[14px] flex items-center justify-center hover:bg-black hover:text-white transition cursor-pointer text-black border border-gray-100 shadow-sm relative z-10"
+                    aria-label={`View ${member.name}'s details`}
                   >
-                    <ExternalLink className="w-4 h-4 group-hover/btn:rotate-45 transition-transform" />
+                    <Plus className={`w-5 h-5 transition-transform duration-300 ${activeMember === member.name ? 'rotate-45' : ''}`} />
                   </button>
+                  
+                  {/* Mini Pop-up */}
+                  {activeMember === member.name && (
+                    <motion.div 
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      className="absolute bottom-12 right-0 bg-white border border-gray-200 shadow-lg rounded-xl p-3 min-w-[120px] flex flex-col gap-2 z-20"
+                    >
+                      {member.linkedinUrl && (
+                        <a 
+                          href={member.linkedinUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-sm text-gray-700 hover:text-black font-medium transition-colors"
+                        >
+                          LinkedIn
+                        </a>
+                      )}
+                      {member.portfolioUrl && (
+                        <a 
+                          href={member.portfolioUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-sm text-gray-700 hover:text-black font-medium transition-colors"
+                        >
+                          Portfolio
+                        </a>
+                      )}
+                    </motion.div>
+                  )}
                 </div>
               </div>
             ))}
