@@ -90,7 +90,7 @@ export default function Hero() {
         </div>
 
         {/* Supporting copy */}
-        <div className="mt-6 sm:mt-8 md:mt-10 max-w-3xl animate-fade-in">
+        <div className="mt-3 sm:mt-8 md:mt-6 max-w-3xl animate-fade-in">
           <p className="text-balance text-base sm:text-lg md:text-xl font-light leading-relaxed text-neutral-500 font-sans">
             We supercharge structural web capabilities across regional sectors by building digital architectures optimized for high performance.
           </p>
@@ -98,10 +98,10 @@ export default function Hero() {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 mb-12 sm:mb-16 animate-fade-in w-full sm:w-auto">
-          <button className="w-full sm:w-auto px-8 py-3 bg-black text-white rounded-lg font-medium hover:bg-black/90 transition-colors text-sm sm:text-base">
+          <button className="w-full sm:w-auto px-8 py-3 bg-black text-white rounded-full font-medium hover:bg-black/90 transition-colors text-sm sm:text-base">
             Explore Our Work
           </button>
-          <button className="w-full sm:w-auto px-8 py-3 bg-white text-black border border-neutral-300 rounded-lg font-medium hover:bg-neutral-50 transition-colors text-sm sm:text-base">
+          <button className="w-full sm:w-auto px-8 py-3 bg-white text-black border border-neutral-300 rounded-full font-medium hover:bg-neutral-50 transition-colors text-sm sm:text-base">
             Contact Us
           </button>
         </div>

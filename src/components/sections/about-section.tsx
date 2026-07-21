@@ -84,7 +84,7 @@ export function AboutCompany() {
               <p className="text-sm font-medium text-black tracking-wide">
                 About Our Company
               </p>
-              <h2 className="mt-3 max-w-lg text-3xl font-bold leading-[1.15] tracking-tight text-neutral-900 md:text-4xl">
+              <h2 className="mt-3 max-w-2xl text-3xl font-bold leading-[1.15] tracking-tight text-neutral-900 md:text-5xl">
                 Innovative Product Execution to Boost Your Business
               </h2>
             </div>

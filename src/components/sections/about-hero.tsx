@@ -84,7 +84,8 @@ export function AboutHero() {
 
   return (
     <div className="about-noise-grid text-zinc-900 relative overflow-x-hidden w-full selection:bg-zinc-950 selection:text-white pt-24 md:pt-32 pb-24">
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .about-noise-grid {
           background-color: #FFFFFF;
           background-image: 
@@ -263,7 +264,7 @@ export function AboutHero() {
           </article>
 
           {/* ── CARD 3: Faster Product Delivery — TEXT ONLY, no image/SVG ── */}
-          <article className="about-premium-card md:col-span-5 bg-black rounded-3xl p-8 sm:p-10 flex flex-col justify-between overflow-hidden relative group min-h-[320px] about-glow-lime border border-zinc-900">
+          <article className="about-premium-card md:col-span-5 bg-black rounded-3xl p-8 sm:p-10 flex flex-col justify-between overflow-hidden relative group min-h-80 about-glow-lime border border-zinc-900">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(198,255,0,0.12),transparent_55%)]"></div>
             <div className="absolute -bottom-10 -left-10 w-44 h-44 bg-zinc-950 rounded-full blur-3xl opacity-80"></div>
 
@@ -286,8 +287,8 @@ export function AboutHero() {
           </article>
 
           {/* ── CARD 4: From Idea to Launch (with Multi-Device SVG) ── */}
-          <article className="about-premium-card md:col-span-8 bg-white border border-zinc-100 rounded-3xl p-8 sm:p-10 flex flex-col justify-between overflow-hidden relative group min-h-[420px]">
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-zinc-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+          <article className="about-premium-card md:col-span-8 bg-white border border-zinc-100 rounded-3xl p-8 sm:p-10 flex flex-col justify-between overflow-hidden relative group min-h-105">
+            <div className="absolute inset-0 bg-linear-to-r from-transparent to-zinc-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center h-full">
               <div className="lg:col-span-5 flex flex-col justify-between h-full z-10">

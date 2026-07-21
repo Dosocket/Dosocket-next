@@ -10,38 +10,34 @@ import { Search, Paintbrush, Smartphone, Upload } from "lucide-react";
 const steps = [
   {
     id: 1,
-    title: "1 Research",
+    title: "Research",
     description:
       "We explored fitness challenges and user pain points to uncover what people truly need from a home workout app.",
     duration: "1 Week",
-    icon: Search,
     color: "green", // light green card
   },
   {
     id: 2,
-    title: "2 Visual Design",
+    title: "Visual Design",
     description:
       "We built a clean, energetic design with easy navigation, motivating visuals, and interactive features that keep workouts exciting.",
     duration: "2 Week",
-    icon: Paintbrush,
     color: "white", // white card
   },
   {
     id: 3,
-    title: "3 Prototype & Test",
+    title: "Prototype & Test",
     description:
       "We ran multiple test rounds to refine the experience, making sure the app feels smooth, secure, and enjoyable for every user.",
     duration: "1-2 Days",
-    icon: Smartphone,
     color: "white", // white card
   },
   {
     id: 4,
-    title: "4 Final Delivery",
+    title: "Final Delivery",
     description:
-      "We wrapped it all up with a polished presentation that demonstrated the app's value—showing how it empowers users to train anytime, anywhere.",
+      "We wrapped it all up with a polished presentation that demonstrated the app's value showing how it empowers users to train anytime, anywhere.",
     duration: "1-2 Days",
-    icon: Upload,
     color: "green", // light green card
   },
 ];
@@ -52,7 +48,6 @@ const steps = [
 function StepCard({ step, index }: { step: (typeof steps)[0]; index: number }) {
   const isRight = index % 2 !== 0;
   const isGreen = step.color === "green";
-  const Icon = step.icon;
 
   return (
     <motion.div
@@ -60,15 +55,13 @@ function StepCard({ step, index }: { step: (typeof steps)[0]; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-      className={`relative z-10 flex w-full md:w-[48%] flex-row items-stretch gap-0 rounded-2xl p-2 ${
-        isGreen ? "bg-[#f2fbe8]" : "bg-[#f9f9f9]"
-      } shadow-sm border ${isGreen ? "border-[#e0f1cc]" : "border-neutral-100"}`}
+      className={`relative z-10 flex w-full md:w-[48%] flex-row items-stretch gap-0 rounded-2xl p-2 ${isGreen ? "bg-[#f2fbe8]" : "bg-[#f9f9f9]"
+        } shadow-sm border ${isGreen ? "border-[#e0f1cc]" : "border-neutral-100"}`}
     >
       {/* Duration Badge */}
       <div
-        className={`flex min-w-[40px] flex-col items-center justify-center rounded-xl px-2 py-4 text-white ${
-          isGreen ? "bg-[#114b35]" : "bg-[#1a1a1a]"
-        }`}
+        className={`flex min-w-10 flex-col items-center justify-center rounded-xl px-2 py-4 text-white ${isGreen ? "bg-[#114b35]" : "bg-[#1a1a1a]"
+          }`}
       >
         <span
           className="text-xs font-medium tracking-wider"
@@ -81,10 +74,7 @@ function StepCard({ step, index }: { step: (typeof steps)[0]; index: number }) {
       {/* Card Content */}
       <div className="flex-1 p-5 sm:p-6">
         <div className="flex items-center gap-3">
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-transparent">
-            <Icon className="h-5 w-5 text-neutral-700" strokeWidth={1.5} />
-          </div>
-          <h3 className="text-xl font-medium text-neutral-900">{step.title}</h3>
+          <h3 className="text-2xl font-medium text-neutral-900">{step.title}</h3>
         </div>
         <p className="mt-4 text-[15px] leading-relaxed text-neutral-600">
           {step.description}
@@ -213,12 +203,11 @@ export function ProjectDetails() {
             return (
               <div
                 key={step.id}
-                className={`relative flex w-full ${
-                  isRight ? "justify-end" : "justify-start"
-                }`}
+                className={`relative flex w-full ${isRight ? "justify-end" : "justify-start"
+                  }`}
               >
                 <StepCard step={step} index={i} />
-                
+
                 {/* Connector to the next step */}
                 {!isLast && (
                   <>

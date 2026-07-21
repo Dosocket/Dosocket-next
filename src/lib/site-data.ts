@@ -57,14 +57,17 @@ export const projects: Project[] = [
     year: "2026",
     image: "/projects/Alga/Alga%20-%20Website.webp",
     cover: "/projects/Alga/Alga%20-%20Website.webp",
-    summary: "A modern, engaging digital storefront for a forward-thinking brand.",
+    summary:
+      "A modern, engaging digital storefront for a forward-thinking brand.",
     outcome: "+140% faster onboarding",
-    challenge: "Alga needed a sleek, highly performant web presence that clearly communicates their value proposition and converts visitors quickly.",
-    solution: "We designed and developed a lightning-fast responsive website utilizing seamless animations and optimized user journeys to maximize engagement.",
+    challenge:
+      "Alga needed a sleek, highly performant web presence that clearly communicates their value proposition and converts visitors quickly.",
+    solution:
+      "We designed and developed a lightning-fast responsive website utilizing seamless animations and optimized user journeys to maximize engagement.",
     results: [
       { label: "User Retention", value: "+45%" },
       { label: "Conversion Rate", value: "3.2%" },
-      { label: "Time to Launch", value: "4 wks" }
+      { label: "Time to Launch", value: "4 wks" },
     ],
     gallery: [
       "/projects/Alga/1764481856115-mockup-macbook-pro.webp",
@@ -77,15 +80,27 @@ export const projects: Project[] = [
       "/projects/Alga/Laptop.webp",
       "/projects/Alga/MObile.webp",
       "/projects/Alga/Mobile%20-%20Screen.webp",
-      "/projects/Alga/Single%20sfcreen%20mobile.webp"
+      "/projects/Alga/Single%20sfcreen%20mobile.webp",
     ],
     process: [
-      { step: "Discovery", text: "Analyzed target demographics and competitive landscape." },
-      { step: "Design", text: "Created wireframes and high-fidelity mockups focusing on conversion." },
-      { step: "Development", text: "Built the frontend using modern web technologies for maximum performance." },
-      { step: "Launch", text: "Conducted rigorous QA testing and deployed the site." }
+      {
+        step: "Discovery",
+        text: "Analyzed target demographics and competitive landscape.",
+      },
+      {
+        step: "Design",
+        text: "Created wireframes and high-fidelity mockups focusing on conversion.",
+      },
+      {
+        step: "Development",
+        text: "Built the frontend using modern web technologies for maximum performance.",
+      },
+      {
+        step: "Launch",
+        text: "Conducted rigorous QA testing and deployed the site.",
+      },
     ],
-    services: ["Web Design", "UI/UX", "Frontend Development"]
+    services: ["Web Design", "UI/UX", "Frontend Development"],
   },
   {
     slug: "cryptovault",
@@ -95,14 +110,17 @@ export const projects: Project[] = [
     year: "2026",
     image: "/projects/CryptoVault%20-%20%20Website/Crypto%20Website.webp",
     cover: "/projects/CryptoVault%20-%20%20Website/Crypto%20Website.webp",
-    summary: "A secure and intuitive platform for modern digital asset management.",
+    summary:
+      "A secure and intuitive platform for modern digital asset management.",
     outcome: "$2M+ processed in first month",
-    challenge: "Building trust in the crypto space requires an interface that is both highly secure and incredibly easy to use for newcomers.",
-    solution: "A complete overhaul of the user dashboard, focusing on transparent data visualization and a streamlined onboarding process.",
+    challenge:
+      "Building trust in the crypto space requires an interface that is both highly secure and incredibly easy to use for newcomers.",
+    solution:
+      "A complete overhaul of the user dashboard, focusing on transparent data visualization and a streamlined onboarding process.",
     results: [
       { label: "Processed Volume", value: "$2M+" },
       { label: "User Growth", value: "300%" },
-      { label: "Support Tickets", value: "-60%" }
+      { label: "Support Tickets", value: "-60%" },
     ],
     gallery: [
       "/projects/CryptoVault%20-%20%20Website/1st%20-%20MockUP.webp",
@@ -113,15 +131,27 @@ export const projects: Project[] = [
       "/projects/CryptoVault%20-%20%20Website/create_a_desktop_202603291357.webp",
       "/projects/CryptoVault%20-%20%20Website/create_a_mock_202603291325.webp",
       "/projects/CryptoVault%20-%20%20Website/create_a_mock_202603291332.webp",
-      "/projects/CryptoVault%20-%20%20Website/i_want_mockup_202603291348.webp"
+      "/projects/CryptoVault%20-%20%20Website/i_want_mockup_202603291348.webp",
     ],
     process: [
-      { step: "Research", text: "Evaluated security best practices and user pain points in crypto exchanges." },
-      { step: "UX Overhaul", text: "Redesigned the portfolio dashboard for clarity and ease of use." },
-      { step: "Implementation", text: "Integrated real-time market data securely." },
-      { step: "Optimization", text: "A/B tested CTA placements to maximize user registrations." }
+      {
+        step: "Research",
+        text: "Evaluated security best practices and user pain points in crypto exchanges.",
+      },
+      {
+        step: "UX Overhaul",
+        text: "Redesigned the portfolio dashboard for clarity and ease of use.",
+      },
+      {
+        step: "Implementation",
+        text: "Integrated real-time market data securely.",
+      },
+      {
+        step: "Optimization",
+        text: "A/B tested CTA placements to maximize user registrations.",
+      },
     ],
-    services: ["Web App", "Security UI", "Data Visualization"]
+    services: ["Web App", "Security UI", "Data Visualization"],
   },
   {
     slug: "dr-lush",
@@ -131,28 +161,43 @@ export const projects: Project[] = [
     year: "2026",
     image: "/projects/DR%20Lush%20-%20Website/Lushora%20-%20Website.webp",
     cover: "/projects/DR%20Lush%20-%20Website/Lushora%20-%20Website.webp",
-    summary: "An ultra-premium eCommerce experience for a luxury wellness brand.",
+    summary:
+      "An ultra-premium eCommerce experience for a luxury wellness brand.",
     outcome: "+210% increase in online sales",
-    challenge: "DR Lush needed their digital presence to match the extreme premium quality of their physical aesthetic products.",
-    solution: "A highly visual, cinematic website experience with ultra-realistic product showcases and an elegant checkout flow.",
+    challenge:
+      "DR Lush needed their digital presence to match the extreme premium quality of their physical aesthetic products.",
+    solution:
+      "A highly visual, cinematic website experience with ultra-realistic product showcases and an elegant checkout flow.",
     results: [
       { label: "Online Sales", value: "+210%" },
       { label: "Average Order Value", value: "+35%" },
-      { label: "Bounce Rate", value: "-25%" }
+      { label: "Bounce Rate", value: "-25%" },
     ],
     gallery: [
       "/projects/DR%20Lush%20-%20Website/A_ultra-realistic_premium_product_mockup_202606102055.webp",
       "/projects/DR%20Lush%20-%20Website/A_ultra-realistic_premium_product_mockup_202606102056.webp",
       "/projects/DR%20Lush%20-%20Website/Lushora%20-%20Website.webp",
-      "/projects/DR%20Lush%20-%20Website/Mock%20Up.webp"
+      "/projects/DR%20Lush%20-%20Website/Mock%20Up.webp",
     ],
     process: [
-      { step: "Brand Audit", text: "Aligned digital assets with physical luxury packaging." },
-      { step: "Visual Design", text: "Created cinematic product showcases with subtle interactions." },
-      { step: "eCommerce Build", text: "Developed a custom, seamless checkout experience." },
-      { step: "Launch", text: "Supported the rollout with high-end social media assets." }
+      {
+        step: "Brand Audit",
+        text: "Aligned digital assets with physical luxury packaging.",
+      },
+      {
+        step: "Visual Design",
+        text: "Created cinematic product showcases with subtle interactions.",
+      },
+      {
+        step: "eCommerce Build",
+        text: "Developed a custom, seamless checkout experience.",
+      },
+      {
+        step: "Launch",
+        text: "Supported the rollout with high-end social media assets.",
+      },
     ],
-    services: ["eCommerce", "Brand Strategy", "Visual Design"]
+    services: ["eCommerce", "Brand Strategy", "Visual Design"],
   },
   {
     slug: "fintrack",
@@ -162,14 +207,17 @@ export const projects: Project[] = [
     year: "2026",
     image: "/projects/FinTrack/Expense%20Dashboard.webp",
     cover: "/projects/FinTrack/Expense%20Dashboard.webp",
-    summary: "A comprehensive expense tracking dashboard that simplifies personal finance.",
+    summary:
+      "A comprehensive expense tracking dashboard that simplifies personal finance.",
     outcome: "1M+ active monthly users",
-    challenge: "Existing expense trackers were either too complex or lacked the necessary features for power users.",
-    solution: "We designed a balanced dashboard that offers quick insights at a glance, with the ability to drill down into detailed analytics.",
+    challenge:
+      "Existing expense trackers were either too complex or lacked the necessary features for power users.",
+    solution:
+      "We designed a balanced dashboard that offers quick insights at a glance, with the ability to drill down into detailed analytics.",
     results: [
       { label: "Active Users", value: "1M+" },
       { label: "Session Time", value: "+40%" },
-      { label: "5-Star Ratings", value: "15k+" }
+      { label: "5-Star Ratings", value: "15k+" },
     ],
     gallery: [
       "/projects/FinTrack/A_cinematic_product_202603292229.webp",
@@ -177,15 +225,27 @@ export const projects: Project[] = [
       "/projects/FinTrack/Expense%20Dashboard.webp",
       "/projects/FinTrack/Image_1_%E2%80%94_202603292222.webp",
       "/projects/FinTrack/Main%20Dashbaord.webp",
-      "/projects/FinTrack/make_a_simple_202603292338.webp"
+      "/projects/FinTrack/make_a_simple_202603292338.webp",
     ],
     process: [
-      { step: "User Research", text: "Surveyed 500+ users to understand their financial tracking habits." },
-      { step: "Prototyping", text: "Iterated on dashboard layouts to find the perfect balance of information density." },
-      { step: "Engineering", text: "Built a reactive frontend that handles thousands of transactions instantly." },
-      { step: "Beta Testing", text: "Ran a closed beta to refine features before public launch." }
+      {
+        step: "User Research",
+        text: "Surveyed 500+ users to understand their financial tracking habits.",
+      },
+      {
+        step: "Prototyping",
+        text: "Iterated on dashboard layouts to find the perfect balance of information density.",
+      },
+      {
+        step: "Engineering",
+        text: "Built a reactive frontend that handles thousands of transactions instantly.",
+      },
+      {
+        step: "Beta Testing",
+        text: "Ran a closed beta to refine features before public launch.",
+      },
     ],
-    services: ["Product Design", "Frontend Engineering", "User Research"]
+    services: ["Product Design", "Frontend Engineering", "User Research"],
   },
   {
     slug: "ironclad-fitness",
@@ -195,14 +255,17 @@ export const projects: Project[] = [
     year: "2026",
     image: "/projects/Ironclad%20Fitness/Ironclad%20Fitness.webp",
     cover: "/projects/Ironclad%20Fitness/Ironclad%20Fitness.webp",
-    summary: "A robust digital platform and growth strategy for a premier fitness chain.",
+    summary:
+      "A robust digital platform and growth strategy for a premier fitness chain.",
     outcome: "3x increase in membership signups",
-    challenge: "Ironclad Fitness needed to translate their hardcore, community-driven gym atmosphere into an online platform that drives foot traffic.",
-    solution: "We built a high-energy, visually striking website paired with an aggressive social media campaign strategy.",
+    challenge:
+      "Ironclad Fitness needed to translate their hardcore, community-driven gym atmosphere into an online platform that drives foot traffic.",
+    solution:
+      "We built a high-energy, visually striking website paired with an aggressive social media campaign strategy.",
     results: [
       { label: "New Memberships", value: "3x" },
       { label: "Social Engagement", value: "+180%" },
-      { label: "App Downloads", value: "50k+" }
+      { label: "App Downloads", value: "50k+" },
     ],
     gallery: [
       "/projects/Ironclad%20Fitness/Ironclad%20Fitness%20-%202.webp",
@@ -215,15 +278,27 @@ export const projects: Project[] = [
       "/projects/Ironclad%20Fitness/Mobile%202.webp",
       "/projects/Ironclad%20Fitness/Mockup%20-%20Ironslad%20Fitness%20-%20Instagram.webp",
       "/projects/Ironclad%20Fitness/Mockup%20-%20Ironslad%20Fitness%20-%20Main.webp",
-      "/projects/Ironclad%20Fitness/Tablet%201.webp"
+      "/projects/Ironclad%20Fitness/Tablet%201.webp",
     ],
     process: [
-      { step: "Strategy", text: "Developed a digital strategy centered around community and results." },
-      { step: "Platform Build", text: "Created a responsive site for class bookings and membership management." },
-      { step: "Content Creation", text: "Produced high-impact photography and video assets." },
-      { step: "Growth Campaign", text: "Launched targeted ads across social platforms." }
+      {
+        step: "Strategy",
+        text: "Developed a digital strategy centered around community and results.",
+      },
+      {
+        step: "Platform Build",
+        text: "Created a responsive site for class bookings and membership management.",
+      },
+      {
+        step: "Content Creation",
+        text: "Produced high-impact photography and video assets.",
+      },
+      {
+        step: "Growth Campaign",
+        text: "Launched targeted ads across social platforms.",
+      },
     ],
-    services: ["Digital Strategy", "Web Development", "Growth Marketing"]
+    services: ["Digital Strategy", "Web Development", "Growth Marketing"],
   },
   {
     slug: "real-estate-nod",
@@ -233,14 +308,17 @@ export const projects: Project[] = [
     year: "2026",
     image: "/projects/Real%20Estate%20-%20NOD/NOD%20-%20Real%20Estate.webp",
     cover: "/projects/Real%20Estate%20-%20NOD/NOD%20-%20Real%20Estate.webp",
-    summary: "A modern, immersive property discovery platform for luxury real estate.",
+    summary:
+      "A modern, immersive property discovery platform for luxury real estate.",
     outcome: "$150M+ in properties sold",
-    challenge: "Selling high-end real estate requires conveying the feeling of a space before the buyer even steps foot inside.",
-    solution: "We designed a highly visual, photography-first platform with virtual tours and seamless agent communication tools.",
+    challenge:
+      "Selling high-end real estate requires conveying the feeling of a space before the buyer even steps foot inside.",
+    solution:
+      "We designed a highly visual, photography-first platform with virtual tours and seamless agent communication tools.",
     results: [
       { label: "Properties Sold", value: "$150M+" },
       { label: "Lead Quality", value: "+85%" },
-      { label: "Time on Site", value: "4m 20s" }
+      { label: "Time on Site", value: "4m 20s" },
     ],
     gallery: [
       "/projects/Real%20Estate%20-%20NOD/Desktop.webp",
@@ -256,16 +334,28 @@ export const projects: Project[] = [
       "/projects/Real%20Estate%20-%20NOD/mockuuups-clean-desk-with-dell-display-mockup.webp",
       "/projects/Real%20Estate%20-%20NOD/mockuuups-free-macbook-pro-mockup-on-stone-pedestal.webp",
       "/projects/Real%20Estate%20-%20NOD/mockuuups-iphone-16-mockup-in-a-womans-hand-with-concrete-backdrop.webp",
-      "/projects/Real%20Estate%20-%20NOD/sdgakjsd.webp"
+      "/projects/Real%20Estate%20-%20NOD/sdgakjsd.webp",
     ],
     process: [
-      { step: "Architecture", text: "Structured property data for advanced filtering and search." },
-      { step: "UX Design", text: "Created an immersive, full-screen viewing experience for property galleries." },
-      { step: "Development", text: "Integrated mapping APIs and CRM lead routing." },
-      { step: "Launch", text: "Deployed with a soft launch to their top-tier clientele." }
+      {
+        step: "Architecture",
+        text: "Structured property data for advanced filtering and search.",
+      },
+      {
+        step: "UX Design",
+        text: "Created an immersive, full-screen viewing experience for property galleries.",
+      },
+      {
+        step: "Development",
+        text: "Integrated mapping APIs and CRM lead routing.",
+      },
+      {
+        step: "Launch",
+        text: "Deployed with a soft launch to their top-tier clientele.",
+      },
     ],
-    services: ["UX/UI Design", "Platform Architecture", "API Integration"]
-  }
+    services: ["UX/UI Design", "Platform Architecture", "API Integration"],
+  },
 ];
 
 export type Service = {
@@ -490,16 +580,37 @@ export const testimonials = [
   },
   {
     quote:
-      "They didn't just redesign the app — they rebuilt how we ship. Our cycle time is half what it was.",
+      "They didn't just redesign the app—they rebuilt how we ship. Our engineering cycle time is half what it was before.",
     name: "Jordan Wei",
     role: "VP Product, Smartpay",
     image: team[0].image,
   },
   {
     quote:
-      "The embedded pod was on day one what an in-house hire would be at month six. We renewed twice.",
+      "The embedded pod was on day one what an in-house hire would be at month six. We renewed our contract twice already.",
     name: "Sasha Lin",
     role: "Head of Product, Quantum Labs",
     image: team[2].image,
+  },
+  {
+    quote:
+      "Their AI workflow automation cut our customer onboarding ops by 70%. We scaled from 1k to 10k users without expanding our support team.",
+    name: "Marcus Vance",
+    role: "Founder & CEO, FlowState AI",
+    image: team[3]?.image || team[0].image,
+  },
+  {
+    quote:
+      "Finding a team that balances high-end UI/UX with bulletproof, production-ready code is rare. Dosocket nailed both on the first iteration.",
+    name: "Elena Rostova",
+    role: "Director of UX, Horizon Health",
+    image: team[4]?.image || team[1].image,
+  },
+  {
+    quote:
+      "Our web app conversion rate jumped 38% within two weeks of launch. The ROI on this project paid for itself in under a month.",
+    name: "David Miller",
+    role: "Head of Growth, Arc Light Studios",
+    image: team[5]?.image || team[2].image,
   },
 ];

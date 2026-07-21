@@ -10,14 +10,14 @@ export function Testimonials() {
     typeof testimonials !== "undefined" && testimonials.length > 0
       ? testimonials
       : [
-          {
-            name: "Alex Rivers",
-            role: "Lead Dev",
-            quote:
-              "Built exactly what we needed with zero friction. Highly adaptable architectures.",
-            image: "https://placehold.net/100",
-          },
-        ];
+        {
+          name: "Alex Rivers",
+          role: "Lead Dev",
+          quote:
+            "Built exactly what we needed with zero friction. Highly adaptable architectures.",
+          image: "https://placehold.net/100",
+        },
+      ];
 
   const t = data[i] || data[0];
 
@@ -27,7 +27,15 @@ export function Testimonials() {
       setI((prev) => (prev + 1) % data.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [data.length]);
+  }, [data.length, i]);
+
+  const handlePrev = () => {
+    setI((prev) => (prev === 0 ? data.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setI((prev) => (prev + 1) % data.length);
+  };
 
   return (
     <section className="px-8 py-24 md:px-16 bg-background">
@@ -36,7 +44,7 @@ export function Testimonials() {
       </span>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-        <div className="group flex min-h-[300px] flex-col justify-between rounded-2xl border border-black/10 bg-white p-8 md:col-span-2">
+        <div className="group flex min-h-75 flex-col justify-between rounded-2xl border border-black/10 bg-white p-8 md:col-span-2">
           <span className="text-6xl font-serif leading-none text-black/20">“</span>
 
           <p className="my-8 text-2xl font-medium tracking-tight text-black md:text-3xl">
@@ -55,8 +63,23 @@ export function Testimonials() {
                 <div className="text-sm text-black/60">{t.role}</div>
               </div>
             </div>
-            <div className="text-sm font-bold text-black/40">
-              0{i + 1} / 0{data.length}
+
+            {/* Navigation Controls (Arrows Only) */}
+            <div className="flex items-center gap-2">
+              <button
+                onClick={handlePrev}
+                aria-label="Previous testimonial"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-black/10 text-black hover:bg-black/5 active:scale-95 transition-all text-lg font-medium"
+              >
+                ‹
+              </button>
+              <button
+                onClick={handleNext}
+                aria-label="Next testimonial"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-black/10 text-black hover:bg-black/5 active:scale-95 transition-all text-lg font-medium"
+              >
+                ›
+              </button>
             </div>
           </div>
         </div>
