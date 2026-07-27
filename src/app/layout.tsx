@@ -4,7 +4,6 @@ import "./globals.css";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Toaster } from "@/components/ui/sonner";
-import { CustomCursor } from "@/components/ui/custom-cursor";
 import { SmoothScroll } from "@/components/layout/smooth-scroll";
 
 export const metadata: Metadata = {
@@ -25,7 +24,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
       <body className="min-h-screen font-sans antialiased bg-background text-foreground" suppressHydrationWarning>
-        <CustomCursor />
         <SmoothScroll>
           {/* SLIDING PANEL — the page content. Sits ABOVE the footer (z-10) with a
               solid background so it fully hides the footer until scrolled past.

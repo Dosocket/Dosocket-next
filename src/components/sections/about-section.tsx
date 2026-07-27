@@ -122,7 +122,7 @@ export function AboutCompany() {
             className="relative flex min-h-80 items-center justify-center overflow-hidden rounded-2xl bg-neutral-200 md:row-span-2 md:min-h-0"
           >
             <img
-              src="/AboutOurCompany.jpg"
+              src="/AboutOurCompany.png"
               alt="Team Photo"
               className="absolute inset-0 w-full h-full object-cover"
             />
