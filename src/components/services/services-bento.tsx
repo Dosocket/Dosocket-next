@@ -25,7 +25,7 @@ import { cn } from "@/lib/utils";
 
 export function ServicesBento() {
   return (
-    <section className="relative bg-background py-24 md:py-32">
+    <section className="relative bg-background">
       <div className="container-x">
         {/* Minimal, frameless section label (no bounding box). */}
         <div className="mb-14 flex items-baseline gap-3 md:mb-20">
@@ -105,7 +105,11 @@ function ServiceItem({
             // colour + opacity-80 + scale-100 on hover. 700ms ease-out is the damping.
             // (opacity-40 reads as a faded/dormant image on the light canvas — bump
             //  the base opacity here if your imagery needs to sit stronger.)
-            className="object-cover opacity-40 grayscale scale-110 transition-[transform,filter,opacity] duration-700 ease-out group-hover:scale-100 group-hover:opacity-80 group-hover:grayscale-0"
+            // Touch devices have no hover, so the resting (faded/grey) state would
+            // otherwise be permanent. `pointer-coarse:` (finger = coarse pointer)
+            // forces the revealed look by default on touch, while desktop keeps
+            // the hover bloom.
+            className="object-cover opacity-40 grayscale scale-110 transition-[transform,filter,opacity] duration-700 ease-out group-hover:scale-100 group-hover:opacity-80 group-hover:grayscale-0 pointer-coarse:opacity-100 pointer-coarse:grayscale-0 pointer-coarse:scale-100"
           />
         </div>
       </div>

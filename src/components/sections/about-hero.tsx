@@ -1,6 +1,13 @@
 "use client";
 
 import React, { useEffect } from "react";
+import Image from "next/image";
+
+import seniorProductExpert from "../../../public/SeniorProductExpert.png";
+import trustedByStartups from "../../../public/TrustedbyFastGrowingStartups.png";
+import fromIdeaToLaunch from "../../../public/FromIDeatolaunch.png";
+import aiIntegratedWorkflow from "../../../public/AIIntegratedWorkflow.png";
+import builtForScale from "../../../public/BuiltforScale.png";
 
 export function AboutHero() {
   useEffect(() => {
@@ -140,7 +147,14 @@ export function AboutHero() {
 
             {/* Img */}
             <div className="flex-1 relative w-full min-h-[200px] mt-6 mb-4 rounded-2xl overflow-hidden">
-              <img className="absolute inset-0 w-full h-full object-cover" src="SeniorProductExpert.png" alt="SP-Img" />
+              <Image
+                className="object-cover"
+                src={seniorProductExpert}
+                alt="Senior product experts building scalable systems"
+                fill
+                sizes="(max-width: 768px) 100vw, 60vw"
+                placeholder="blur"
+              />
             </div>
 
 
@@ -171,7 +185,13 @@ export function AboutHero() {
 
             {/* Crystal Shield SVG */}
             <div className="relative w-full mt-6 overflow-hidden rounded-2xl border border-zinc-100 bg-zinc-50 flex items-center justify-center">
-              <img className="w-full h-auto object-contain" src="\TrustedbyFastGrowingStartups.png" alt="TFG-IMG" />
+              <Image
+                className="w-full h-auto object-contain"
+                src={trustedByStartups}
+                alt="Trusted by fast-growing startups"
+                sizes="(max-width: 768px) 100vw, 40vw"
+                placeholder="blur"
+              />
             </div>
           </article>
 
@@ -223,7 +243,14 @@ export function AboutHero() {
 
               {/* img */}
               <div className="lg:col-span-7 flex-1 relative w-full h-full min-h-[250px] overflow-hidden rounded-2xl border border-zinc-100 bg-zinc-50 flex items-center justify-center mt-6 lg:mt-0">
-                <img className="absolute inset-0 w-full h-full object-cover" src="\FromIDeatolaunch.png" alt="FIL-IMG" />
+                <Image
+                  className="object-cover"
+                  src={fromIdeaToLaunch}
+                  alt="From idea to launch product experiences"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  placeholder="blur"
+                />
               </div>
             </div>
           </article>
@@ -247,7 +274,13 @@ export function AboutHero() {
 
             {/* AI Node Map SVG */}
             <div className="relative w-full mt-6 overflow-hidden rounded-2xl border border-zinc-100 bg-zinc-50 flex items-center justify-center">
-              <img className="w-full h-auto object-contain" src="\AIIntegratedWorkflow.png" alt="AI-IMG" />
+              <Image
+                className="w-full h-auto object-contain"
+                src={aiIntegratedWorkflow}
+                alt="AI integrated workflow pipeline"
+                sizes="(max-width: 768px) 100vw, 33vw"
+                placeholder="blur"
+              />
             </div>
           </article>
 
@@ -271,7 +304,13 @@ export function AboutHero() {
 
               {/* IMG */}
               <div className="md:col-span-6 relative w-full h-auto overflow-hidden rounded-2xl border border-zinc-100 bg-zinc-50 flex items-center justify-center mt-6 md:mt-0">
-                <img className="w-full h-auto object-contain" src="\BuiltforScale.png" alt="BFS-IMG" />
+                <Image
+                  className="w-full h-auto object-contain"
+                  src={builtForScale}
+                  alt="Infrastructure built for scale"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  placeholder="blur"
+                />
               </div>
             </div>
           </article>

@@ -49,7 +49,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
       <section className="container-x pt-10 pb-20">
         <Reveal>
           <div
-            className="font-display font-bold uppercase tracking-[0.05em] text-foreground leading-[0.9]"
+            className="font-display font-bold uppercase tracking-wider text-foreground leading-[0.9]"
             style={{ fontSize: "clamp(3.5rem, 14vw, 14rem)" }}
           >
             {s.title.split("").join(" ")}
@@ -70,7 +70,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
             <ul className="grid grid-cols-1 gap-3 md:grid-cols-2">
               {s.inclusions.map((inc) => (
                 <li key={inc} className="flex items-start gap-3 rounded-xl border bg-card p-4 text-sm">
-                  <Check className="mt-0.5 size-4 shrink-0 text-lime" />
+                  <Check className="mt-0.5 size-4 shrink-0 text-black" />
                   {inc}
                 </li>
               ))}
@@ -125,7 +125,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             {relatedWorks.map((p) => (
               <Link key={p.slug} href={`/works/${p.slug}`} className="group block">
-                <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-muted relative">
+                <div className="aspect-4/3 overflow-hidden rounded-2xl bg-muted relative">
                   <Image
                     src={p.image}
                     alt=""
@@ -149,7 +149,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
             <Link
               key={r.slug}
               href={`/services/${r.slug}`}
-              className="group flex items-center justify-between rounded-2xl border bg-card p-8 transition-colors hover:border-lime"
+              className="group flex items-center justify-between rounded-2xl border bg-card p-8 transition-colors hover:border-black"
             >
               <div>
                 <div className="text-lg font-semibold">{r.title}</div>

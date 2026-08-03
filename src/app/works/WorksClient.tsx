@@ -80,8 +80,8 @@ export default function WorksClient({ initialProjects }: { initialProjects: Proj
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.05]"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-background/85 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                  <div className="absolute inset-x-4 bottom-4 translate-y-2 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+                  <div className="absolute inset-0 bg-linear-to-t from-background/85 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100 pointer-coarse:opacity-100" />
+                  <div className="absolute inset-x-4 bottom-4 translate-y-2 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100 pointer-coarse:translate-y-0 pointer-coarse:opacity-100">
                     <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
                       {p.client}
                     </div>

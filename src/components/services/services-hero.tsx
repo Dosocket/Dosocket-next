@@ -197,6 +197,9 @@ function HeroCard({
           fill
           sizes="(max-width: 768px) 58vw, 420px"
           className="object-cover"
+          // First tile is the initial hero (LCP) — load it eagerly with a preload
+          // hint instead of lazily. Later tiles reveal on scroll, so they stay lazy.
+          priority={index === 0}
         />
       </div>
     </motion.div>

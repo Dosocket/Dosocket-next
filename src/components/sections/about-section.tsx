@@ -14,9 +14,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Reveal } from "@/components/ui/reveal";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import aboutOurCompany from "../../../public/AboutOurCompany.png";
 
 /* ─────────────────────────────────────────
    Stats Data
@@ -121,10 +123,13 @@ export function AboutCompany() {
             transition={{ duration: 0.6 }}
             className="relative flex min-h-80 items-center justify-center overflow-hidden rounded-2xl bg-neutral-200 md:row-span-2 md:min-h-0"
           >
-            <img
-              src="/AboutOurCompany.png"
+            <Image
+              src={aboutOurCompany}
               alt="Team Photo"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="object-cover"
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              placeholder="blur"
             />
           </motion.div>
 
