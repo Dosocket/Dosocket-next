@@ -50,17 +50,11 @@ export function ServicesIntro() {
       <div className="container-x">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(120px,180px)_1fr] lg:gap-16">
           {/* ---------- LEFT: technical bracketed label ---------- */}
+
           <div className="lg:pt-4">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-[0.3em] text-muted-foreground"
-            >
-              <span className="inline-block size-2 rounded-full bg-[#E8FF00] ring-1 ring-black/10" />
-              [ Service ]
-            </motion.span>
+            <span className="inline-flex rounded-full border border-border bg-card px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-muted-foreground">
+              / Services
+            </span>
           </div>
 
           {/* ---------- RIGHT: massive word-by-word statement ---------- */}

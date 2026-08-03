@@ -205,42 +205,82 @@ export default function OurProcessScroll() {
   const progress = useSpring(scrollYProgress, CONFIG.spring);
 
   return (
-    <section
-      ref={trackRef}
-      className="relative w-full bg-background"
-      style={{ height: CONFIG.scrollTrackHeight }}
-    >
-      <div className="sticky top-0 h-screen w-full overflow-hidden bg-background">
-        {/* Header badge */}
-        <div className="absolute inset-x-0 top-10 z-30 flex justify-center sm:top-14">
-          <span className="text-xs tracking-widest text-neutral-400">
-            [ OUR PROCESS ]
-          </span>
+    <>
+      {/* Mobile dedicated UI version */}
+      <section className="block w-full bg-background py-24 md:hidden">
+        <div className="container-x">
+          <div className="mb-10 text-center">
+            <span className="font-mono text-xs tracking-widest text-muted-foreground">
+              [ OUR PROCESS ]
+            </span>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            {CONFIG.words.map((word, i) => (
+              <motion.div
+                key={word}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5 }}
+                className="relative overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-sm"
+              >
+                <div className="relative z-10 flex flex-col items-start gap-4">
+                  <span className="rounded bg-[#E8FF00] px-2.5 py-1 font-mono text-xs font-bold tracking-widest text-black">
+                    STEP {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="text-4xl font-extrabold uppercase tracking-tighter text-foreground">
+                    {word}
+                  </h3>
+                </div>
+                {/* Huge faded number in the background corner */}
+                <span className="pointer-events-none absolute -bottom-6 -right-2 z-0 text-[8rem] font-black leading-none text-muted-foreground/10 select-none">
+                  {i + 1}
+                </span>
+              </motion.div>
+            ))}
+          </div>
         </div>
+      </section>
 
-        {/* Word wheel */}
-        <div className="relative h-full w-full">
-          {CONFIG.words.map((word, i) => (
-            <ProcessWord
-              key={word}
-              word={word}
-              index={i}
-              total={CONFIG.words.length}
-              progress={progress}
-            />
-          ))}
+      {/* Desktop animated version */}
+      <section
+        ref={trackRef}
+        className="relative hidden w-full bg-background md:block"
+        style={{ height: CONFIG.scrollTrackHeight }}
+      >
+        <div className="sticky top-0 h-screen w-full overflow-hidden bg-background">
+          {/* Header badge */}
+          <div className="absolute inset-x-0 top-10 z-30 flex justify-center sm:top-14">
+            <span className="text-xs tracking-widest text-neutral-400">
+              [ OUR PROCESS ]
+            </span>
+          </div>
+
+          {/* Word wheel */}
+          <div className="relative h-full w-full">
+            {CONFIG.words.map((word, i) => (
+              <ProcessWord
+                key={word}
+                word={word}
+                index={i}
+                total={CONFIG.words.length}
+                progress={progress}
+              />
+            ))}
+          </div>
+
+          {/* Vignette fade — top */}
+          <div
+            className={`pointer-events-none absolute inset-x-0 top-0 z-20 ${CONFIG.vignetteHeightClass} bg-linear-to-b from-background via-background/80 to-transparent`}
+          />
+
+          {/* Vignette fade — bottom */}
+          <div
+            className={`pointer-events-none absolute inset-x-0 bottom-0 z-20 ${CONFIG.vignetteHeightClass} bg-linear-to-t from-background via-background/80 to-transparent`}
+          />
         </div>
-
-        {/* Vignette fade — top */}
-        <div
-          className={`pointer-events-none absolute inset-x-0 top-0 z-20 ${CONFIG.vignetteHeightClass} bg-linear-to-b from-background via-background/80 to-transparent`}
-        />
-
-        {/* Vignette fade — bottom */}
-        <div
-          className={`pointer-events-none absolute inset-x-0 bottom-0 z-20 ${CONFIG.vignetteHeightClass} bg-linear-to-t from-background via-background/80 to-transparent`}
-        />
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

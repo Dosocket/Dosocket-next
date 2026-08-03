@@ -404,29 +404,29 @@ export default function ExecutionFramework() {
 
               {/* Right Column: Active Step Details */}
               <div className="col-span-12 sm:col-span-6 flex items-center relative z-10 h-125">
-                <div className="w-full bg-black rounded-3xl p-6 md:p-8 text-white shadow-2xl transition-all duration-300 relative overflow-hidden border border-gray-800">
+                <div className="w-full h-full bg-black rounded-3xl p-6 md:p-8 text-white shadow-2xl transition-all duration-300 relative overflow-hidden border border-gray-800 flex flex-col justify-center">
                   {/* Subtle bg glow */}
                   <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#D6FC00]/10 blur-[80px] rounded-full pointer-events-none"></div>
 
-                  <div className="flex justify-between items-start mb-6 md:mb-8">
+                  <div className="flex justify-between items-start mb-4 md:mb-6">
                     <div className="bg-[#D6FC00]/10 text-[#D6FC00] px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase border border-[#D6FC00]/20">
                       Phase {activeData.num}
                     </div>
                   </div>
 
-                  <h3 className="text-3xl md:text-4xl font-medium tracking-tight mb-3">
+                  <h3 className="text-3xl md:text-4xl font-medium tracking-tight mb-2">
                     {activeData.title}
                   </h3>
 
-                  <p className="text-gray-400 text-sm md:text-base font-medium mb-6 uppercase tracking-wider">
+                  <p className="text-gray-400 text-sm md:text-base font-medium mb-4 uppercase tracking-wider">
                     {activeData.subtitle}
                   </p>
 
-                  <p className="text-gray-300 text-[15px] md:text-[16px] leading-relaxed mb-8">
+                  <p className="text-gray-300 text-[15px] md:text-[16px] leading-relaxed mb-6">
                     {activeData.desc}
                   </p>
 
-                  <div className="space-y-5 mb-8">
+                  <div className="space-y-3 md:space-y-4">
                     {activeData.bullets.map((bullet, i) => (
                       <div key={i} className="flex items-start gap-4">
                         <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-[#D6FC00]/10 text-[#D6FC00] flex items-center justify-center">

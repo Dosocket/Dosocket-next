@@ -83,7 +83,7 @@ function ServiceItem({
         "group",
         // CLOSER: span both columns + horizontal split (image left / text right).
         closer &&
-          "md:col-span-2 md:flex md:flex-row md:items-center md:gap-16",
+        "md:col-span-2 md:flex md:flex-row md:items-center md:gap-16",
       )}
     >
       {/* ── IMAGE ── independent structural element, rounded boundary, no frame.
@@ -119,7 +119,7 @@ function ServiceItem({
         </h3>
 
         {/* Micro-line highlight — a short rule that fills with #E8FF00 on hover. */}
-        <span className="mt-3 block h-0.5 w-10 origin-left scale-x-100 bg-border transition-all duration-500 group-hover:w-16 group-hover:bg-[#E8FF00]" />
+        <span className="mt-3 block h-0.5 w-10 origin-left scale-x-100 bg-border transition-all duration-500 group-hover:w-16 group-hover:bg-[black]" />
 
         {/* Paragraph summary */}
         <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
@@ -133,7 +133,7 @@ function ServiceItem({
               key={item}
               className="flex items-center gap-3 text-sm text-foreground/70"
             >
-              <span className="size-1.5 shrink-0 rounded-[1px] bg-foreground/40 transition-colors duration-300 group-hover:bg-[#E8FF00]" />
+              <span className="size-1.5 shrink-0 rounded-[1px] bg-foreground/40 transition-colors duration-300 group-hover:bg-[black]" />
               {item}
             </li>
           ))}
@@ -144,10 +144,10 @@ function ServiceItem({
           href={`/services/${service.slug}`}
           className="group/link mt-7 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-wider text-foreground/60 transition-colors hover:text-foreground"
         >
-          <span className="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-[#E8FF00] after:transition-transform after:duration-500 group-hover/link:after:scale-x-100">
+          <span className="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-[black] after:transition-transform after:duration-500 group-hover/link:after:scale-x-100">
             Explore capability
           </span>
-          <span className="grid size-8 place-items-center rounded-full border border-border transition-all duration-500 group-hover/link:border-[#E8FF00] group-hover/link:bg-[#E8FF00]/10">
+          <span className="grid size-8 place-items-center rounded-full border border-border transition-all duration-500 group-hover/link:border-[black] group-hover/link:bg-[black]/10">
             <ArrowUpRight className="size-3.5 transition-transform duration-500 group-hover/link:rotate-45" />
           </span>
         </Link>

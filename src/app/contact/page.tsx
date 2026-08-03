@@ -84,14 +84,14 @@ export default function ContactPage() {
             <div className="rounded-2xl border border-border bg-card p-7">
               <div className="text-xs uppercase tracking-widest text-muted-foreground">Direct</div>
               <ul className="mt-4 space-y-3 text-sm">
-                <li className="flex gap-3">
-                  <Mail className="size-4 shrink-0 text-lime" />
-                  <a href={`mailto:${BRAND.email}`} className="hover:text-lime">
+                <li className="flex gap-4">
+                  <Mail className="size-4 shrink-0 text-black" />
+                  <a href={`mailto:${BRAND.email}`} className="hover:text-black">
                     {BRAND.email}
                   </a>
                 </li>
                 <li className="flex gap-3">
-                  <MessageSquare className="size-4 shrink-0 text-lime" />
+                  <MessageSquare className="size-4 shrink-0 text-black" />
                   <span>{BRAND.handle} — all channels</span>
                 </li>
               </ul>
@@ -109,10 +109,10 @@ export default function ContactPage() {
                     href={s.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="group flex items-center justify-between rounded-xl border border-border bg-background px-3 py-2 text-sm transition-colors hover:border-lime hover:text-lime"
+                    className="group flex items-center justify-between rounded-xl border border-border bg-background px-3 py-2 text-sm transition-colors hover:border-black hover:text-black"
                   >
                     {s.label}
-                    <ArrowUpRight className="size-3.5 text-muted-foreground transition-colors group-hover:text-lime" />
+                    <ArrowUpRight className="size-3.5 text-muted-foreground transition-colors group-hover:text-black" />
                   </a>
                 ))}
               </div>
@@ -129,7 +129,7 @@ export default function ContactPage() {
             <details key={f.q} className="group py-5">
               <summary className="flex cursor-pointer list-none items-center justify-between text-base font-medium">
                 {f.q}
-                <span className="text-xl text-lime transition-transform group-open:rotate-45">
+                <span className="text-xl text-black transition-transform group-open:rotate-45">
                   +
                 </span>
               </summary>

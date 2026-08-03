@@ -6,6 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export function Field({
   label,
@@ -60,32 +61,36 @@ export function ContactForm() {
           <Label className="text-xs uppercase tracking-widest text-muted-foreground">
             Service interest
           </Label>
-          <select
-            className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none focus:border-lime"
-            name="type"
-          >
-            <option>Digital Brand & Experience</option>
-            <option>High-Performance Development</option>
-            <option>Growth & Revenue Systems</option>
-            <option>AI & Workflow Automation</option>
-            <option>On-Demand Product Teams</option>
-            <option>Not sure — help me scope</option>
-          </select>
+          <Select name="type" defaultValue="Digital Brand & Experience">
+            <SelectTrigger className="w-full h-auto rounded-xl border border-border bg-background px-4 py-6 text-sm outline-none focus:ring-1 focus:ring-lime focus:border-lime data-[state=open]:ring-1 data-[state=open]:ring-lime data-[state=open]:border-lime">
+              <SelectValue placeholder="Select service interest" />
+            </SelectTrigger>
+            <SelectContent side="bottom" align="start" alignItemWithTrigger={false} sideOffset={6} className="rounded-xl border border-border bg-background shadow-xl">
+              <SelectItem value="Digital Brand & Experience">Digital Brand & Experience</SelectItem>
+              <SelectItem value="High-Performance Development">High-Performance Development</SelectItem>
+              <SelectItem value="Growth & Revenue Systems">Growth & Revenue Systems</SelectItem>
+              <SelectItem value="AI & Workflow Automation">AI & Workflow Automation</SelectItem>
+              <SelectItem value="On-Demand Product Teams">On-Demand Product Teams</SelectItem>
+              <SelectItem value="Not sure — help me scope">Not sure — help me scope</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
         
         <div className="md:col-span-2 space-y-1.5">
           <Label className="text-xs uppercase tracking-widest text-muted-foreground">
             Budget range
           </Label>
-          <select
-            className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none focus:border-lime"
-            name="budget"
-          >
-            <option>$5k – $15k</option>
-            <option>$15k – $40k</option>
-            <option>$40k – $100k</option>
-            <option>$100k+ / retainer</option>
-          </select>
+          <Select name="budget" defaultValue="$5k – $15k">
+            <SelectTrigger className="w-full h-auto rounded-xl border border-border bg-background px-4 py-6 text-sm outline-none focus:ring-1 focus:ring-lime focus:border-lime data-[state=open]:ring-1 data-[state=open]:ring-lime data-[state=open]:border-lime">
+              <SelectValue placeholder="Select budget range" />
+            </SelectTrigger>
+            <SelectContent side="bottom" align="start" alignItemWithTrigger={false} sideOffset={6} className="rounded-xl border border-border bg-background shadow-xl">
+              <SelectItem value="$5k – $15k">$5k – $15k</SelectItem>
+              <SelectItem value="$15k – $40k">$15k – $40k</SelectItem>
+              <SelectItem value="$40k – $100k">$40k – $100k</SelectItem>
+              <SelectItem value="$100k+ / retainer">$100k+ / retainer</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
         
         <div className="md:col-span-2 space-y-1.5">

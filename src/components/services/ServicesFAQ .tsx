@@ -38,7 +38,7 @@ const TESTIMONIAL = {
     "The FAQ section clarified their process, making me feel informed and ensuring a smooth, trustworthy collaboration.",
   name: "Qasim",
   role: "Startup Founder",
-  avatar: "/testimonials/daniel-carter.jpg",
+  avatar: "/Qasim.jpeg",
 };
 
 const FAQ_ITEMS = [
@@ -88,7 +88,6 @@ const CTA = {
   heading: "Ready to take the next step for your project?",
   buttonLabel: "Book an intro call",
   href: BRAND.calcom,
-  avatar: "/testimonials/daniel-carter.jpg",
 };
 
 // ============================================================================
@@ -204,12 +203,14 @@ export function ServicesFAQ() {
               href={CTA.href}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex shrink-0 items-center gap-3 rounded-full border border-border bg-card py-2 pr-5 pl-2 text-sm font-semibold text-foreground shadow-sm transition-transform duration-300 hover:scale-[1.02]"
+              className="inline-flex shrink-0 items-center rounded-full border border-border bg-card py-2 pr-5 pl-2 text-sm font-semibold text-foreground shadow-sm transition-transform duration-300 hover:scale-[1.02]"
             >
-              <span className="relative size-8 shrink-0 overflow-hidden rounded-full bg-muted">
-                <Image src={CTA.avatar} alt="" fill className="object-cover" />
-              </span>
-              {CTA.buttonLabel}
+              <div>
+                <span className="grid p-2
+                 size-full place-items-center rounded-full">
+                  {CTA.buttonLabel}
+                </span>
+              </div>
             </a>
           </div>
         </div>

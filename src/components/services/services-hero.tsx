@@ -78,7 +78,7 @@ export function ServicesHero() {
   return (
     <section
       ref={trackRef}
-      className="relative bg-background"
+      className="relative hidden bg-background md:block"
       style={{ height: `${SCROLL_TRACK_VH}vh` }}
     >
       {/* Pinned stage. perspective gives the emerging cards a touch of depth. */}
@@ -128,23 +128,6 @@ export function ServicesHero() {
             technology expertise — all under one roof.
           </motion.p>
         </div>
-
-        {/* ---------- SCROLL HINT ---------- */}
-        <motion.div
-          style={{ opacity: hintOpacity }}
-          className="pointer-events-none absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2"
-        >
-          <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
-            Scroll
-          </span>
-          <span className="flex h-9 w-5 items-start justify-center rounded-full border border-foreground/20 p-1">
-            <motion.span
-              className="h-1.5 w-1.5 rounded-full bg-foreground"
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-            />
-          </span>
-        </motion.div>
       </div>
     </section>
   );
@@ -207,7 +190,7 @@ function HeroCard({
       className="relative"
     >
       {/* CARD SIZE: tune w / max-w / aspect to reshape the flying tiles. */}
-      <div className="relative aspect-[16/11] w-[58vw] max-w-[420px] overflow-hidden rounded-2xl border border-black/5 bg-white shadow-2xl shadow-black/20 ring-1 ring-black/5">
+      <div className="relative aspect-16/11 w-[58vw] max-w-105 overflow-hidden rounded-2xl border border-black/5 bg-white shadow-2xl shadow-black/20 ring-1 ring-black/5">
         <Image
           src={layer.src}
           alt={layer.alt}

@@ -237,8 +237,21 @@ export default function GrowFasterParallax() {
           ))}
         </h2>
 
-        {/* Parallax cluster, absolutely positioned over the heading box */}
-        <div className="pointer-events-none absolute inset-0">
+        {/* Mobile CTA (only visible on small screens) */}
+        <div className="relative z-10 mt-10 flex justify-center md:hidden">
+          <a
+            href={BRAND.calcom}
+            target="_blank"
+            rel="noreferrer"
+            className="group inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-background transition-transform duration-300 hover:scale-105"
+          >
+            Talk to us
+            <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
+        </div>
+
+        {/* Parallax cluster, absolutely positioned over the heading box (hidden on mobile) */}
+        <div className="pointer-events-none absolute inset-0 hidden md:block">
           {FLOATERS.map((item) => (
             <FloatingImage key={item.src} item={item} mx={mx} my={my} />
           ))}

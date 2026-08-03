@@ -1,12 +1,15 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { projects } from "@/lib/site-data";
+import { getProjects } from "@/lib/projects";
 import { Reveal } from "@/components/ui/reveal";
 import { ArrowUpRight } from "lucide-react";
 import { Metadata } from "next";
 
+export const dynamic = 'force-dynamic';
+
 export async function generateStaticParams() {
+  const projects = await getProjects();
   return projects.map((p) => ({
     slug: p.slug,
   }));
@@ -14,6 +17,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
+  const projects = await getProjects();
   const p = projects.find((x) => x.slug === slug);
   if (!p) return {};
 
@@ -30,18 +34,19 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function CaseStudy({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  const projects = await getProjects();
   const p = projects.find((x) => x.slug === slug);
 
-  if (!p) {
+  if (!p || p.gallery.length === 0) {
     notFound();
   }
 
-  const related = projects.filter((x) => x.slug !== p.slug).slice(0, 2);
+  const related = projects.filter((x) => x.slug !== p.slug && x.gallery.length > 0).slice(0, 2);
 
   return (
-    <div className="bg-background pt-12">
+    <div className="bg-background pt-25">
       <section className="container-x pt-6">
-        <div className="relative overflow-hidden rounded-3xl aspect-[16/9] w-full">
+        <div className="relative overflow-hidden rounded-3xl aspect-video w-full max-h-[75vh]">
           <Image
             src={p.cover}
             alt={p.title}
@@ -50,7 +55,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
           <div className="absolute inset-x-0 bottom-0 p-8 text-white md:p-14">
             <Reveal>
               <div className="flex flex-wrap items-center gap-3 text-xs">
@@ -116,14 +121,15 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
       {/* Gallery */}
       {p.gallery.length > 0 && (
         <section className="container-x pb-24">
-          <div className="columns-1 gap-6 md:columns-2 lg:columns-3 [column-fill:_balance]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {p.gallery.map((img, i) => (
-              <div key={i} className="mb-6 break-inside-avoid relative rounded-2xl overflow-hidden bg-muted/20">
-                <img
+              <div key={i} className="relative rounded-2xl overflow-hidden bg-card aspect-video">
+                <Image
                   src={img}
                   alt={`${p.title} gallery image ${i + 1}`}
-                  className="w-full h-auto block"
-                  loading="lazy"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 hover:scale-[1.05]"
                 />
               </div>
             ))}

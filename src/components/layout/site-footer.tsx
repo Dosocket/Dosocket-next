@@ -90,7 +90,7 @@ export function SiteFooter() {
 
         {/* ══════════ BOTTOM BAR: socials + legal (left) · copyright (right) ══════════ */}
         <div className="mt-auto flex flex-col gap-4 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-between">
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium uppercase tracking-wider text-neutral-500">
+          <div className="grid grid-cols-2 gap-y-4 gap-x-4 sm:flex sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-2 text-xs font-medium uppercase tracking-wider text-neutral-500">
             {SOCIALS.map(([href, label]) => (
               <a
                 key={label}
