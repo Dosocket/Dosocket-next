@@ -48,12 +48,16 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
     <div className="bg-background pt-12">
       <section className="container-x pt-10 pb-20">
         <Reveal>
-          <div
-            className="font-display font-bold uppercase tracking-wider text-foreground leading-[0.9]"
-            style={{ fontSize: "clamp(3.5rem, 14vw, 14rem)" }}
+          <h1
+            className="font-display font-bold uppercase tracking-tight text-foreground leading-[0.9] md:tracking-wider"
+            style={{ fontSize: "clamp(3.2rem, 12vw, 14rem)" }}
           >
-            {s.title.split("").join(" ")}
-          </div>
+            {s.title.split(" ").map((word, i) => (
+              <span key={i} className="mr-[0.3em] inline-block">
+                {word}
+              </span>
+            ))}
+          </h1>
         </Reveal>
         <Reveal>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{s.description}</p>
