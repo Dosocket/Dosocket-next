@@ -52,7 +52,6 @@ const HERO_LAYERS: Layer[] = [
   { src: services[2].image, alt: services[2].title, x: 840, y: -480 }, // ↗ top-right corner
   { src: services[3].image, alt: services[3].title, x: -840, y: -480 },// ↖ top-left corner
   { src: services[4].image, alt: services[4].title, x: 0, y: -580 },   // ↑ top-middle edge
-  { src: projects[0].cover, alt: projects[0].title, x: 840, y: 470 },  // ↘ bottom-right corner
 ];
 
 export function ServicesHero() {
