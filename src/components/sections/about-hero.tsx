@@ -159,10 +159,10 @@ export function AboutHero() {
 
 
             <div className="pt-4">
-              <a href="#" className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-zinc-950 hover:text-black border-b border-zinc-950/10 pb-1 hover:border-zinc-950 transition-colors duration-300">
+              <Link href="/works" className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-zinc-950 hover:text-black border-b border-zinc-950/10 pb-1 hover:border-zinc-950 transition-colors duration-300">
                 Explore Our Work
                 <span className="transform group-hover:translate-x-1.5 transition-transform duration-300">→</span>
-              </a>
+              </Link>
             </div>
           </article>
 

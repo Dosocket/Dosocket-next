@@ -49,8 +49,8 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
       <section className="container-x pt-10 pb-20">
         <Reveal>
           <h1
-            className="font-display font-bold uppercase tracking-tight text-foreground leading-[0.9] md:tracking-wider"
-            style={{ fontSize: "clamp(2.5rem, 10vw, 12rem)" }}
+            className="font-display font-bold uppercase tracking-tight text-foreground leading-[0.95]"
+            style={{ fontSize: "clamp(2.25rem, 8vw, 8rem)" }}
           >
             {s.title.split(" ").map((word, i) => (
               <span key={i} className="mr-[0.3em] inline-block">

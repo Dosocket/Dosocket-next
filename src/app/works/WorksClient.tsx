@@ -54,10 +54,10 @@ export default function WorksClient({ initialProjects }: { initialProjects: Proj
               key={f}
               onClick={() => setFilter(f)}
               className={cn(
-                "rounded-full border px-4 py-1.5 text-sm transition-colors cursor-pointer",
+                "rounded-full border px-4 py-1.5 text-sm font-medium transition-all duration-200 cursor-pointer",
                 filter === f
-                  ? "border-lime bg-lime text-lime-foreground"
-                  : "border-border hover:border-lime/50"
+                  ? "border-black bg-black text-white shadow-sm"
+                  : "border-gray-200 bg-white text-gray-700 hover:border-gray-400 hover:text-black"
               )}
             >
               {f}

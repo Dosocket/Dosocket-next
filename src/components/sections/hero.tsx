@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { FlipText } from "@/components/FlipText";
@@ -98,12 +99,18 @@ export default function Hero() {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 mb-12 sm:mb-16 animate-fade-in w-full sm:w-auto">
-          <button className="w-full sm:w-auto px-8 py-3 bg-black text-white rounded-full font-medium hover:bg-black/90 transition-colors text-sm sm:text-base">
+          <Link
+            href="/works"
+            className="w-full sm:w-auto px-8 py-3 bg-black text-white rounded-full font-medium hover:bg-black/90 transition-colors text-sm sm:text-base text-center cursor-pointer"
+          >
             Explore Our Work
-          </button>
-          <button className="w-full sm:w-auto px-8 py-3 bg-white text-black border border-neutral-300 rounded-full font-medium hover:bg-neutral-50 transition-colors text-sm sm:text-base">
+          </Link>
+          <Link
+            href="/contact"
+            className="w-full sm:w-auto px-8 py-3 bg-white text-black border border-neutral-300 rounded-full font-medium hover:bg-neutral-50 transition-colors text-sm sm:text-base text-center cursor-pointer"
+          >
             Contact Us
-          </button>
+          </Link>
         </div>
       </div>
 

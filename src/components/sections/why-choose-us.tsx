@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -30,9 +31,12 @@ export function WhyChooseUs() {
             </Reveal>
 
             <Reveal>
-              <button className="self-start px-6 py-2.5 lg:px-7 lg:py-3 bg-white text-black text-xs sm:text-sm font-medium rounded-full hover:bg-neutral-200 transition-colors">
+              <Link
+                href="/works"
+                className="self-start inline-flex items-center justify-center px-6 py-2.5 lg:px-7 lg:py-3 bg-white text-black text-xs sm:text-sm font-medium rounded-full hover:bg-neutral-200 transition-colors cursor-pointer"
+              >
                 Explore Our Work
-              </button>
+              </Link>
             </Reveal>
           </div>
 

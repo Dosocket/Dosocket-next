@@ -37,17 +37,12 @@ const LEGAL: [string, string][] = [
 
 export function SiteFooter() {
   return (
-    <footer className="relative z-0 h-[44rem] w-full overflow-hidden bg-neutral-950 text-neutral-400 md:sticky md:bottom-0 md:h-[34rem]">
+    <footer className="relative z-0 h-[46rem] w-full overflow-hidden bg-neutral-950 text-neutral-400 md:sticky md:bottom-0 md:h-[40rem]">
       {/* Faint top hairline so the seam with the sliding panel reads crisply. */}
       <div className="absolute inset-x-0 top-0 h-px bg-white/10" />
 
-      {/* CONTENT — flows from the top; `mt-auto` drops the legal bar to the bottom.
-          NAVBAR CLEARANCE: because the footer is pinned to the viewport bottom, its
-          top sits at (viewportHeight − footerHeight). The md height above is kept
-          COMFORTABLY SHORTER than a typical desktop viewport so the top never rises
-          under the fixed header, and `pt-24` adds extra clearance for short screens.
-          The bottom padding RESERVES room for the pinned wordmark below. */}
-      <div className="container-x relative z-10 flex h-full flex-col pt-24 pb-[24vw] md:pt-24 md:pb-40">
+      {/* CONTENT — flows from the top; `mt-auto` drops the legal bar to the bottom. */}
+      <div className="container-x relative z-10 flex h-full flex-col pt-20 pb-[22vw] md:pt-20 md:pb-48">
         {/* ══════════ TOP: CTA (left) + nav (right) ══════════ */}
         <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
           {/* CTA */}
@@ -124,14 +119,14 @@ export function SiteFooter() {
       </div>
 
       {/* ══════════ MONOLITHIC WORDMARK ══════════ */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 select-none overflow-hidden flex justify-center pb-2">
-        <div className="w-full max-w-6xl px-6 flex justify-center">
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 select-none overflow-hidden flex justify-center">
+        <div className="container-x w-full flex justify-center">
           <Image
             src="/white-text-logo.png"
             alt="Dosocket"
             width={1653}
             height={260}
-            className="w-full max-w-5xl h-auto object-contain translate-y-[12%]"
+            className="w-full h-auto object-contain translate-y-[20%] md:translate-y-[24%]"
             priority
           />
         </div>
