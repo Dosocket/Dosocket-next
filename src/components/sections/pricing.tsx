@@ -642,7 +642,133 @@ export function Pricing() {
           </Reveal>
         </div>
 
-        <div className="overflow-x-auto rounded-3xl border border-border bg-white p-4 md:p-8 shadow-sm">
+        {/* ── Mobile Comparison Cards (block md:hidden) ── */}
+        <div className="block md:hidden space-y-8">
+          {[
+            {
+              key: "basic" as const,
+              name: "Basic",
+              price: "$499",
+              period: "/project",
+              popular: false,
+              description: "Perfect for startups and small businesses testing the waters.",
+            },
+            {
+              key: "standard" as const,
+              name: "Standard",
+              price: "$1,299",
+              period: "/project",
+              popular: true,
+              tag: "Most Popular",
+              description: "For growing businesses ready to build a serious digital presence.",
+            },
+            {
+              key: "premium" as const,
+              name: "Premium",
+              price: "$2,999",
+              period: "/project",
+              popular: false,
+              tag: "Limited Availability",
+              description: "For established businesses that want complete digital presence.",
+            },
+            {
+              key: "custom" as const,
+              name: "Custom / Enterprise",
+              price: "Let's Talk",
+              period: "Starting from $5,000+",
+              popular: false,
+              description: "Tailored for large businesses and complex custom projects.",
+            },
+          ].map((plan) => (
+            <div
+              key={plan.key}
+              className={cn(
+                "relative rounded-3xl p-6 sm:p-8 bg-white shadow-sm transition-all duration-300",
+                plan.popular
+                  ? "border-2 border-black ring-2 ring-black/5"
+                  : "border border-border"
+              )}
+            >
+              {plan.tag && (
+                <div className="absolute top-0 right-6 -translate-y-1/2">
+                  <span
+                    className={cn(
+                      "px-3.5 py-1 rounded-full uppercase shadow-xs inline-block font-display text-[10px] font-extrabold tracking-wider",
+                      plan.popular
+                        ? "bg-[#E8FF00] text-black"
+                        : "bg-neutral-900 text-white"
+                    )}
+                  >
+                    {plan.tag}
+                  </span>
+                </div>
+              )}
+
+              {/* Plan Header */}
+              <div className="border-b border-border pb-5 mb-6">
+                <h3 className="font-display font-bold text-2xl text-foreground">
+                  {plan.name}
+                </h3>
+                <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+                  {plan.description}
+                </p>
+                <div className="mt-4 flex items-baseline gap-2">
+                  <span className="font-display font-bold text-3xl text-foreground tracking-tight">
+                    {plan.price}
+                  </span>
+                  <span className="text-xs text-muted-foreground font-medium">
+                    {plan.period}
+                  </span>
+                </div>
+              </div>
+
+              {/* Categories & Features List */}
+              <div className="space-y-6">
+                {comparisonData.map((category, cIdx) => (
+                  <div key={cIdx} className="space-y-2.5">
+                    <div className="bg-neutral-100/90 px-3.5 py-1.5 rounded-xl">
+                      <span className="font-display font-bold text-[11px] uppercase tracking-widest text-neutral-800">
+                        {category.category}
+                      </span>
+                    </div>
+
+                    <div className="divide-y divide-border/60">
+                      {category.features.map((feature, fIdx) => {
+                        const val = feature[plan.key];
+                        return (
+                          <div
+                            key={fIdx}
+                            className="flex items-center justify-between py-3 gap-3 text-sm"
+                          >
+                            <span className="text-neutral-700 font-medium text-[13px] leading-snug">
+                              {feature.name}
+                            </span>
+                            <div className="shrink-0 text-right">
+                              {renderCellContent(val)}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Action button */}
+              <div className="mt-8 pt-5 border-t border-border">
+                <AgencyButton
+                  text="Book a Free Call"
+                  onClick={() => openContact(`Book a Free Call - ${plan.name}`)}
+                  variant={plan.popular ? "filled" : "outline"}
+                  className="w-full"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* ── Desktop Comparison Table (hidden md:block) ── */}
+        <div className="hidden md:block overflow-x-auto rounded-3xl border border-border bg-white p-8 shadow-sm">
           <table className="w-full border-collapse min-w-[720px]">
             <thead>
               <tr className="border-b border-border">
