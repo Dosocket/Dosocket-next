@@ -32,7 +32,7 @@ export function SiteHeader() {
             className="flex items-center focus:outline-hidden"
           >
             <Image
-              src="/black-logo.png"
+              src="/green-icon.png"
               alt="Dosocket"
               width={140}
               height={40}

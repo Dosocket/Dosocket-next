@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { BRAND } from "@/lib/site-data";
 
@@ -122,23 +123,17 @@ export function SiteFooter() {
         </div>
       </div>
 
-      {/* ══════════ MONOLITHIC WORDMARK ══════════
-          Pinned to the footer's BOTTOM so it's always visible regardless of the
-          content above. Tucked so ~80% shows and the bottom ~20% bleeds past the
-          footer edge (= the viewport bottom on reveal). The wrapper's
-          `overflow-hidden` clips the tucked portion.
-
-          TUCK: `translate-y-[0.18em]` = how far it drops below the edge (≈20%).
-          Reserved space above comes from the content's `pb-[26vw] md:pb-[10rem]`. */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 select-none overflow-hidden">
-        <div className="container-x justify-center flex">
-          <h2
-            className="translate-y-[0.18em] whitespace-nowrap font-display font-bold uppercase leading-[0.78] tracking-tighter text-white"
-            // Sized to the shorter footer; capped so ultra-wide screens don't overflow.
-            style={{ fontSize: "min(18vw, 15rem)" }}
-          >
-            Dosocket
-          </h2>
+      {/* ══════════ MONOLITHIC WORDMARK ══════════ */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 select-none overflow-hidden flex justify-center pb-2">
+        <div className="w-full max-w-6xl px-6 flex justify-center">
+          <Image
+            src="/white-text-logo.png"
+            alt="Dosocket"
+            width={1653}
+            height={260}
+            className="w-full max-w-5xl h-auto object-contain translate-y-[12%]"
+            priority
+          />
         </div>
       </div>
     </footer>
