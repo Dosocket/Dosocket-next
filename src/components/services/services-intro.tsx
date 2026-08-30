@@ -63,9 +63,8 @@ export function ServicesIntro() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-120px" }}
-            className="font-display font-bold uppercase leading-[0.95] tracking-tighter text-foreground"
-            // clamp keeps the statement monolithic but never overflowing.
-            style={{ fontSize: "clamp(2rem, 6vw, 5.5rem)" }}
+            className="font-display font-bold uppercase leading-[1.08] tracking-tight text-foreground"
+            style={{ fontSize: "clamp(1.85rem, 4.5vw, 4.25rem)" }}
           >
             {HEADLINE.map((w, i) => (
               // Per-word clip mask: overflow-hidden crops the word until it rises in.
