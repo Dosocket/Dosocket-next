@@ -126,7 +126,8 @@ export function SiteFooter() {
             alt="Dosocket"
             width={1653}
             height={260}
-            className="w-full h-auto object-contain translate-y-[20%] md:translate-y-[24%]"
+            style={{ height: "auto" }}
+            className="w-full object-contain translate-y-[20%] md:translate-y-[24%]"
             priority
           />
         </div>

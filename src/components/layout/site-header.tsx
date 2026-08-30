@@ -34,9 +34,10 @@ export function SiteHeader() {
             <Image
               src="/dark-green logo.svg"
               alt="Dosocket"
-              width={108}
-              height={20}
-              className="h-[18px] md:h-[20px] w-auto object-contain"
+              width={1681}
+              height={309}
+              style={{ width: "auto" }}
+              className="h-[18px] md:h-[20px] object-contain"
               priority
             />
           </Link>
