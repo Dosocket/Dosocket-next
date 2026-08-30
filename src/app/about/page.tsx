@@ -2,10 +2,10 @@
 
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/ui/reveal";
-import { ArrowRight, Plus } from "lucide-react";
+import { ArrowLeft, ArrowRight, Plus } from "lucide-react";
 import ExecutionFramework from "@/components/ExecutionFramework";
 import { AboutHero } from "@/components/sections/about-hero";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 // Types
 interface TeamMember {
@@ -51,17 +51,17 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Fatima",
-    role: "UI/UX Designer",
+    role: "Co-Founder",
     img: "/Fatima-Rashid.jpeg",
     portfolioUrl: "https://www.behance.net/fatimarashid23",
     linkedinUrl: "https://www.linkedin.com/in/fatimarashi",
   },
   {
-    name: "Minhaj",
+    name: "Ezza Fatima",
     role: "Full Stack Developer",
-    img: "/Minhaj.jpeg",
-    portfolioUrl: "https://minhaj-psi.vercel.app/",
-    linkedinUrl: "https://www.linkedin.com/in/minhaj-arshad-8aa522372/",
+    img: "/ezza.png",
+
+    linkedinUrl: "https://www.linkedin.com/in/ezza-fatima125/",
   },
   {
     name: "Ayesha",
@@ -69,13 +69,27 @@ const teamMembers: TeamMember[] = [
     img: "/Ayesha-Janjua.jpeg",
     linkedinUrl: "https://www.linkedin.com/in/ayesha-j-834008413?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
+  {
+    name: "Ushna",
+    role: "AI Engineer",
+    img: "/ushna.png",
+    linkedinUrl: "https://www.linkedin.com/in/ushna-amir/"
+  },
 ];
 
 export default function AboutPage() {
   const [activeMember, setActiveMember] = useState<string | null>(null);
+  const teamScrollRef = useRef<HTMLDivElement>(null);
 
   const toggleMemberDetails = (name: string) => {
     setActiveMember(activeMember === name ? null : name);
+  };
+
+  const scrollTeam = (direction: "left" | "right") => {
+    if (teamScrollRef.current) {
+      const offset = direction === "left" ? -340 : 340;
+      teamScrollRef.current.scrollBy({ left: offset, behavior: "smooth" });
+    }
   };
 
   return (
@@ -133,80 +147,104 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          {/* Team Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {teamMembers.map((member: TeamMember) => (
-              <div
-                key={member.name}
-                className="relative aspect-4/5 bg-[#E8E8E8] rounded-3xl overflow-hidden group"
-              >
-                {/* Image Container */}
-                <div className="w-full h-full">
-                  <img
-                    src={member.img}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      // Fallback if image doesn't load
-                      const target = e.target as HTMLImageElement;
-                      target.src = "/placeholder-team-member.jpg";
-                    }}
-                  />
-                </div>
+          {/* Horizontally Scrollable Team Carousel Wrapper */}
+          <div className="relative group">
+            {/* Left Navigation Arrow */}
+            <button
+              onClick={() => scrollTeam("left")}
+              className="absolute -left-4 md:-left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-gray-200 bg-white/95 backdrop-blur-md flex items-center justify-center text-black hover:bg-black hover:text-white transition-all shadow-lg hover:scale-105 active:scale-95 cursor-pointer"
+              aria-label="Scroll team left"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </button>
 
-                {/* Gradient overlay for text readability */}
-                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/10 to-transparent opacity-90 transition-opacity group-hover:opacity-100"></div>
+            {/* Right Navigation Arrow */}
+            <button
+              onClick={() => scrollTeam("right")}
+              className="absolute -right-4 md:-right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-gray-200 bg-white/95 backdrop-blur-md flex items-center justify-center text-black hover:bg-black hover:text-white transition-all shadow-lg hover:scale-105 active:scale-95 cursor-pointer"
+              aria-label="Scroll team right"
+            >
+              <ArrowRight className="w-5 h-5" />
+            </button>
 
-                {/* Name and Role */}
-                <div className="absolute bottom-6 left-6 right-8">
-                  <h3 className="text-white text-[22px] font-medium leading-tight">
-                    {member.name}
-                  </h3>
-                  <p className="text-white/80 text-xs mt-1">{member.role}</p>
-                </div>
+            {/* Horizontally Scrollable Team Row */}
+            <div
+              ref={teamScrollRef}
+              className="flex gap-6 overflow-x-auto pb-6 pt-2 snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden px-1"
+            >
+              {teamMembers.map((member: TeamMember) => (
+                <div
+                  key={member.name}
+                  className="relative aspect-4/5 w-[280px] sm:w-[300px] md:w-[320px] shrink-0 snap-start bg-[#E8E8E8] rounded-3xl overflow-hidden group shadow-sm"
+                >
+                  {/* Image Container */}
+                  <div className="w-full h-full">
+                    <img
+                      src={member.img}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        // Fallback if image doesn't load
+                        const target = e.target as HTMLImageElement;
+                        target.src = "/placeholder-team-member.jpg";
+                      }}
+                    />
+                  </div>
 
-                {/* Plus button & details popup */}
-                <div className="absolute bottom-0 right-0 bg-[#F5F5F5] pt-2 pl-2 rounded-tl-[20px]">
-                  <button
-                    onClick={() => toggleMemberDetails(member.name)}
-                    className="bg-white w-10 h-10 rounded-[14px] flex items-center justify-center hover:bg-black hover:text-white transition cursor-pointer text-black border border-gray-100 shadow-sm relative z-10"
-                    aria-label={`View ${member.name}'s details`}
-                  >
-                    <Plus className={`w-5 h-5 transition-transform duration-300 ${activeMember === member.name ? 'rotate-45' : ''}`} />
-                  </button>
-                  
-                  {/* Mini Pop-up */}
-                  {activeMember === member.name && (
-                    <motion.div 
-                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      className="absolute bottom-12 right-0 bg-white border border-gray-200 shadow-lg rounded-xl p-3 min-w-[120px] flex flex-col gap-2 z-20"
+                  {/* Gradient overlay for text readability */}
+                  <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/10 to-transparent opacity-90 transition-opacity group-hover:opacity-100"></div>
+
+                  {/* Name and Role */}
+                  <div className="absolute bottom-6 left-6 right-8">
+                    <h3 className="text-white text-[22px] font-medium leading-tight">
+                      {member.name}
+                    </h3>
+                    <p className="text-white/80 text-xs mt-1">{member.role}</p>
+                  </div>
+
+                  {/* Plus button & details popup */}
+                  <div className="absolute bottom-0 right-0 bg-[#F5F5F5] pt-2 pl-2 rounded-tl-[20px]">
+                    <button
+                      onClick={() => toggleMemberDetails(member.name)}
+                      className="bg-white w-10 h-10 rounded-[14px] flex items-center justify-center hover:bg-black hover:text-white transition cursor-pointer text-black border border-gray-100 shadow-sm relative z-10"
+                      aria-label={`View ${member.name}'s details`}
                     >
-                      {member.linkedinUrl && (
-                        <a 
-                          href={member.linkedinUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-sm text-gray-700 hover:text-black font-medium transition-colors"
-                        >
-                          LinkedIn
-                        </a>
-                      )}
-                      {member.portfolioUrl && (
-                        <a 
-                          href={member.portfolioUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-sm text-gray-700 hover:text-black font-medium transition-colors"
-                        >
-                          Portfolio
-                        </a>
-                      )}
-                    </motion.div>
-                  )}
+                      <Plus className={`w-5 h-5 transition-transform duration-300 ${activeMember === member.name ? 'rotate-45' : ''}`} />
+                    </button>
+
+                    {/* Mini Pop-up */}
+                    {activeMember === member.name && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        className="absolute bottom-12 right-0 bg-white border border-gray-200 shadow-lg rounded-xl p-3 min-w-[120px] flex flex-col gap-2 z-20"
+                      >
+                        {member.linkedinUrl && (
+                          <a
+                            href={member.linkedinUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-gray-700 hover:text-black font-medium transition-colors"
+                          >
+                            LinkedIn
+                          </a>
+                        )}
+                        {member.portfolioUrl && (
+                          <a
+                            href={member.portfolioUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-gray-700 hover:text-black font-medium transition-colors"
+                          >
+                            Portfolio
+                          </a>
+                        )}
+                      </motion.div>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

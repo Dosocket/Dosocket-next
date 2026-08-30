@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -12,6 +13,7 @@ const nav = [
   { to: "/about", label: "About Us" },
   { to: "/works", label: "Works" },
   { to: "/services", label: "Services" },
+  { to: "/pricing", label: "Pricing" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -20,16 +22,23 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-4 left-1/2 z-50 w-full max-w-[800px] -translate-x-1/2 px-4 md:px-0 transition-all duration-300">
-      <div className="flex h-14 w-full items-center justify-between rounded-full bg-white/95 px-4 pr-2 shadow-[0_8px_32px_rgba(0,0,0,0.08)] ring-1 ring-neutral-200/50 backdrop-blur-md">
-        
-        {/* Logo — text wordmark only */}
+    <header className="fixed top-4 left-1/2 z-50 w-full max-w-[840px] -translate-x-1/2 px-4 md:px-0 transition-all duration-300">
+      <div className="flex h-14 md:h-15 w-full items-center justify-between rounded-full bg-white/95 px-4 pr-2 shadow-[0_8px_32px_rgba(0,0,0,0.08)] ring-1 ring-neutral-200/50 backdrop-blur-md">
+
+        {/* Logo */}
         <div className="flex items-center justify-start pl-2">
           <Link
             href="/"
-            className="font-display text-base font-bold text-black"
+            className="flex items-center focus:outline-hidden"
           >
-            Dosocket
+            <Image
+              src="/black-logo.png"
+              alt="Dosocket"
+              width={140}
+              height={40}
+              className="h-9 md:h-10.5 w-auto object-contain"
+              priority
+            />
           </Link>
         </div>
 

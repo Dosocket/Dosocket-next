@@ -104,6 +104,15 @@
 
   --destructive: oklch(0.6 0.22 27);
   --destructive-foreground: oklch(0.985 0 0);
+
+  /* Specific tokens for dark panels / pricing */
+  --neon-lime: #D6FC00;
+  --dark-bg: #0b0c10;
+  --dark-surface: #14151b;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --text-white: #ffffff;
+  --text-muted: #9ca3af;
+  --font-body: var(--font-inter), sans-serif;
 }
 
 @layer base {
