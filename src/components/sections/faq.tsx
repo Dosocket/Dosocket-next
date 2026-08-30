@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Reveal } from "@/components/ui/reveal";
 import { MessageCircleQuestion, ChevronDown } from "lucide-react";
 import Link from "next/link";
+import { BRAND } from "@/lib/site-data";
 
 /* ─────────────────────────────────────────
    FAQ Data
@@ -80,12 +81,14 @@ export function FAQ() {
                     Reach out anytime — we'll guide you through every detail to make sure you get the most out of our platform.
                   </p>
                   <div className="mt-8">
-                    <Link
-                      href="#"
+                    <a
+                      href={BRAND.calcom}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex h-12 items-center justify-center rounded-full bg-[#E8FF00] px-8 text-sm font-bold text-black transition-transform hover:scale-105 active:scale-95"
                     >
                       Book a Demo
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </Reveal>

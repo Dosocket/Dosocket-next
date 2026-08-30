@@ -44,7 +44,7 @@ const values: Value[] = [
 const teamMembers: TeamMember[] = [
   {
     name: "Qasim",
-    role: "CEO",
+    role: "CEO & Co-Founder",
     img: "/Qasim.jpeg",
     portfolioUrl: "https://icuxali.framer.ai/",
     linkedinUrl: "https://www.linkedin.com/in/icuxqasimali?utm_source=share_via&utm_content=profile&utm_medium=member_android",
@@ -57,7 +57,7 @@ const teamMembers: TeamMember[] = [
     linkedinUrl: "https://www.linkedin.com/in/fatimarashi",
   },
   {
-    name: "Ezza Fatima",
+    name: "Ezza",
     role: "Full Stack Developer",
     img: "/ezza.png",
 

@@ -50,7 +50,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
         <Reveal>
           <h1
             className="font-display font-bold uppercase tracking-tight text-foreground leading-[0.9] md:tracking-wider"
-            style={{ fontSize: "clamp(3.2rem, 12vw, 14rem)" }}
+            style={{ fontSize: "clamp(2.5rem, 10vw, 12rem)" }}
           >
             {s.title.split(" ").map((word, i) => (
               <span key={i} className="mr-[0.3em] inline-block">

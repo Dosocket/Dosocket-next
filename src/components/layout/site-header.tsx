@@ -32,11 +32,11 @@ export function SiteHeader() {
             className="flex items-center focus:outline-hidden"
           >
             <Image
-              src="/green-icon.png"
+              src="/dark-green logo.svg"
               alt="Dosocket"
               width={140}
-              height={40}
-              className="h-9 md:h-10.5 w-auto object-contain"
+              height={26}
+              className="h-6 md:h-7 w-auto object-contain"
               priority
             />
           </Link>
