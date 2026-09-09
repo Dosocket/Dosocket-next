@@ -37,12 +37,12 @@ const LEGAL: [string, string][] = [
 
 export function SiteFooter() {
   return (
-    <footer className="relative z-0 h-[46rem] w-full overflow-hidden bg-neutral-950 text-neutral-400 md:sticky md:bottom-0 md:h-[40rem]">
+    <footer className="relative z-0 h-[48rem] w-full overflow-hidden bg-neutral-950 text-neutral-400 md:sticky md:bottom-0 md:h-[42rem]">
       {/* Faint top hairline so the seam with the sliding panel reads crisply. */}
       <div className="absolute inset-x-0 top-0 h-px bg-white/10" />
 
       {/* CONTENT — flows from the top; `mt-auto` drops the legal bar to the bottom. */}
-      <div className="container-x relative z-10 flex h-full flex-col pt-20 pb-[22vw] md:pt-20 md:pb-48">
+      <div className="container-x relative z-10 flex h-full flex-col pt-16 pb-[32vw] md:pt-16 md:pb-72">
         {/* ══════════ TOP: CTA (left) + nav (right) ══════════ */}
         <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
           {/* CTA */}
@@ -86,7 +86,7 @@ export function SiteFooter() {
         </div>
 
         {/* ══════════ BOTTOM BAR: socials + legal (left) · copyright (right) ══════════ */}
-        <div className="mt-auto flex flex-col gap-4 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-between">
+        <div className="mt-auto mb-6 md:mb-10 flex flex-col gap-4 border-t border-white/10 pt-8 md:flex-row md:items-center md:justify-between">
           <div className="grid grid-cols-2 gap-y-4 gap-x-4 sm:flex sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-2 text-xs font-medium uppercase tracking-wider text-neutral-500">
             {SOCIALS.map(([href, label]) => (
               <a
