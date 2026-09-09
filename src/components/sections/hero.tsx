@@ -131,7 +131,7 @@ export default function Hero() {
               <span className="text-[10px] md:text-xs font-bold text-neutral-500 uppercase tracking-widest text-center">Global Clients</span>
             </div>
             <div className="flex flex-col items-center justify-center">
-              <span className="text-4xl md:text-5xl lg:text-6xl font-bold font-space text-black mb-2">4X</span>
+              <span className="text-4xl md:text-5xl lg:text-6xl font-bold font-space text-black mb-2">5X</span>
               <span className="text-[10px] md:text-xs font-bold text-neutral-500 uppercase tracking-widest text-center">Faster Delivery</span>
             </div>
           </div>

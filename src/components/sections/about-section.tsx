@@ -24,9 +24,9 @@ import aboutOurCompany from "../../../public/AboutOurCompany.png";
    Stats Data
 ───────────────────────────────────────── */
 const stats = [
-  { value: "50+", label: "Deals with Clients" },
+  { value: "100%", label: "Deals with Clients" },
   { value: "10+", label: "Team Members" },
-  { value: "113+", label: "Completed Projects" },
+  { value: "60+", label: "Completed Projects" },
 ];
 
 /* ─────────────────────────────────────────

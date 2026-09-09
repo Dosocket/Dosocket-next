@@ -50,7 +50,7 @@ export function WhyChooseUs() {
               viewport={{ once: true }}
               className="sm:col-span-2 bg-white rounded-2xl p-5 lg:p-6 text-black flex flex-col justify-center"
             >
-              <h3 className="text-3xl lg:text-5xl font-bold tracking-tighter mb-1 lg:mb-2 font-space">113+</h3>
+              <h3 className="text-3xl lg:text-5xl font-bold tracking-tighter mb-1 lg:mb-2 font-space">60+</h3>
               <p className="text-sm lg:text-base font-bold mb-1">Projects Delivered</p>
               <p className="text-neutral-500 text-xs lg:text-sm leading-relaxed max-w-xl">
                 Successfully launched AI products, SaaS platforms, websites, and digital systems that deliver measurable business impact.
@@ -65,7 +65,7 @@ export function WhyChooseUs() {
               transition={{ delay: 0.1 }}
               className="bg-white rounded-2xl p-5 lg:p-6 text-black flex flex-col justify-center"
             >
-              <h3 className="text-3xl lg:text-4xl font-bold tracking-tighter mb-1 lg:mb-2 font-space">42+</h3>
+              <h3 className="text-3xl lg:text-4xl font-bold tracking-tighter mb-1 lg:mb-2 font-space">16+</h3>
               <p className="text-sm font-bold mb-1">Happy Clients</p>
               <p className="text-neutral-500 text-xs leading-relaxed">
                 Trusted by startups, founders, agencies, and scaling businesses worldwide.

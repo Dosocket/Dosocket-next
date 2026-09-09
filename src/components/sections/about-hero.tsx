@@ -327,7 +327,7 @@ export function AboutHero() {
 
             <div className="flex flex-col justify-center items-center relative">
               <div className="text-4xl md:text-5xl font-extrabold text-black tracking-tight flex items-center justify-center mb-1.5 select-none">
-                <span className="about-stat-counter" data-target="98">0</span>%
+                <span className="about-stat-counter" data-target="100">0</span>%
               </div>
               <span className="text-[10px] uppercase font-bold tracking-widest text-zinc-400">Client Satisfaction</span>
               <div className="absolute right-0 top-1/4 h-1/2 w-px bg-zinc-100 hidden lg:block"></div>
@@ -335,15 +335,15 @@ export function AboutHero() {
 
             <div className="flex flex-col justify-center items-center relative">
               <div className="text-4xl md:text-5xl font-extrabold text-black tracking-tight flex items-center justify-center mb-1.5 select-none">
-                <span className="about-stat-counter" data-target="120">0</span>+
+                <span className="about-stat-counter" data-target="60">0</span>+
               </div>
-              <span className="text-[10px] uppercase font-bold tracking-widest text-zinc-400">Products Delivered</span>
+              <span className="text-[10px] uppercase font-bold tracking-widest text-zinc-400">Projects Delivered</span>
               <div className="absolute right-0 top-1/4 h-1/2 w-px bg-zinc-100 hidden lg:block"></div>
             </div>
 
             <div className="flex flex-col justify-center items-center relative">
               <div className="text-4xl md:text-5xl font-extrabold text-black tracking-tight flex items-center justify-center mb-1.5 select-none">
-                <span className="about-stat-counter" data-target="35">0</span>+
+                <span className="about-stat-counter" data-target="16">0</span>+
               </div>
               <span className="text-[10px] uppercase font-bold tracking-widest text-zinc-400">Global Clients</span>
               <div className="absolute right-0 top-1/4 h-1/2 w-px bg-zinc-100 hidden lg:block"></div>

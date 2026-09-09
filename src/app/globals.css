@@ -121,6 +121,12 @@
   }
 
   html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Standard scrollbar for Firefox and modern browsers */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(36, 37, 41, 0.45) transparent;
   }
 
   body {
@@ -128,10 +134,39 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
-  body::-webkit-scrollbar {
-    display: none;
+  /* ============================================================
+     CUSTOM MINIMAL SCROLLBAR (Chrome, Edge, Safari)
+     ============================================================ */
+  ::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(36, 37, 41, 0.4);
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(36, 37, 41, 0.75);
+    border: 1.5px solid rgba(214, 252, 0, 0.4);
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: rgba(20, 21, 25, 0.95);
+    border: 1.5px solid rgba(214, 252, 0, 0.7);
+    background-clip: padding-box;
   }
 
   h1,

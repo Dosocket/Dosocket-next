@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Toaster } from "@/components/ui/sonner";
 import { SmoothScroll } from "@/components/layout/smooth-scroll";
+import { BackToTop } from "@/components/ui/back-to-top";
 
 export const metadata: Metadata = {
   title: "Dosocket — Senior Craft, AI-Multiplied Velocity",
@@ -22,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
+    <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
       <body className="min-h-screen font-sans antialiased bg-background text-foreground" suppressHydrationWarning>
         <SmoothScroll>
           {/* SLIDING PANEL — the page content. Sits ABOVE the footer (z-10) with a
@@ -38,6 +39,7 @@ export default function RootLayout({
 
           {/* REVEAL-DOOR FOOTER — rendered BEHIND the panel at z-0. */}
           <SiteFooter />
+          <BackToTop />
         </SmoothScroll>
         <Toaster />
       </body>
